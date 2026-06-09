@@ -8,6 +8,9 @@ import {
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import GameDashboard from "./GameDashboard";
+import HeroSection from "../home/HeroSection";
+import TrendingGames from "../home/TrendingGames";
+import CategoriesSection from "../home/CategoriesSection";
 
 const popularGames = [
   {
@@ -146,6 +149,9 @@ const popularGames = [
 
         </div>
       </section>
+      <HeroSection/>
+      <TrendingGames/>
+      <CategoriesSection/>
       <GameDashboard/>
 
       {/* POPULAR GAMES */}
