@@ -6,31 +6,47 @@ import {
   Play,
   ChevronRight,
 } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const popularGames = [
   {
     id: 1,
     title: "Car Racing",
+    name: "car-racing",
     image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341",
   },
   {
     id: 2,
     title: "Battle Arena",
+    name: "battle-arena",
     image: "https://images.unsplash.com/photo-1511512578047-dfb367046420",
   },
   {
     id: 3,
     title: "Zombie Attack",
+    name: "zombie-attack",
     image: "https://images.unsplash.com/photo-1542751371-adc38448a05e",
   },
   {
     id: 4,
     title: "Football Pro",
+    name: "football",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
+  },
+  {
+    id: 5,
+    title: "Tic Tac Toe",
+    name: "tictactoe",
     image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
   },
 ];
 
  function Home() {
+  const navigate = useNavigate()
+
+  const handleplay =()=>{
+    navigate('/tictactoe')
+  }
   return (
     <div className="bg-[#050816] text-white min-h-screen">
 
@@ -142,7 +158,8 @@ const popularGames = [
                   {game.title}
                 </h3>
 
-                <button className="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold">
+                <button
+                onClick={()=> navigate(`/${game.name}`)} className="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold">
                   Play Game
                 </button>
               </div>
