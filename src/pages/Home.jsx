@@ -7,6 +7,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import GameDashboard from "./GameDashboard";
 
 const popularGames = [
   {
@@ -31,6 +32,24 @@ const popularGames = [
     id: 4,
     title: "Football Pro",
     name: "football",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
+  },
+  {
+    id: 5,
+    title: "Tic Tac Toe",
+    name: "tictactoe",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
+  },
+  {
+    id: 6,
+    title: "Memory Game",
+    name: "memory-game",
+    image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
+  },
+  {
+    id: 5,
+    title: "Tic Tac Toe",
+    name: "tictactoe",
     image: "https://images.unsplash.com/photo-1574629810360-7efbbe195018",
   },
   {
@@ -127,6 +146,7 @@ const popularGames = [
 
         </div>
       </section>
+      <GameDashboard/>
 
       {/* POPULAR GAMES */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -247,6 +267,7 @@ const popularGames = [
           Start Playing
         </button>
       </section>
+      
     </div>
   );
 }

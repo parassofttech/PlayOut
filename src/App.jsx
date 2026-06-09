@@ -8,6 +8,14 @@ import Categories from './pages/Categories'
 import Leaderboard from './pages/Leaderboard'
 import TicTacToe from './games/TicTacToe'
 import CarRacing from './games/CarRacing'
+import MemoryGame from './games/MemoryGame'
+import ZombieAttack from './games/ZombieAttack'
+import AimTrainer from './games/AimTrainer'
+import PuzzleSlider from './games/PuzzleSlider'
+import QuizGame from './games/QuizGame'
+import DiceGame from './games/DiceGame'
+import RockPaperScissors from './games/RockPaperScissors'
+import GuessNumber from './games/GuessNumber'
 
 function App() {
   
@@ -22,8 +30,16 @@ function App() {
       <Route path='/games' element={<Games/>}/>
       <Route path='/categories' element={<Categories/>}/>
       <Route path='/leaderboard' element={<Leaderboard/>}/>
-      <Route path='/tictactoe' element={<TicTacToe/>}/>
+      <Route path='/tic-tac-toe' element={<TicTacToe/>}/>
       <Route path="/car-racing" element={<CarRacing />} />
+      <Route path="/memory-game" element={<MemoryGame />} />
+      <Route path="/zombie-attack" element={<ZombieAttack />} />
+      <Route path="/aim-trainer" element={<AimTrainer />} />
+      <Route path="/puzzle-slider" element={<PuzzleSlider />} />
+      <Route path="/guess-number" element={<GuessNumber />} />
+      <Route path="/dice-game" element={<DiceGame />} />
+      <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
+      <Route path="/quiz-game" element={<QuizGame/>} />
 
 
     </Routes>
