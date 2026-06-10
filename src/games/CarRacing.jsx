@@ -130,7 +130,7 @@ const CarRacing = () => {
         </div>
 
         {/* ROAD */}
-        <div className="relative w-[340px] h-[700px] overflow-hidden rounded-2xl border-x-8 border-yellow-400 bg-zinc-900 shadow-[0_0_50px_rgba(0,255,255,0.25)]">
+        <div className="relative w-[340px] h-[600px] overflow-hidden rounded-2xl border-x-8 border-yellow-400 bg-zinc-900 shadow-[0_0_50px_rgba(0,255,255,0.25)]">
 
           {/* LINES */}
           {[...Array(12)].map((_, index) => (
