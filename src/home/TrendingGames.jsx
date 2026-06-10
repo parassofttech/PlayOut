@@ -143,7 +143,7 @@ const TrendingGames = () => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="grid md:grid-cols-4 gap-6 mt-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
           <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
             <h3 className="text-3xl font-black text-cyan-400">
               500+

@@ -118,7 +118,7 @@ const HeroSection = () => {
                       Live Players
                     </h4>
                     <p className="text-sm text-gray-400">
-                      12,845 Online
+                      1,845 Online
                     </p>
                   </div>
                 </div>

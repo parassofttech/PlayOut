@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import GameCard from "../components/GameCard";
+import { useSearchParams } from "react-router-dom";
 
 const gamesData = [
   {
@@ -90,7 +91,12 @@ const categories = [
 const Games = () => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
+  const [searchParams] = useSearchParams();
+  
 
+  const category =
+  searchParams.get("category");
+  
   const filteredGames = gamesData.filter((game) => {
     const matchSearch = game.title
       .toLowerCase()

@@ -15,31 +15,39 @@ const CarRacing = () => {
       id: 1,
       lane: 1,
       y: -200,
-      speed: 30,
+      speed: 6,
     },
   ]);
 
-  // Keyboard Controls
+  // 🚗 MOVE LEFT
+  const moveLeft = () => {
+    if (gameOver) return;
+    setLane((prev) => Math.max(prev - 1, 0));
+  };
+
+  // 🚗 MOVE RIGHT
+  const moveRight = () => {
+    if (gameOver) return;
+    setLane((prev) => Math.min(prev + 1, 2));
+  };
+
+  // ⌨️ KEYBOARD CONTROL
+  const handleKeyDown = (e) => {
+    if (gameOver) return;
+
+    if (e.key === "ArrowLeft") moveLeft();
+    if (e.key === "ArrowRight") moveRight();
+  };
+
   useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (gameOver) return;
-
-      if (e.key === "ArrowLeft") {
-        setLane((prev) => Math.max(prev - 1, 0));
-      }
-
-      if (e.key === "ArrowRight") {
-        setLane((prev) => Math.min(prev + 1, 2));
-      }
-    };
-
     window.addEventListener("keydown", handleKeyDown);
 
-    return () =>
+    return () => {
       window.removeEventListener("keydown", handleKeyDown);
+    };
   }, [gameOver]);
 
-  // Game Loop
+  // 🎮 GAME LOOP
   useEffect(() => {
     if (gameOver) return;
 
@@ -50,35 +58,22 @@ const CarRacing = () => {
           y: enemy.y + enemy.speed,
         }));
 
-        // Collision Detection
+        // COLLISION
         updated.forEach((enemy) => {
-          if (
-            enemy.lane === lane &&
-            enemy.y > 500 &&
-            enemy.y < 610
-          ) {
+          if (enemy.lane === lane && enemy.y > 500 && enemy.y < 610) {
             setGameOver(true);
           }
         });
 
-        // Remove Passed Cars
-        const filtered = updated.filter(
-          (enemy) => enemy.y < 800
-        );
+        // REMOVE OLD
+        const filtered = updated.filter((enemy) => enemy.y < 800);
 
-        // Spawn New Enemy
-        if (
-          filtered.length < 3 &&
-          Math.random() > 0.945
-        ) {
-          const newLane = Math.floor(
-            Math.random() * 3
-          );
+        // SPAWN NEW
+        if (filtered.length < 3 && Math.random() > 0.945) {
+          const newLane = Math.floor(Math.random() * 3);
 
           const laneBusy = filtered.some(
-            (enemy) =>
-              enemy.lane === newLane &&
-              enemy.y < 250
+            (enemy) => enemy.lane === newLane && enemy.y < 250
           );
 
           if (!laneBusy) {
@@ -86,9 +81,7 @@ const CarRacing = () => {
               id: Date.now(),
               lane: newLane,
               y: -220,
-              speed:
-                enemyBaseSpeed +
-                Math.random() * 1.5,
+              speed: enemyBaseSpeed + Math.random() * 1.5,
             });
           }
         }
@@ -102,15 +95,14 @@ const CarRacing = () => {
     return () => clearInterval(gameLoop);
   }, [lane, gameOver, enemyBaseSpeed]);
 
-  // Increase Difficulty
+  // ⚡ DIFFICULTY INCREASE
   useEffect(() => {
-    if (score > 0 && score % 200 === 0) {
-      setEnemyBaseSpeed((prev) =>
-        Math.min(prev + 0.3, 15)
-      );
-    }
-  }, [score]);
+  if (score > 0 && score % 80 === 0) {
+    setEnemyBaseSpeed((prev) => Math.min(prev + 0.6, 20));
+  }
+}, [score]);
 
+  // 🔄 RESTART
   const restartGame = () => {
     setLane(1);
     setScore(0);
@@ -134,15 +126,13 @@ const CarRacing = () => {
         {/* HUD */}
         <div className="absolute -top-16 left-0 right-0 flex justify-between text-white font-bold text-lg">
           <span>🏆 Score: {score}</span>
-          <span>
-            ⚡ Speed: {enemyBaseSpeed.toFixed(1)}
-          </span>
+          <span>⚡ Speed: {enemyBaseSpeed.toFixed(1)}</span>
         </div>
 
-        {/* Road */}
+        {/* ROAD */}
         <div className="relative w-[340px] h-[700px] overflow-hidden rounded-2xl border-x-8 border-yellow-400 bg-zinc-900 shadow-[0_0_50px_rgba(0,255,255,0.25)]">
 
-          {/* Road Lines */}
+          {/* LINES */}
           {[...Array(12)].map((_, index) => (
             <div
               key={index}
@@ -150,19 +140,12 @@ const CarRacing = () => {
               style={{
                 width: "10px",
                 height: "80px",
-                top: `${
-                  ((index * 100 + score * 0.8) %
-                    1200) - 100
-                }px`,
+                top: `${((index * 100 + score * 0.8) % 1200) - 100}px`,
               }}
             />
           ))}
 
-          {/* Side Glow */}
-          <div className="absolute left-0 top-0 w-2 h-full bg-cyan-400 blur-md" />
-          <div className="absolute right-0 top-0 w-2 h-full bg-cyan-400 blur-md" />
-
-          {/* Enemy Cars */}
+          {/* ENEMIES */}
           {enemies.map((enemy) => (
             <img
               key={enemy.id}
@@ -176,15 +159,14 @@ const CarRacing = () => {
             />
           ))}
 
-          {/* Player Car */}
+          {/* PLAYER */}
           <img
             src={playerCar}
             alt="player"
             className="absolute bottom-5 w-[75px] h-[125px] object-contain drop-shadow-[0_0_25px_cyan]"
             style={{
               left: LANES[lane],
-              transition:
-                "all .12s cubic-bezier(0.4,0,0.2,1)",
+              transition: "all .12s cubic-bezier(0.4,0,0.2,1)",
               transform:
                 lane === 0
                   ? "rotate(-10deg)"
@@ -195,21 +177,34 @@ const CarRacing = () => {
           />
         </div>
 
-        {/* Controls */}
-        <div className="mt-5 text-center text-gray-300">
-          ⬅️ Move Left &nbsp;&nbsp; ➡️ Move Right
+        {/* CONTROLS BUTTONS */}
+        <div className="mt-6 flex items-center justify-center gap-6 text-gray-300">
+
+          <button
+            onClick={moveLeft}
+            className="px-6 py-3 bg-white/10 rounded-xl hover:bg-white/20 active:scale-95 transition"
+          >
+            ⬅️ Left
+          </button>
+
+          
+
+          <button
+            onClick={moveRight}
+            className="px-6 py-3 bg-white/10 rounded-xl hover:bg-white/20 active:scale-95 transition"
+          >
+            Right ➡️
+          </button>
         </div>
 
-        {/* Game Over */}
+        {/* GAME OVER */}
         {gameOver && (
           <div className="absolute inset-0 bg-black/90 rounded-2xl flex flex-col items-center justify-center text-white">
             <h1 className="text-5xl font-black text-red-500">
               GAME OVER
             </h1>
 
-            <p className="mt-4 text-2xl">
-              Score: {score}
-            </p>
+            <p className="mt-4 text-2xl">Score: {score}</p>
 
             <button
               onClick={restartGame}
@@ -219,6 +214,7 @@ const CarRacing = () => {
             </button>
           </div>
         )}
+
       </div>
     </div>
   );

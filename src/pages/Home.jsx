@@ -11,6 +11,10 @@ import GameDashboard from "./GameDashboard";
 import HeroSection from "../home/HeroSection";
 import TrendingGames from "../home/TrendingGames";
 import CategoriesSection from "../home/CategoriesSection";
+import Testimonials from "../home/Testimonials";
+import Newsletter from "../home/Newsletter";
+import PopularGame from "../home/PopularGame";
+import Footer from '../components/Footer'
 
 const popularGames = [
   {
@@ -73,154 +77,13 @@ const popularGames = [
     <div className="bg-[#050816] text-white min-h-screen">
 
       {/* HERO */}
-      <section className="relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/20 via-purple-500/20 to-pink-500/20 blur-3xl"></div>
-
-        <div className="max-w-7xl mx-auto px-6 py-24 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-
-            <div>
-              <span className="bg-cyan-500/20 text-cyan-400 px-4 py-2 rounded-full text-sm">
-                🎮 #1 Online Gaming Platform
-              </span>
-
-              <h1 className="text-5xl md:text-7xl font-black mt-6 leading-tight">
-                Play
-                <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                  {" "}
-                  Unlimited
-                </span>
-                <br />
-                Games Online
-              </h1>
-
-              <p className="text-gray-400 text-lg mt-6 max-w-xl">
-                Enjoy thousands of exciting games. Racing, Action,
-                Adventure, Puzzle, Sports and many more — all in one place.
-              </p>
-
-              <div className="flex flex-wrap gap-4 mt-8">
-                <button className="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition">
-                  <Play size={20} />
-                  Play Now
-                </button>
-
-                <button className="px-8 py-4 border border-white/20 rounded-xl hover:bg-white/10 transition">
-                  Explore Games
-                </button>
-              </div>
-            </div>
-
-            <div className="relative">
-              <img
-                src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8"
-                alt="gaming"
-                className="rounded-3xl shadow-2xl"
-              />
-            </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* STATS */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h2 className="text-4xl font-bold text-cyan-400">500+</h2>
-            <p className="text-gray-400">Games</p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h2 className="text-4xl font-bold text-purple-400">50K+</h2>
-            <p className="text-gray-400">Players</p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h2 className="text-4xl font-bold text-pink-400">1M+</h2>
-            <p className="text-gray-400">Game Plays</p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h2 className="text-4xl font-bold text-green-400">24/7</h2>
-            <p className="text-gray-400">Online</p>
-          </div>
-
-        </div>
-      </section>
+     
       <HeroSection/>
       <TrendingGames/>
       <CategoriesSection/>
-      <GameDashboard/>
-
-      {/* POPULAR GAMES */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-4xl font-bold">
-            Popular Games
-          </h2>
-
-          <button className="flex items-center gap-2 text-cyan-400">
-            View All
-            <ChevronRight size={18} />
-          </button>
-        </div>
-
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {popularGames.map((game) => (
-            <div
-              key={game.id}
-              className="group bg-white/5 rounded-2xl overflow-hidden border border-white/10 hover:border-cyan-500 transition"
-            >
-              <img
-                src={game.image}
-                alt={game.title}
-                className="h-56 w-full object-cover group-hover:scale-110 transition duration-500"
-              />
-
-              <div className="p-5">
-                <h3 className="font-bold text-xl">
-                  {game.title}
-                </h3>
-
-                <button
-                onClick={()=> navigate(`/${game.name}`)} className="mt-4 w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold">
-                  Play Game
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* CATEGORIES */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <h2 className="text-4xl font-bold text-center mb-12">
-          Game Categories
-        </h2>
-
-        <div className="grid md:grid-cols-4 gap-6">
-          {[
-            "Action",
-            "Adventure",
-            "Racing",
-            "Sports",
-            "Puzzle",
-            "Arcade",
-            "Shooting",
-            "Strategy",
-          ].map((cat) => (
-            <div
-              key={cat}
-              className="bg-gradient-to-br from-cyan-500/10 to-purple-500/10 border border-white/10 rounded-2xl p-8 text-center hover:scale-105 transition"
-            >
-              <Gamepad2 className="mx-auto mb-4 text-cyan-400" />
-              <h3 className="font-bold text-lg">{cat}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
+      <PopularGame/>
+      <Testimonials/>
+      <Newsletter/>
 
       {/* FEATURES */}
       <section className="max-w-7xl mx-auto px-6 py-16">
@@ -273,6 +136,7 @@ const popularGames = [
           Start Playing
         </button>
       </section>
+      <Footer/>
       
     </div>
   );

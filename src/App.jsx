@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Navbar from './components/Navbar'
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom'
 import Home from './pages/Home'
-import Footer from './components/Footer'
 import Games from './pages/Games'
 import Categories from './pages/Categories'
 import Leaderboard from './pages/Leaderboard'
@@ -43,7 +42,7 @@ function App() {
 
 
     </Routes>
-    <Footer/>
+    
    </Router>
    
    

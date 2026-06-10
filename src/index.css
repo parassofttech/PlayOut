@@ -18,3 +18,21 @@
     transform: rotateY(180deg);
   }
 }
+
+@keyframes testimonialSlider {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-testimonial-slider {
+  animation: testimonialSlider 35s linear infinite;
+}
+
+.animate-testimonial-slider:hover {
+  animation-play-state: paused;
+}

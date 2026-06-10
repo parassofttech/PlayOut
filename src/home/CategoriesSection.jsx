@@ -1,108 +1,253 @@
-import React from "react";
+import { useState } from "react";
+import {
+  Car,
+  Trophy,
+  Puzzle,
+  Sword,
+  Target,
+  Rocket,
+  Brain,
+  Gamepad2,
+} from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import { Brain, Zap, Target, Smile, Puzzle, Sparkles, ArrowUpRight } from "lucide-react";
 
-function CategoriesSection() {
+const categories = [
+  {
+    id: "car-racing",
+    name: "Racing",
+    icon: Car,
+    color: "from-cyan-500 to-blue-600",
+    games: 120,
+    description: "High speed racing adventures",
+  },
+  {
+    id: "action",
+    name: "Action",
+    icon: Sword,
+    color: "from-red-500 to-orange-500",
+    games: 95,
+    description: "Fight and survive challenges",
+  },
+  {
+    id: "sports",
+    name: "Sports",
+    icon: Trophy,
+    color: "from-green-500 to-emerald-500",
+    games: 80,
+    description: "Football, Cricket & More",
+  },
+  {
+    id: "puzzle",
+    name: "Puzzle",
+    icon: Puzzle,
+    color: "from-purple-500 to-pink-500",
+    games: 150,
+    description: "Train your brain",
+  },
+  {
+    id: "shooting",
+    name: "Shooting",
+    icon: Target,
+    color: "from-yellow-500 to-orange-500",
+    games: 75,
+    description: "FPS and sniper games",
+  },
+  {
+    id: "arcade",
+    name: "Arcade",
+    icon: Rocket,
+    color: "from-indigo-500 to-violet-500",
+    games: 110,
+    description: "Classic arcade fun",
+  },
+  {
+    id: "strategy",
+    name: "Strategy",
+    icon: Brain,
+    color: "from-pink-500 to-rose-500",
+    games: 65,
+    description: "Plan and conquer",
+  },
+  {
+    id: "adventure",
+    name: "Adventure",
+    icon: Gamepad2,
+    color: "from-teal-500 to-cyan-500",
+    games: 90,
+    description: "Explore new worlds",
+  },
+];
+
+const CategoriesSection = () => {
   const navigate = useNavigate();
 
-  const categories = [
-    {
-      name: "Brain Games",
-      desc: "Quiz, Memory, Guess games",
-      path: "/?category=brain",
-      color: "from-purple-500 to-pink-500",
-      glow: "shadow-purple-500/20",
-      icon: <Brain className="text-purple-400 group-hover:text-purple-300 w-6 h-6" />,
-    },
-    {
-      name: "Action Games",
-      desc: "Racing, Zombie, Reflex",
-      path: "/?category=action",
-      color: "from-blue-500 to-cyan-400",
-      glow: "shadow-blue-500/20",
-      icon: <Zap className="text-blue-400 group-hover:text-blue-300 w-6 h-6" />,
-    },
-    {
-      name: "Skill Games",
-      desc: "Aim Trainer, Timing games",
-      path: "/?category=skill",
-      color: "from-red-500 to-orange-400",
-      glow: "shadow-red-500/20",
-      icon: <Target className="text-red-400 group-hover:text-red-300 w-6 h-6" />,
-    },
-    {
-      name: "Fun Games",
-      desc: "Dice, RPS, casual games",
-      path: "/?category=fun",
-      color: "from-green-500 to-emerald-400",
-      glow: "shadow-green-500/20",
-      icon: <Smile className="text-green-400 group-hover:text-green-300 w-6 h-6" />,
-    },
-    {
-      name: "Puzzle Games",
-      desc: "Sliding puzzles, logic games",
-      path: "/?category=puzzle",
-      color: "from-amber-500 to-orange-500",
-      glow: "shadow-amber-500/20",
-      icon: <Puzzle className="text-amber-400 group-hover:text-amber-300 w-6 h-6" />,
-    },
-  ];
+  const [activeCategory, setActiveCategory] =
+    useState(categories[0]);
+
+  const handleCategoryClick = (category) => {
+    setActiveCategory(category);
+
+    // category page
+    navigate(`/games?category=${category.id}`);
+  };
 
   return (
-    <div className="w-full py-16 px-6 relative bg-[#070913] overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[250px] bg-gradient-to-r from-blue-500/10 to-purple-500/10 blur-[120px] rounded-full pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff02_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+    <section className="relative py-24 bg-[#050816] overflow-hidden">
+      {/* Background */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full" />
 
-      <div className="max-w-7xl mx-auto relative z-10">
-        <div className="text-center mb-14 space-y-3">
-          <div className="inline-flex items-center gap-2 bg-slate-900/80 border border-white/5 rounded-full px-4 py-1.5 backdrop-blur-xl shadow-lg shadow-black/40">
-            <Sparkles size={14} className="text-cyan-400 animate-pulse" />
-            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">Discover Arena</span>
-          </div>
-          
-          <h2 className="text-4xl md:text-5xl font-black text-white tracking-tight">
-            Game{" "}
-            <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-400 bg-clip-text text-transparent">
-              Categories
+      <div className="relative max-w-7xl mx-auto px-5">
+        {/* Heading */}
+        <div className="text-center mb-16">
+          <span className="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
+            Game Categories
+          </span>
+
+          <h2 className="mt-5 text-5xl font-black text-white">
+            Explore Games By
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+              {" "}
+              Category
             </span>
           </h2>
-          <p className="text-slate-500 text-sm max-w-md mx-auto">
-            Select a dimension to test your reflexes, strategy, or core gaming skills.
+
+          <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
+            Select your favorite category and start
+            playing instantly.
           </p>
         </div>
 
-        {/* Normal Grid without motion.div */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
-          {categories.map((cat, index) => (
-            <div
-              key={index}
-              onClick={() => navigate(cat.path)}
-              className={`group relative cursor-pointer p-6 rounded-[2rem] bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-white/5 hover:border-white/20 hover:-translate-y-1.5 transition-all duration-300 shadow-2xl ${cat.glow}`}
-            >
-              <div className={`absolute inset-0 bg-gradient-to-br ${cat.color} opacity-0 group-hover:opacity-[0.03] rounded-[2rem] transition-opacity duration-500 pointer-events-none`} />
+        {/* Featured Category */}
+        <div
+          className={`mb-12 rounded-3xl p-8 border border-white/10 bg-gradient-to-r ${activeCategory.color}`}
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-8">
+            <div>
+              <h3 className="text-4xl font-black text-white">
+                {activeCategory.name}
+              </h3>
 
-              <div className="absolute top-5 right-5 text-slate-600 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 opacity-0 group-hover:opacity-100">
-                <ArrowUpRight size={16} />
-              </div>
+              <p className="mt-3 text-white/90">
+                {activeCategory.description}
+              </p>
 
-              <div className="w-12 h-12 rounded-xl bg-slate-800/50 group-hover:bg-slate-800 border border-white/5 flex items-center justify-center mb-6 shadow-inner transition-colors duration-300">
-                {cat.icon}
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold text-white tracking-tight group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-400 transition-all duration-300">
-                  {cat.name}
-                </h3>
-                <p className="text-xs text-slate-400 font-medium leading-relaxed group-hover:text-slate-300 transition-colors duration-300">
-                  {cat.desc}
-                </p>
-              </div>
+              <p className="mt-3 text-lg font-bold text-white">
+                {activeCategory.games}+ Games Available
+              </p>
             </div>
-          ))}
+
+            <button
+              onClick={() =>
+                navigate(
+                  `/games?category=${activeCategory.id}`
+                )
+              }
+              className="px-8 py-4 rounded-xl bg-white text-black font-bold hover:scale-105 transition"
+            >
+              Play Now
+            </button>
+          </div>
+        </div>
+
+        {/* Categories Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-7">
+          {categories.map((category) => {
+            const Icon = category.icon;
+
+            return (
+              <div
+                key={category.id}
+                onClick={() =>
+                  handleCategoryClick(category)
+                }
+                className={`group cursor-pointer relative rounded-3xl overflow-hidden border transition-all duration-500
+                ${
+                  activeCategory.id === category.id
+                    ? "border-cyan-400 scale-105"
+                    : "border-white/10"
+                }`}
+              >
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-xl" />
+
+                <div
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r ${category.color} transition`}
+                />
+
+                <div className="relative p-7">
+                  <div
+                    className={`w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-r ${category.color}`}
+                  >
+                    <Icon
+                      size={38}
+                      className="text-white"
+                    />
+                  </div>
+
+                  <h3 className="mt-5 text-2xl font-bold text-white">
+                    {category.name}
+                  </h3>
+
+                  <p className="mt-2 text-gray-400 text-sm">
+                    {category.description}
+                  </p>
+
+                  <div className="mt-5 flex items-center justify-between">
+                    <span className="text-cyan-400 font-semibold">
+                      Play Games
+                    </span>
+
+                    <span className="text-white group-hover:translate-x-2 transition">
+                      →
+                    </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom Stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-black text-cyan-400">
+              500+
+            </h3>
+            <p className="text-gray-400">
+              Total Games
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-black text-purple-400">
+              1M+
+            </h3>
+            <p className="text-gray-400">
+              Players
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-black text-pink-400">
+              50+
+            </h3>
+            <p className="text-gray-400">
+              Categories
+            </p>
+          </div>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-black text-yellow-400">
+              24/7
+            </h3>
+            <p className="text-gray-400">
+              Gaming
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-}
+};
 
 export default CategoriesSection;
