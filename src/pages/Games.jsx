@@ -1,12 +1,12 @@
 import { useState } from "react";
 import SearchBar from "../components/SearchBar";
 import GameCard from "../components/GameCard";
-import { useSearchParams } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const gamesData = [
   {
     id: 1,
-    title: "Car Racing 3D",
+    title: "Car Racing ",
     category: "Racing",
     rating: 4.9,
     players: "25K+",
@@ -92,6 +92,7 @@ const Games = () => {
   const [search, setSearch] = useState("");
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchParams] = useSearchParams();
+  const navigate = useNavigate()
   
 
   const category =
@@ -168,16 +169,25 @@ const Games = () => {
 
         {filteredGames.length > 0 ? (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
-            {filteredGames.map((game) => (
-              <GameCard
-                key={game.id}
+            {filteredGames.map((game, index) => (
+              <div  onClick={ ()=>navigate(`/${game.id}`)}>
+                <GameCard
+                
+                key={index}
                 title={game.title}
                 image={game.image}
                 category={game.category}
                 rating={game.rating}
                 players={game.players}
+                
               />
-            ))}
+              
+              </div>
+              
+            )
+          )
+            }
+           
           </div>
         ) : (
           <div className="text-center py-20">
