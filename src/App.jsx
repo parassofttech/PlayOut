@@ -17,6 +17,7 @@ import RockPaperScissors from './games/RockPaperScissors'
 import GuessNumber from './games/GuessNumber'
 import PuzzleGame from './games/PuzzleGame'
 import SnakeGame from './games/SnakeGame'
+import Profile from './pages/Profile'
 
 function App() {
   
@@ -31,6 +32,7 @@ function App() {
       <Route path='/games' element={<Games/>}/>
       <Route path='/categories' element={<Categories/>}/>
       <Route path='/leaderboard' element={<Leaderboard/>}/>
+      <Route path='/profile' element={<Profile/>}/>
       <Route path='/tic-tac-toe' element={<TicTacToe/>}/>
       <Route path="/car-racing" element={<CarRacing />} />
       <Route path="/memory-game" element={<MemoryGame />} />
