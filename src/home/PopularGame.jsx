@@ -21,8 +21,8 @@ const games = [
     trending: true,
   },
   {
-    id: "zombi-attack",
-    title: "Zombie Attack",
+    id: "dice-game",
+    title: "Dice Game",
     category: "Action",
     rating: 4.8,
     players: "18K+",
@@ -31,8 +31,8 @@ const games = [
     trending: true,
   },
   {
-    id: 3,
-    title: "Football Stars",
+    id: "rock-paper-scissors",
+    title: "Rock Paper Scissors",
     category: "Sports",
     rating: 4.7,
     players: "12K+",
@@ -40,7 +40,7 @@ const games = [
       "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
   },
   {
-    id: "puzzle",
+    id: "puzzle-game",
     title: "Puzzle Master",
     category: "Puzzle",
     rating: 4.9,
@@ -49,8 +49,8 @@ const games = [
       "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200",
   },
   {
-    id: 5,
-    title: "Space Adventure",
+    id: "tic-tac-toe",
+    title: " Tic Tac Toe",
     category: "Adventure",
     rating: 4.8,
     players: "20K+",
@@ -58,11 +58,47 @@ const games = [
       "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200",
   },
   {
-    id: 6,
-    title: "Sniper Elite",
+    id: "aim-trainer",
+    title: "Aim Trainer",
     category: "Shooting",
     rating: 4.9,
-    players: "30K+",
+    players: "10K+",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+  },
+  {
+    id: "memory-game",
+    title: "Memory Game",
+    category: "Shooting",
+    rating: 4.9,
+    players: "15K+",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+  },
+  {
+    id: "guess-number",
+    title: "Guess Number",
+    category: "Guess Number",
+    rating: 4.9,
+    players: "20K+",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+  },
+  {
+    id: "snack-game",
+    title: "Snack Game",
+    category: "Shooting",
+    rating: 4.9,
+    players: "18K+",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+  },
+  {
+    id: "quiz-game",
+    title: "Quiz Game",
+    category: "Shooting",
+    rating: 4.9,
+    players: "10K+",
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
   },
