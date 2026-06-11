@@ -188,50 +188,51 @@ const PopularGame = () => {
         </div>
 
         {/* Games Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* Games Grid */}
+<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
   {games.slice(1).map((game, index) => (
     <div
       key={index}
-      className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:-translate-y-2 transition-all duration-500"
+      className="group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl hover:-translate-y-2 transition-all duration-500"
     >
       {/* IMAGE */}
       <div className="overflow-hidden">
         <img
           src={game.image}
           alt={game.title}
-          className="w-full h-52 sm:h-56 md:h-60 object-cover group-hover:scale-110 transition duration-700"
+          className="w-full h-44 sm:h-56 md:h-60 object-cover group-hover:scale-110 transition duration-700"
         />
       </div>
 
       {/* HEART */}
-      <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-        <button className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-black/60 flex items-center justify-center text-white">
-          <Heart size={18} />
+      <div className="absolute top-2 right-2 sm:top-4 sm:right-4">
+        <button className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-black/60 flex items-center justify-center text-white">
+          <Heart size={16} />
         </button>
       </div>
 
       {/* CONTENT */}
-      <div className="p-4 sm:p-6">
-        <span className="text-cyan-400 text-xs sm:text-sm font-semibold">
+      <div className="p-3 sm:p-6">
+        <span className="text-cyan-400 text-[11px] sm:text-sm font-semibold">
           {game.category}
         </span>
 
-        <h3 className="mt-1 sm:mt-2 text-lg sm:text-2xl font-bold text-white">
+        <h3 className="mt-1 sm:mt-2 text-base sm:text-2xl font-bold text-white leading-tight">
           {game.title}
         </h3>
 
-        <div className="flex justify-between mt-3 sm:mt-5">
-          <span className="flex items-center gap-2 text-gray-300 text-sm sm:text-base">
-            <Users size={16} />
+        <div className="flex justify-between mt-2 sm:mt-5">
+          <span className="flex items-center gap-2 text-gray-300 text-xs sm:text-base">
+            <Users size={14} />
             {game.players}
           </span>
         </div>
 
         <Link
           to={game.id}
-          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
+          className="inline-flex items-center justify-center gap-2 mt-4 sm:mt-5 w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-xs sm:text-base"
         >
-          <Play size={16} />
+          <Play size={14} />
           Play Now
         </Link>
       </div>
