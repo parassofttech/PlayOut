@@ -85,8 +85,8 @@ const games = [
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
   },
   {
-    id: "snack-game",
-    title: "Snack Game",
+    id: "snake-game",
+    title: "Snake Game",
     category: "Shooting",
     rating: 4.9,
     players: "18K+",

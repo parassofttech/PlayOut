@@ -7,6 +7,13 @@ import {
   Crown,
 } from "lucide-react";
 
+import {
+  ArrowUp,
+  ArrowDown,
+  ArrowLeft,
+  ArrowRight,
+} from "lucide-react";
+
 const BOARD_SIZE = 20;
 const INITIAL_SNAKE = [{ x: 10, y: 10 }];
 
@@ -64,28 +71,58 @@ const SnakeGame = () => {
     setSpeed(140);
   };
 
+  const changeDirection = (newDirection) => {
+  if (
+    newDirection === "UP" &&
+    direction !== "DOWN"
+  ) {
+    setDirection("UP");
+  }
+
+  if (
+    newDirection === "DOWN" &&
+    direction !== "UP"
+  ) {
+    setDirection("DOWN");
+  }
+
+  if (
+    newDirection === "LEFT" &&
+    direction !== "RIGHT"
+  ) {
+    setDirection("LEFT");
+  }
+
+  if (
+    newDirection === "RIGHT" &&
+    direction !== "LEFT"
+  ) {
+    setDirection("RIGHT");
+  }
+
+  if (!gameStarted) {
+    setGameStarted(true);
+  }
+};
+
   useEffect(() => {
     const handleKeyDown = (e) => {
       switch (e.key) {
         case "ArrowUp":
-          if (direction !== "DOWN")
-            setDirection("UP");
-          break;
+  changeDirection("UP");
+  break;
 
-        case "ArrowDown":
-          if (direction !== "UP")
-            setDirection("DOWN");
-          break;
+case "ArrowDown":
+  changeDirection("DOWN");
+  break;
 
-        case "ArrowLeft":
-          if (direction !== "RIGHT")
-            setDirection("LEFT");
-          break;
+case "ArrowLeft":
+  changeDirection("LEFT");
+  break;
 
-        case "ArrowRight":
-          if (direction !== "LEFT")
-            setDirection("RIGHT");
-          break;
+case "ArrowRight":
+  changeDirection("RIGHT");
+  break;
 
         case " ":
           setPaused((prev) => !prev);
@@ -222,6 +259,9 @@ const SnakeGame = () => {
     return () => clearInterval(interval);
   }, [moveSnake, speed]);
 
+
+
+
   return (
     <div className="min-h-screen bg-[#050816] flex flex-col items-center justify-center px-5 py-10">
 
@@ -338,6 +378,87 @@ const SnakeGame = () => {
           </div>
         )}
       </div>
+
+     {/* Mobile Controls */}
+
+<div className="mt-8 md:hidden flex flex-col items-center gap-3">
+
+  <button
+    onClick={() => changeDirection("UP")}
+    className="
+      w-16 h-16
+      rounded-2xl
+      bg-gradient-to-r
+      from-cyan-500
+      to-purple-600
+      text-white
+      shadow-[0_0_20px_rgba(34,211,238,.4)]
+      flex items-center justify-center
+      active:scale-90
+      transition
+    "
+  >
+    <ArrowUp size={30} />
+  </button>
+
+  <div className="flex gap-3">
+
+    <button
+      onClick={() => changeDirection("LEFT")}
+      className="
+        w-16 h-16
+        rounded-2xl
+        bg-gradient-to-r
+        from-cyan-500
+        to-purple-600
+        text-white
+        shadow-[0_0_20px_rgba(34,211,238,.4)]
+        flex items-center justify-center
+        active:scale-90
+        transition
+      "
+    >
+      <ArrowLeft size={30} />
+    </button>
+
+    <button
+      onClick={() => changeDirection("DOWN")}
+      className="
+        w-16 h-16
+        rounded-2xl
+        bg-gradient-to-r
+        from-cyan-500
+        to-purple-600
+        text-white
+        shadow-[0_0_20px_rgba(34,211,238,.4)]
+        flex items-center justify-center
+        active:scale-90
+        transition
+      "
+    >
+      <ArrowDown size={30} />
+    </button>
+
+    <button
+      onClick={() => changeDirection("RIGHT")}
+      className="
+        w-16 h-16
+        rounded-2xl
+        bg-gradient-to-r
+        from-cyan-500
+        to-purple-600
+        text-white
+        shadow-[0_0_20px_rgba(34,211,238,.4)]
+        flex items-center justify-center
+        active:scale-90
+        transition
+      "
+    >
+      <ArrowRight size={30} />
+    </button>
+
+  </div>
+</div>
 
       {/* Controls */}
       <div className="flex gap-4 mt-8">
