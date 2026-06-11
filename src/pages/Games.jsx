@@ -5,76 +5,96 @@ import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const gamesData = [
   {
-    id: 1,
+    id: "car-racing",
     title: "Car Racing ",
     category: "Racing",
     rating: 4.9,
     players: "25K+",
     image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d?w=1000",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTvZMdYsgUwZzLy_HM2UCaUe5cq9NxSv0-g&s",
   },
+  
   {
-    id: 2,
-    title: "Battle Arena",
-    category: "Action",
+    id: "dice-game",
+    title: "Dice Game",
+    category: "Strategy",
     rating: 4.8,
     players: "18K+",
     image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1000",
+      "https://play-lh.googleusercontent.com/8kugXgA2GzLTeGwtm9fkeUwcvx-PZuvt9b5tr3b8PAy6uizs9JSrvCUxvoTfXQfi0ZKuzEktTdrJbYEXTleKgQ",
+    trending: true,
   },
   {
-    id: 3,
-    title: "Football Pro",
-    category: "Sports",
+    id: "rock-paper-scissors",
+    title: "Rock Paper Scissors",
+    category: "Multiplayer",
     rating: 4.7,
     players: "12K+",
     image:
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1000",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtlsMRhVlu0fqALSqBqeVaZqQVjFU2acKpHA&s",
   },
   {
-    id: 4,
+    id: "puzzle-game",
     title: "Puzzle Master",
     category: "Puzzle",
-    rating: 4.6,
-    players: "9K+",
-    image:
-      "https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?w=1000",
-  },
-  {
-    id: 5,
-    title: "Zombie Attack",
-    category: "Action",
     rating: 4.9,
-    players: "30K+",
-    image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1000",
-  },
-  {
-    id: 6,
-    title: "Speed Drift",
-    category: "Racing",
-    rating: 4.8,
     players: "15K+",
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1000",
+      "https://play-lh.googleusercontent.com/xyikFZEzzKVQqOsz9Yty5sejBxj3ZQKE6Dl_YgPmmOBaecaNkFg3D440EbdUb6o9PlW0ofnXssw_5XGmcc-tsg",
   },
   {
-    id: 7,
-    title: "Arcade Blast",
+    id: "tic-tac-toe",
+    title: " Tic Tac Toe",
+    category: "Strategy",
+    rating: 4.8,
+    players: "20K+",
+    image:
+      "https://play-lh.googleusercontent.com/7-Fc-KeLDyyrUtGbg-cXsIBkLWTH6FxtDrEKjwtYgWfSPr7eKmNU9Mvjzb5I_rVuY_ec3sb1gwTxmqkEEOtO5g",
+  },
+  {
+    id: "aim-trainer",
+    title: "Aim Trainer",
     category: "Arcade",
-    rating: 4.5,
-    players: "8K+",
+    rating: 4.9,
+    players: "10K+",
     image:
-      "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1000",
+      "https://aimtrainer.io/img/photos/screen.png",
   },
   {
-    id: 8,
-    title: "Adventure Quest",
-    category: "Adventure",
+    id: "memory-game",
+    title: "Memory Game",
+    category: "Strategy",
     rating: 4.9,
-    players: "22K+",
+    players: "15K+",
     image:
-      "https://images.unsplash.com/photo-1547394765-185e1e68f34e?w=1000",
+      "https://www.bestschoolgames.com/_next/image?url=https%3A%2F%2Fadm.bestschoolgames.com%2Fuploads%2Femoji_memory_game_thumb_879ea8325e.png&w=3840&q=75",
+  },
+  {
+    id: "guess-number",
+    title: "Guess Number",
+    category: "Guess Number",
+    rating: 4.9,
+    players: "20K+",
+    image:
+      "https://i.pinimg.com/564x/2e/e9/62/2ee9625a733381b5f2cfb4123ecb7d3d.jpg",
+  },
+  {
+    id: "snake-game",
+    title: "Snake Game",
+    category: "Arcade",
+    rating: 4.9,
+    players: "18K+",
+    image:
+      "https://www.coolmathgames.com/sites/default/files/Snake_OG-logo.jpg",
+  },
+  {
+    id: "quiz-game",
+    title: "Quiz Game",
+    category: "Strategy",
+    rating: 4.9,
+    players: "10K+",
+    image:
+      "https://www.shutterstock.com/shutterstock/photos/2052894734/display_1500/stock-vector-quiz-and-question-marks-trivia-night-quiz-symbol-neon-sign-night-online-game-with-questions-2052894734.jpg",
   },
 ];
 
