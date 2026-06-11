@@ -23,21 +23,21 @@ const games = [
   {
     id: "dice-game",
     title: "Dice Game",
-    category: "Action",
+    category: "Strategy",
     rating: 4.8,
     players: "18K+",
     image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200",
+      "https://play-lh.googleusercontent.com/8kugXgA2GzLTeGwtm9fkeUwcvx-PZuvt9b5tr3b8PAy6uizs9JSrvCUxvoTfXQfi0ZKuzEktTdrJbYEXTleKgQ",
     trending: true,
   },
   {
     id: "rock-paper-scissors",
     title: "Rock Paper Scissors",
-    category: "Sports",
+    category: "Multiplayer",
     rating: 4.7,
     players: "12K+",
     image:
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtlsMRhVlu0fqALSqBqeVaZqQVjFU2acKpHA&s",
   },
   {
     id: "puzzle-game",
@@ -46,34 +46,34 @@ const games = [
     rating: 4.9,
     players: "15K+",
     image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200",
+      "https://play-lh.googleusercontent.com/xyikFZEzzKVQqOsz9Yty5sejBxj3ZQKE6Dl_YgPmmOBaecaNkFg3D440EbdUb6o9PlW0ofnXssw_5XGmcc-tsg",
   },
   {
     id: "tic-tac-toe",
     title: " Tic Tac Toe",
-    category: "Adventure",
+    category: "Strategy",
     rating: 4.8,
     players: "20K+",
     image:
-      "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200",
+      "https://play-lh.googleusercontent.com/7-Fc-KeLDyyrUtGbg-cXsIBkLWTH6FxtDrEKjwtYgWfSPr7eKmNU9Mvjzb5I_rVuY_ec3sb1gwTxmqkEEOtO5g",
   },
   {
     id: "aim-trainer",
     title: "Aim Trainer",
-    category: "Shooting",
+    category: "Arcade",
     rating: 4.9,
     players: "10K+",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+      "https://aimtrainer.io/img/photos/screen.png",
   },
   {
     id: "memory-game",
     title: "Memory Game",
-    category: "Shooting",
+    category: "Strategy",
     rating: 4.9,
     players: "15K+",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+      "https://www.bestschoolgames.com/_next/image?url=https%3A%2F%2Fadm.bestschoolgames.com%2Fuploads%2Femoji_memory_game_thumb_879ea8325e.png&w=3840&q=75",
   },
   {
     id: "guess-number",
@@ -82,25 +82,25 @@ const games = [
     rating: 4.9,
     players: "20K+",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+      "https://i.pinimg.com/564x/2e/e9/62/2ee9625a733381b5f2cfb4123ecb7d3d.jpg",
   },
   {
     id: "snake-game",
     title: "Snake Game",
-    category: "Shooting",
+    category: "Arcade",
     rating: 4.9,
     players: "18K+",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+      "https://www.coolmathgames.com/sites/default/files/Snake_OG-logo.jpg",
   },
   {
     id: "quiz-game",
     title: "Quiz Game",
-    category: "Shooting",
+    category: "Strategy",
     rating: 4.9,
     players: "10K+",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=1200",
+      "https://www.shutterstock.com/shutterstock/photos/2052894734/display_1500/stock-vector-quiz-and-question-marks-trivia-night-quiz-symbol-neon-sign-night-online-game-with-questions-2052894734.jpg",
   },
 ];
 
