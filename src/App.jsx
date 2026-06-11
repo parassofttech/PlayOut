@@ -15,6 +15,7 @@ import QuizGame from './games/QuizGame'
 import DiceGame from './games/DiceGame'
 import RockPaperScissors from './games/RockPaperScissors'
 import GuessNumber from './games/GuessNumber'
+import PuzzleGame from './games/PuzzleGame'
 
 function App() {
   
@@ -39,6 +40,7 @@ function App() {
       <Route path="/dice-game" element={<DiceGame />} />
       <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
       <Route path="/quiz-game" element={<QuizGame/>} />
+      <Route path="/puzzle-game" element={<PuzzleGame />} />
 
 
     </Routes>

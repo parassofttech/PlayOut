@@ -1,38 +1,39 @@
 import { Flame, Play, Star, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const trendingGames = [
   {
-    id: 1,
-    title: "Car Racing 3D",
+    id: "car-racing",
+    title: "Car Racing",
     image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d?w=1200",
+      "https://c.ndtvimg.com/2022-01/hbofdgmg_car_625x300_28_January_22.jpg",
     rating: 4.9,
     players: "25K+",
     category: "Racing",
   },
   {
-    id: 2,
-    title: "Zombie Attack",
+    id: "tic-tac-toe",
+    title: "Tic Tac Toe",
     image:
-      "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200",
+      "https://play-lh.googleusercontent.com/7-Fc-KeLDyyrUtGbg-cXsIBkLWTH6FxtDrEKjwtYgWfSPr7eKmNU9Mvjzb5I_rVuY_ec3sb1gwTxmqkEEOtO5g",
     rating: 4.8,
     players: "18K+",
     category: "Action",
   },
   {
-    id: 3,
-    title: "Football Pro",
+    id: "memory-game",
+    title: "Memory Game",
     image:
-      "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200",
+      "https://www.bestschoolgames.com/_next/image?url=https%3A%2F%2Fadm.bestschoolgames.com%2Fuploads%2Femoji_memory_game_thumb_879ea8325e.png&w=3840&q=75",
     rating: 4.7,
     players: "15K+",
     category: "Sports",
   },
   {
-    id: 4,
-    title: "Puzzle Master",
+    id: "puzzle-game",
+    title: "Puzzle Game",
     image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=1200",
+      "https://play-lh.googleusercontent.com/xyikFZEzzKVQqOsz9Yty5sejBxj3ZQKE6Dl_YgPmmOBaecaNkFg3D440EbdUb6o9PlW0ofnXssw_5XGmcc-tsg",
     rating: 4.9,
     players: "12K+",
     category: "Puzzle",
@@ -91,10 +92,13 @@ const TrendingGames = () => {
               </span>
             </div>
 
-            <button className="mt-6 flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold text-white hover:scale-105 transition">
-              <Play size={18} />
-              Play Now
-            </button>
+            <Link
+          to={trendingGames[0].id}
+          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
+        >
+          <Play size={16} />
+          Play Now
+        </Link>
           </div>
         </div>
 
@@ -102,7 +106,7 @@ const TrendingGames = () => {
         <div className="grid md:grid-cols-3 gap-8">
           {trendingGames.slice(1).map((game, index) => (
             <div
-              key={game.id}
+              key={index}
               className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-lg"
             >
               <img
@@ -126,17 +130,21 @@ const TrendingGames = () => {
 
                 <div className="flex justify-between mt-3 text-sm text-gray-300">
                   <span className="flex items-center gap-1">
-                    ⭐ {game.rating}
+                    ⭐ 
                   </span>
 
                   <span className="flex items-center gap-1">
                     👥 {game.players}
                   </span>
                 </div>
+                <Link
+          to={game.id}
+          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
+        >
+          Play Now
+        </Link>
 
-                <button className="w-full mt-4 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold text-white opacity-0 group-hover:opacity-100 transition">
-                  Play Game
-                </button>
+               
               </div>
             </div>
           ))}

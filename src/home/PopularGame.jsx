@@ -17,7 +17,7 @@ const games = [
     rating: 4.9,
     players: "25K+",
     image:
-      "https://images.unsplash.com/photo-1492144534655-ae79c964c9d?w=1200",
+      "https://www.topgear.com/sites/default/files/news-listicle/image/2023/01/2.jpeg",
     trending: true,
   },
   {
