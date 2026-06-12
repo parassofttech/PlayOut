@@ -172,35 +172,7 @@ const Testimonials = () => {
           </div>
         </div>
 
-        {/* Bottom Stats */}
-        <div className="grid md:grid-cols-3 gap-6 mt-20">
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
-            <h3 className="text-4xl font-black text-cyan-400">
-              50K+
-            </h3>
-            <p className="text-gray-400 mt-2">
-              Happy Gamers
-            </p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
-            <h3 className="text-4xl font-black text-purple-400">
-              4.9★
-            </h3>
-            <p className="text-gray-400 mt-2">
-              Average Rating
-            </p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-8 text-center">
-            <h3 className="text-4xl font-black text-pink-400">
-              1M+
-            </h3>
-            <p className="text-gray-400 mt-2">
-              Monthly Players
-            </p>
-          </div>
-        </div>
+       
       </div>
     </section>
   );

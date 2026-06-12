@@ -208,43 +208,7 @@ const CategoriesSection = () => {
         </div>
 
         {/* Bottom Stats */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16">
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h3 className="text-3xl font-black text-cyan-400">
-              500+
-            </h3>
-            <p className="text-gray-400">
-              Total Games
-            </p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h3 className="text-3xl font-black text-purple-400">
-              1M+
-            </h3>
-            <p className="text-gray-400">
-              Players
-            </p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h3 className="text-3xl font-black text-pink-400">
-              50+
-            </h3>
-            <p className="text-gray-400">
-              Categories
-            </p>
-          </div>
-
-          <div className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
-            <h3 className="text-3xl font-black text-yellow-400">
-              24/7
-            </h3>
-            <p className="text-gray-400">
-              Gaming
-            </p>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
