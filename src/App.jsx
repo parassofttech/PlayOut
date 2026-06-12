@@ -21,6 +21,10 @@ import Profile from './pages/Profile'
 import CricketGame from './games/CricketGame'
 import DriftKing from './games/DriftKing'
 import BikeRacing from './games/BikeRacing'
+import Sudoku from './games/Sudoku'
+import Game2048 from './games/Game2048'
+import SlidingPuzzle from './games/SlidingPuzzle'
+import ColorSortPuzzle from './games/ColorSortPuzzle'
 
 function App() {
   
@@ -51,7 +55,10 @@ function App() {
       <Route path="/cricket-game" element={<CricketGame />} />
       <Route path="/drift-king" element={<DriftKing />} />
       <Route path="/bike-racing" element={<BikeRacing />} />
-
+      <Route path="/sudoku" element={<Sudoku/>} />
+      <Route path="/2048" element={<Game2048/>} />
+      <Route path="/sliding-puzzle" element={<SlidingPuzzle />} />
+      <Route path="/color-sort-puzzle" element={<ColorSortPuzzle />} />
 
     </Routes>
     

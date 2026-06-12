@@ -79,6 +79,15 @@ const gamesData = [
       "https://aimtrainer.io/img/photos/screen.png",
   },
   {
+  id: "sudoku",
+  title: "Sudoku Puzzle",
+  category: "Puzzle",
+  rating: 4.8,
+  players: "18K+",
+  image:
+    "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200",
+},
+  {
     id: "memory-game",
     title: "Memory Game",
     category: "Strategy",
@@ -87,6 +96,15 @@ const gamesData = [
     image:
       "https://www.bestschoolgames.com/_next/image?url=https%3A%2F%2Fadm.bestschoolgames.com%2Fuploads%2Femoji_memory_game_thumb_879ea8325e.png&w=3840&q=75",
   },
+  {
+  id: "color-sort-puzzle",
+  title: "Color Sort Puzzle",
+  category: "Puzzle",
+  rating: 4.9,
+  players: "20K+",
+  image:
+    "https://images.unsplash.com/photo-1607082349566-187342175e2d?w=1200",
+},
   {
     id: "guess-number",
     title: "Guess Number",
@@ -122,6 +140,24 @@ const gamesData = [
   players: "22K+",
   image:
     "https://images.unsplash.com/photo-1508974239320-0a029497e820?w=1200",
+},
+{
+  id: "2048",
+  title: "2048 Puzzle",
+  category: "Puzzle",
+  rating: 4.9,
+  players: "30K+",
+  image:
+    "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1200",
+},
+{
+  id: "sliding-puzzle",
+  title: "Sliding Puzzle",
+  category: "Puzzle",
+  rating: 4.8,
+  players: "16K+",
+  image:
+    "https://images.unsplash.com/photo-1581368129682-e2b5e5c2f9b2?w=1200",
 },
 ];
 
