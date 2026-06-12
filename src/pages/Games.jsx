@@ -52,6 +52,24 @@ const gamesData = [
       "https://play-lh.googleusercontent.com/7-Fc-KeLDyyrUtGbg-cXsIBkLWTH6FxtDrEKjwtYgWfSPr7eKmNU9Mvjzb5I_rVuY_ec3sb1gwTxmqkEEOtO5g",
   },
   {
+  id: "cricket-game",
+  title: "Cricket Challenge",
+  category: "Sports",
+  rating: 4.8,
+  players: "20K+",
+  image:
+    "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1200",
+},
+{
+  id: "drift-king",
+  title: "Drift King",
+  category: "Racing",
+  rating: 4.9,
+  players: "25K+",
+  image:
+    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d?w=1200",
+},
+  {
     id: "aim-trainer",
     title: "Aim Trainer",
     category: "Arcade",
@@ -96,6 +114,15 @@ const gamesData = [
     image:
       "https://www.shutterstock.com/shutterstock/photos/2052894734/display_1500/stock-vector-quiz-and-question-marks-trivia-night-quiz-symbol-neon-sign-night-online-game-with-questions-2052894734.jpg",
   },
+  {
+  id: "bike-racing",
+  title: "Bike Racing",
+  category: "Racing",
+  rating: 4.8,
+  players: "22K+",
+  image:
+    "https://images.unsplash.com/photo-1508974239320-0a029497e820?w=1200",
+},
 ];
 
 const categories = [

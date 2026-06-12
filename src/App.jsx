@@ -18,6 +18,9 @@ import GuessNumber from './games/GuessNumber'
 import PuzzleGame from './games/PuzzleGame'
 import SnakeGame from './games/SnakeGame'
 import Profile from './pages/Profile'
+import CricketGame from './games/CricketGame'
+import DriftKing from './games/DriftKing'
+import BikeRacing from './games/BikeRacing'
 
 function App() {
   
@@ -45,6 +48,9 @@ function App() {
       <Route path="/quiz-game" element={<QuizGame/>} />
       <Route path="/puzzle-game" element={<PuzzleGame />} />
       <Route path="/snake-game" element={<SnakeGame />} />
+      <Route path="/cricket-game" element={<CricketGame />} />
+      <Route path="/drift-king" element={<DriftKing />} />
+      <Route path="/bike-racing" element={<BikeRacing />} />
 
 
     </Routes>
