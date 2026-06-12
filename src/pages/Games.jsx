@@ -96,6 +96,15 @@ const gamesData = [
   image:
     "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200",
 },
+{
+  id: "brick-breaker",
+  title: "Brick Breaker",
+  category: "Arcade",
+  rating: 4.8,
+  players: "45K+",
+  image:
+    "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1200",
+},
   {
     id: "memory-game",
     title: "Memory Game",
