@@ -188,6 +188,14 @@ const gamesData = [
     "https://images.unsplash.com/photo-1508974239320-0a029497e820?w=1200",
 },
 {
+  id: "typing-race",
+  title: "Typing Race",
+  category: "Skill",
+  rating: 4.7,
+  players: "10K+",
+  image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200",
+},
+{
   id: "2048",
   title: "2048 Puzzle",
   category: "Puzzle",
@@ -222,6 +230,7 @@ const gamesData = [
   players: "20K+",
   image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1200",
 },
+
 ];
 
 const categories = [
@@ -231,7 +240,7 @@ const categories = [
   "Sports",
   "Puzzle",
   "Arcade",
-  "Adventure",
+  "Strategy",
 ];
 
 const Games = () => {

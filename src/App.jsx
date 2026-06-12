@@ -33,6 +33,8 @@ import NinjaRun from './games/NinjaRun'
 import AlienAttack from './games/AlienAttack'
 import TableTennis from './games/TableTennis'
 import Football from './games/Football'
+import Chess from './games/Chess'
+import TypingRace from './games/TypingRace'
 
 function App() {
   
@@ -75,6 +77,9 @@ function App() {
       <Route path="/alien-attack" element={<AlienAttack />} />
       <Route path="/table-tennis" element={<TableTennis />} />
       <Route path="/football" element={<Football />} />
+      <Route path="/chess" element={<Chess />} />
+      <Route path="/typing-race" element={<TypingRace />} />
+      
 
     </Routes>
     
