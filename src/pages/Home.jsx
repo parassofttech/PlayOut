@@ -86,35 +86,35 @@ const popularGames = [
       <Newsletter/>
 
       {/* FEATURES */}
-      <section className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid md:grid-cols-3 gap-8">
+      <section className="max-w-7xl mx-auto px-6 ">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 ">
 
-          <div className="bg-white/5 p-8 rounded-2xl">
+          <div className="bg-white/5 p-2 sm:p-4 md:p-6  rounded-2xl">
             <Zap className="text-yellow-400 mb-4" size={40} />
-            <h3 className="font-bold text-2xl mb-2">
+            <h3 className="font-bold text-xs sm:text-sm md:text-lg mb-2">
               Fast Performance
             </h3>
-            <p className="text-gray-400">
+            <p className="text-gray-400  mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm leading-relaxed">
               Lightning-fast gaming experience without downloads.
             </p>
           </div>
 
-          <div className="bg-white/5 p-8 rounded-2xl">
+          <div className="bg-white/5 p-[8%] h-65   rounded-2xl">
             <Trophy className="text-purple-400 mb-4" size={40} />
-            <h3 className="font-bold text-2xl mb-2">
+            <h3 className="font-bold text-xs sm:text-sm md:text-lg mb-2">
               Leaderboards
             </h3>
-            <p className="text-gray-400">
+            <p className="text-gray-400 p-2 mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm leading-relaxed ">
               Compete with players around the world.
             </p>
           </div>
 
-          <div className="bg-white/5 p-8 rounded-2xl">
+          <div className="bg-white/5 p-[8%] h-65  rounded-2xl">
             <Star className="text-cyan-400 mb-4" size={40} />
-            <h3 className="font-bold text-2xl mb-2">
+            <h3 className="font-bold  text-xs sm:text-sm md:text-lg mb-2">
               Top Rated Games
             </h3>
-            <p className="text-gray-400">
+            <p className="text-gray-400  mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm leading-relaxed">
               Discover the highest-rated games instantly.
             </p>
           </div>
@@ -132,7 +132,7 @@ const popularGames = [
           Join thousands of gamers and start your adventure today.
         </p>
 
-        <button className="mt-8 px-10 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold text-lg hover:scale-105 transition">
+        <button onClick={()=>navigate('/games')} className="mt-8 px-10 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold text-lg hover:scale-105 transition">
           Start Playing
         </button>
       </section>

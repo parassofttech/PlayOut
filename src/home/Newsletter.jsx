@@ -72,49 +72,49 @@ const Newsletter = () => {
             </div>
 
             {/* Benefits */}
-            <div className="grid md:grid-cols-3 gap-6 mt-14">
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h3 className="text-cyan-400 text-3xl font-black">
-                  🎮
-                </h3>
+            <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 mt-14">
+  <div className="rounded-xl md:rounded-2xl bg-white/5 border border-white/10 p-2 sm:p-4 md:p-6">
+    <h3 className="text-cyan-400 text-xl sm:text-2xl md:text-3xl font-black">
+      🎮
+    </h3>
 
-                <h4 className="text-white font-bold mt-3">
-                  New Games
-                </h4>
+    <h4 className="text-white font-bold mt-2 text-xs sm:text-sm md:text-lg">
+      New Games
+    </h4>
 
-                <p className="text-gray-400 mt-2 text-sm">
-                  Be the first to know when new games arrive.
-                </p>
-              </div>
+    <p className="text-gray-400 mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm leading-relaxed">
+      Be the first to know when new games arrive.
+    </p>
+  </div>
 
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h3 className="text-purple-400 text-3xl font-black">
-                  🏆
-                </h3>
+  <div className="rounded-xl md:rounded-2xl bg-white/5 border border-white/10 p-2 sm:p-4 md:p-6">
+    <h3 className="text-purple-400 text-xl sm:text-2xl md:text-3xl font-black">
+      🏆
+    </h3>
 
-                <h4 className="text-white font-bold mt-3">
-                  Tournaments
-                </h4>
+    <h4 className="text-white font-bold mt-2 text-xs sm:text-sm md:text-lg">
+      Tournaments
+    </h4>
 
-                <p className="text-gray-400 mt-2 text-sm">
-                  Receive tournament alerts and rewards.
-                </p>
-              </div>
+    <p className="text-gray-400 mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm leading-relaxed">
+      Receive tournament alerts and rewards.
+    </p>
+  </div>
 
-              <div className="rounded-2xl bg-white/5 border border-white/10 p-6">
-                <h3 className="text-pink-400 text-3xl font-black">
-                  🎁
-                </h3>
+  <div className="rounded-xl md:rounded-2xl bg-white/5 border border-white/10 p-2 sm:p-4 md:p-6">
+    <h3 className="text-pink-400 text-xl sm:text-2xl md:text-3xl font-black">
+      🎁
+    </h3>
 
-                <h4 className="text-white font-bold mt-3">
-                  Exclusive Rewards
-                </h4>
+    <h4 className="text-white font-bold mt-2 text-xs sm:text-sm md:text-lg">
+      Exclusive Rewards
+    </h4>
 
-                <p className="text-gray-400 mt-2 text-sm">
-                  Get bonus coins, gifts and premium perks.
-                </p>
-              </div>
-            </div>
+    <p className="text-gray-400 mt-1 md:mt-2 text-[10px] sm:text-xs md:text-sm leading-relaxed">
+      Get bonus coins, gifts and premium perks.
+    </p>
+  </div>
+</div>
 
             {/* Stats */}
             <div className="flex flex-wrap justify-center gap-10 mt-14">

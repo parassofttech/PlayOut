@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {
   Star,
   Users,
@@ -105,6 +105,8 @@ const games = [
 ];
 
 const PopularGame = () => {
+
+  const navigate = useNavigate()
   return (
     <section className="relative py-24 bg-[#050816] overflow-hidden">
       {/* Background Glow */}
@@ -254,7 +256,7 @@ const PopularGame = () => {
               </p>
             </div>
 
-            <button className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition">
+            <button onClick={()=>navigate('/games')} className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition">
               Explore Games
             </button>
           </div>
