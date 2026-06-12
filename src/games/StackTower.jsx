@@ -1,30 +1,29 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 function StackTower() {
   const [blocks, setBlocks] = useState([]);
-  const [moving, setMoving] = useState(true);
-  const [direction, setDirection] = useState(1);
   const [pos, setPos] = useState(0);
+  const [dir, setDir] = useState(1);
   const [speed, setSpeed] = useState(3);
   const [score, setScore] = useState(0);
   const [gameOver, setGameOver] = useState(false);
 
-  const width = 100;
+  const WIDTH = 100;
 
-  // Move block left-right
+  // 🧠 MOVE BLOCK
   useEffect(() => {
-    if (gameOver || !moving) return;
+    if (gameOver) return;
 
     const interval = setInterval(() => {
       setPos((p) => {
-        let next = p + direction * speed;
+        let next = p + dir * speed;
 
         if (next > 250) {
-          setDirection(-1);
+          setDir(-1);
           next = 250;
         }
         if (next < 0) {
-          setDirection(1);
+          setDir(1);
           next = 0;
         }
 
@@ -33,10 +32,10 @@ function StackTower() {
     }, 16);
 
     return () => clearInterval(interval);
-  }, [direction, speed, moving, gameOver]);
+  }, [dir, speed, gameOver]);
 
-  // Drop block
-  const drop = () => {
+  // 🧱 DROP FUNCTION (FIXED)
+  const drop = useCallback(() => {
     if (gameOver) return;
 
     const last = blocks[blocks.length - 1];
@@ -46,62 +45,62 @@ function StackTower() {
       y: blocks.length * 30,
     };
 
-    // first block always allowed
+    // first block
     if (!last) {
       setBlocks([newBlock]);
       setScore(1);
-      setSpeed(4);
       return;
     }
 
-    // check overlap
-    const overlap =
-      Math.abs(last.x - newBlock.x) < 30;
+    // overlap check
+    const overlap = Math.abs(last.x - newBlock.x) < 25;
 
     if (!overlap) {
       setGameOver(true);
       return;
     }
 
-    setBlocks([...blocks, newBlock]);
+    setBlocks((prev) => [...prev, newBlock]);
     setScore((s) => s + 1);
 
-    // increase difficulty
-    if (score % 3 === 0) {
-      setSpeed((s) => Math.min(s + 0.5, 10));
-    }
-  };
+    // increase speed gradually
+    setSpeed((s) => Math.min(s + 0.3, 10));
+  }, [blocks, pos, gameOver]);
 
-  // keyboard + touch
+  // ⌨️ KEYBOARD + TOUCH (FIXED STABLE)
   useEffect(() => {
-    const handle = (e) => {
-      if (e.code === "Space") drop();
+    const handleKey = (e) => {
+      if (e.code === "Space") {
+        e.preventDefault(); // 🔥 important fix (scroll bug)
+        drop();
+      }
     };
 
-    window.addEventListener("keydown", handle);
-    window.addEventListener("touchstart", drop);
+    const handleTouch = () => drop();
+
+    window.addEventListener("keydown", handleKey);
+    window.addEventListener("touchstart", handleTouch);
 
     return () => {
-      window.removeEventListener("keydown", handle);
-      window.removeEventListener("touchstart", drop);
+      window.removeEventListener("keydown", handleKey);
+      window.removeEventListener("touchstart", handleTouch);
     };
-  });
+  }, [drop]);
 
   const restart = () => {
     setBlocks([]);
-    setScore(0);
-    setSpeed(3);
     setPos(0);
+    setDir(1);
+    setSpeed(3);
+    setScore(0);
     setGameOver(false);
-    setDirection(1);
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-black to-purple-900 flex items-center justify-center p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-purple-900 p-4">
 
       <div className="text-center">
 
-        {/* SCORE */}
         <h1 className="text-4xl font-black text-white mb-2">
           🧱 Stack Tower
         </h1>
@@ -114,15 +113,15 @@ function StackTower() {
         </p>
 
         {/* GAME AREA */}
-        <div className="relative w-[300px] h-[400px] bg-black border-2 border-white/20 overflow-hidden rounded-xl">
+        <div className="relative w-[300px] h-[400px] bg-black border border-white/20 rounded-xl overflow-hidden">
 
-          {/* stacked blocks */}
+          {/* blocks */}
           {blocks.map((b, i) => (
             <div
               key={i}
               className="absolute h-[30px] bg-gradient-to-r from-cyan-500 to-purple-600"
               style={{
-                width: width,
+                width: WIDTH,
                 bottom: b.y,
                 left: b.x,
               }}
@@ -134,24 +133,17 @@ function StackTower() {
             <div
               className="absolute h-[30px] bg-yellow-400"
               style={{
-                width: width,
+                width: WIDTH,
                 bottom: blocks.length * 30,
                 left: pos,
               }}
             />
           )}
 
-          {/* base line */}
-          <div className="absolute bottom-0 w-full h-1 bg-white/20" />
         </div>
 
-        {/* CONTROLS */}
-        <button
-          onClick={drop}
-          className="mt-5 px-8 py-3 bg-cyan-500 text-black font-bold rounded-xl"
-        >
-          DROP
-        </button>
+        {/* CONTROLS (mobile backup) */}
+        
 
         {/* GAME OVER */}
         {gameOver && (
@@ -168,7 +160,7 @@ function StackTower() {
         </button>
 
         <p className="text-gray-400 text-sm mt-3">
-          👆 Tap or Press SPACE to drop
+          👆 Tap / SPACE to drop block
         </p>
 
       </div>
