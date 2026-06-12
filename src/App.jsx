@@ -31,6 +31,8 @@ import EndlessRunner from './games/EndlessRunner'
 import BrickBreaker from './games/BrickBreaker'
 import NinjaRun from './games/NinjaRun'
 import AlienAttack from './games/AlienAttack'
+import TableTennis from './games/TableTennis'
+import Football from './games/Football'
 
 function App() {
   
@@ -71,6 +73,8 @@ function App() {
       <Route path="/brick-breaker" element={<BrickBreaker />} />
       <Route path="/ninja-run" element={<NinjaRun />} />
       <Route path="/alien-attack" element={<AlienAttack />} />
+      <Route path="/table-tennis" element={<TableTennis />} />
+      <Route path="/football" element={<Football />} />
 
     </Routes>
     

@@ -205,6 +205,23 @@ const gamesData = [
   image:
     "https://images.unsplash.com/photo-1581368129682-e2b5e5c2f9b2?w=1200",
 },
+{
+  id: "table-tennis",
+  title: "Table Tennis",
+  category: "Sports",
+  rating: 4.8,
+  players: "22K+",
+  image:
+    "https://images.unsplash.com/photo-1534158914592-062992fbe900?w=1200",
+},
+{
+  id: "football",
+  title: "Football Game",
+  category: "Sports",
+  rating: 4.8,
+  players: "20K+",
+  image: "https://images.unsplash.com/photo-1521412644187-c49fa049e84d?w=1200",
+},
 ];
 
 const categories = [
