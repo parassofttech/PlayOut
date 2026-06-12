@@ -42,6 +42,7 @@ const gamesData = [
     image:
       "https://play-lh.googleusercontent.com/xyikFZEzzKVQqOsz9Yty5sejBxj3ZQKE6Dl_YgPmmOBaecaNkFg3D440EbdUb6o9PlW0ofnXssw_5XGmcc-tsg",
   },
+  
   {
   id: "stack-tower",
   title: "Stack Tower",
@@ -88,6 +89,15 @@ const gamesData = [
       "https://aimtrainer.io/img/photos/screen.png",
   },
   {
+  id: "alien-attack",
+  title: "Alien Attack",
+  category: "Shooting",
+  rating: 4.8,
+  players: "52K+",
+  image:
+    "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200",
+},
+  {
   id: "sudoku",
   title: "Sudoku Puzzle",
   category: "Puzzle",
@@ -95,6 +105,15 @@ const gamesData = [
   players: "18K+",
   image:
     "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200",
+},
+{
+  id: "ninja-run",
+  title: "Ninja Run",
+  category: "Action",
+  rating: 4.8,
+  players: "38K+",
+  image:
+    "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200",
 },
 {
   id: "brick-breaker",

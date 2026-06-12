@@ -29,6 +29,8 @@ import FlappyBird from './games/FlappyBird'
 import StackTower from './games/StackTower'
 import EndlessRunner from './games/EndlessRunner'
 import BrickBreaker from './games/BrickBreaker'
+import NinjaRun from './games/NinjaRun'
+import AlienAttack from './games/AlienAttack'
 
 function App() {
   
@@ -67,6 +69,8 @@ function App() {
       <Route path="/stack-tower" element={<StackTower />} />
       <Route path="/endless-runner" element={<EndlessRunner />} />
       <Route path="/brick-breaker" element={<BrickBreaker />} />
+      <Route path="/ninja-run" element={<NinjaRun />} />
+      <Route path="/alien-attack" element={<AlienAttack />} />
 
     </Routes>
     
