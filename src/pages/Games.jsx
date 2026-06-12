@@ -43,6 +43,15 @@ const gamesData = [
       "https://play-lh.googleusercontent.com/xyikFZEzzKVQqOsz9Yty5sejBxj3ZQKE6Dl_YgPmmOBaecaNkFg3D440EbdUb6o9PlW0ofnXssw_5XGmcc-tsg",
   },
   {
+  id: "stack-tower",
+  title: "Stack Tower",
+  category: "Arcade",
+  rating: 4.8,
+  players: "28K+",
+  image:
+    "https://images.unsplash.com/photo-1520975958225-3f61d8b1f2d8?w=1200",
+},
+  {
     id: "tic-tac-toe",
     title: " Tic Tac Toe",
     category: "Strategy",
@@ -132,6 +141,15 @@ const gamesData = [
     image:
       "https://www.shutterstock.com/shutterstock/photos/2052894734/display_1500/stock-vector-quiz-and-question-marks-trivia-night-quiz-symbol-neon-sign-night-online-game-with-questions-2052894734.jpg",
   },
+  {
+  id: "flappy-bird",
+  title: "Flappy Bird",
+  category: "Arcade",
+  rating: 4.8,
+  players: "35K+",
+  image:
+    "https://images.unsplash.com/photo-1520975928316-51bff5e88f9d?w=1200",
+},
   {
   id: "bike-racing",
   title: "Bike Racing",

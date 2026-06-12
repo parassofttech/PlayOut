@@ -25,6 +25,8 @@ import Sudoku from './games/Sudoku'
 import Game2048 from './games/Game2048'
 import SlidingPuzzle from './games/SlidingPuzzle'
 import ColorSortPuzzle from './games/ColorSortPuzzle'
+import FlappyBird from './games/FlappyBird'
+import StackTower from './games/StackTower'
 
 function App() {
   
@@ -59,6 +61,8 @@ function App() {
       <Route path="/2048" element={<Game2048/>} />
       <Route path="/sliding-puzzle" element={<SlidingPuzzle />} />
       <Route path="/color-sort-puzzle" element={<ColorSortPuzzle />} />
+      <Route path="/flappy-bird" element={<FlappyBird />} />
+      <Route path="/stack-tower" element={<StackTower />} />
 
     </Routes>
     
