@@ -1,75 +1,85 @@
 import { Link } from "react-router-dom";
 import {
+  Flame,
   Trophy,
   Users,
-  Play,
-  Flame,
   Star,
+  Play,
   ChevronRight,
+  Sword,
 } from "lucide-react";
 
-const racingGames = [
+const actionGames = [
   {
-    id: "car-racing",
-    title: "Car Racing Pro",
-    image:
-      "https://www.topgear.com/sites/default/files/news-listicle/image/2023/01/2.jpeg",
-    players: "25K+",
+    id: "alien-attack",
+    title: "Alien Attack",
+    players: "20K+",
     rating: 4.9,
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh3e_G9XTWuTLm4PnlKedTgphp5TmUdOW5uA&s",
   },
   {
-    id: "bike-racing",
-    title: "Bike Racing",
-    image:
-      "https://images.unsplash.com/photo-1558981806-ec527fa84c39?w=1200",
+    id: "ninja-run",
+    title: "Ninja Run",
     players: "18K+",
     rating: 4.8,
+    image:
+      "https://www.metacritic.com/a/img/resize/a184e11cd8c471b6c0869937b760c043eb132a39/catalog/provider/6/12/6-1-882129-52.jpg?auto=webp&fit=contain&height=480&quality=70",
   },
   {
-    id: "drift-king",
-    title: "Drift King",
-    image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1200",
+    id: "aim-trainer",
+    title: "Aim Trainer",
     players: "15K+",
     rating: 4.8,
+    image:
+      "https://aimtrainer.io/img/photos/screen.png",
+  },
+  
+  {
+    id: "brick-breaker",
+    title: "Brick Breaker",
+    players: "14K+",
+    rating: 4.7,
+    image:
+      "https://play-lh.googleusercontent.com/BSGfo6oFgwtvM_iHT8OUu0LA1dTOeGJGhq74o_TKpX3GfqlwQoeKa7pjHw0Bc3GwgS1wy6rIPEJau6saDox1Iw",
   },
   
 ];
 
-const RacingGames = () => {
+const ActionGames = () => {
   return (
     <div className="min-h-screen bg-[#050816] overflow-hidden">
-      {/* Background Glow */}
-      <div className="fixed top-0 left-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full" />
-      <div className="fixed bottom-0 right-0 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full" />
+
+      {/* Background */}
+      <div className="fixed top-0 left-0 w-96 h-96 bg-red-500/10 blur-3xl rounded-full" />
+      <div className="fixed bottom-0 right-0 w-96 h-96 bg-orange-500/10 blur-3xl rounded-full" />
 
       <div className="relative max-w-7xl mx-auto px-4 py-16">
 
-        {/* Hero Section */}
+        {/* Hero */}
         <div className="text-center mb-16">
-          <span className="px-4 py-2 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400">
-            🚗 High Speed Collection
+          <span className="px-4 py-2 rounded-full bg-red-500/10 border border-red-500/20 text-red-400">
+            ⚔️ High Intensity Games
           </span>
 
           <h1 className="mt-6 text-4xl md:text-7xl font-black text-white">
-            Racing
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            Action
+            <span className="bg-gradient-to-r from-red-400 to-orange-500 bg-clip-text text-transparent">
               {" "}Games
             </span>
           </h1>
 
           <p className="max-w-2xl mx-auto mt-6 text-gray-400">
-            Experience thrilling races, crazy drifts, bike adventures,
-            and endless runner challenges. Test your speed and become
-            the ultimate champion.
+            Fight enemies, dodge obstacles, survive challenges,
+            and become the ultimate action hero.
           </p>
         </div>
 
         {/* Featured Banner */}
-        <div className="relative rounded-[35px] overflow-hidden border border-white/10 mb-16 group">
+        <div className="relative overflow-hidden rounded-[35px] border border-white/10 mb-16 group">
           <img
-            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d?w=1200"
-            alt="Racing"
+            src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200"
+            alt="Action"
             className="w-full h-[300px] md:h-[500px] object-cover group-hover:scale-110 transition duration-700"
           />
 
@@ -82,23 +92,23 @@ const RacingGames = () => {
                 Trending
               </span>
 
-              <span className="px-4 py-2 rounded-full bg-cyan-500 text-white text-sm font-bold">
-                #1 Racing
+              <span className="px-4 py-2 rounded-full bg-orange-500 text-white text-sm font-bold">
+                #1 Action
               </span>
             </div>
 
             <h2 className="text-3xl md:text-6xl font-black text-white">
-              Car Racing Pro
+              Alien Attack
             </h2>
 
             <p className="text-gray-300 mt-4">
-              Race against opponents, dodge obstacles and become
-              the fastest driver on the track.
+              Destroy enemy waves, survive attacks and save
+              the galaxy from alien invasion.
             </p>
 
             <Link
-              to="/car-racing"
-              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              to="/alien-attack"
+              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold hover:scale-105 transition"
             >
               <Play size={18} />
               Play Now
@@ -108,15 +118,16 @@ const RacingGames = () => {
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 md:gap-8 mb-16">
+
           <div className="rounded-3xl bg-white/5 border border-white/10 p-5 text-center backdrop-blur-xl">
-            <Trophy className="mx-auto text-yellow-400" size={35} />
-            <h3 className="text-white text-3xl font-black mt-3">3+</h3>
+            <Sword className="mx-auto text-red-400" size={35} />
+            <h3 className="text-white text-3xl font-black mt-3">4+</h3>
             <p className="text-gray-400">Games</p>
           </div>
 
           <div className="rounded-3xl bg-white/5 border border-white/10 p-5 text-center backdrop-blur-xl">
             <Users className="mx-auto text-cyan-400" size={35} />
-            <h3 className="text-white text-3xl font-black mt-3">88K+</h3>
+            <h3 className="text-white text-3xl font-black mt-3">119K+</h3>
             <p className="text-gray-400">Players</p>
           </div>
 
@@ -125,20 +136,22 @@ const RacingGames = () => {
             <h3 className="text-white text-3xl font-black mt-3">4.9</h3>
             <p className="text-gray-400">Rating</p>
           </div>
+
         </div>
 
         {/* Games Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {racingGames.map((game) => (
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+
+          {actionGames.map((game) => (
             <div
               key={game.id}
-              className="group rounded-3xl overflow-hidden bg-white/5 border border-white/10 hover:-translate-y-3 transition-all duration-500 backdrop-blur-xl"
+              className="group rounded-3xl overflow-hidden bg-white/5 border border-white/10 backdrop-blur-xl hover:-translate-y-3 transition-all duration-500"
             >
               <div className="overflow-hidden">
                 <img
                   src={game.image}
                   alt={game.title}
-                  className="w-full h-40 md:h-52 object-cover group-hover:scale-110 transition duration-700"
+                  className="w-full h-40 md:h-56 object-cover group-hover:scale-110 transition duration-700"
                 />
               </div>
 
@@ -159,7 +172,7 @@ const RacingGames = () => {
 
                 <Link
                   to={`/${game.id}`}
-                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold hover:scale-105 transition"
                 >
                   <Play size={16} />
                   Play
@@ -167,32 +180,34 @@ const RacingGames = () => {
               </div>
             </div>
           ))}
+
         </div>
 
-        {/* Bottom CTA */}
-        <div className="mt-20 rounded-[35px] border border-white/10 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
+        {/* CTA */}
+        <div className="mt-20 rounded-[35px] border border-white/10 bg-gradient-to-r from-red-500/10 via-orange-500/10 to-yellow-500/10 backdrop-blur-xl">
           <div className="p-10 md:p-14 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white">
-              🏁 Start Your Engine
+              🔥 Ready For Action?
             </h2>
 
             <p className="mt-4 text-gray-400 max-w-2xl mx-auto">
-              Choose your favorite racing game and challenge
-              yourself to beat the highest score.
+              Jump into intense battles, thrilling adventures,
+              and fast-paced action challenges.
             </p>
 
             <Link
-              to="/car-racing"
-              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              to="/alien-attack"
+              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold hover:scale-105 transition"
             >
-              Play Racing Games
+              Start Playing
               <ChevronRight size={20} />
             </Link>
           </div>
         </div>
+
       </div>
     </div>
   );
 };
 
-export default RacingGames;
+export default ActionGames;
