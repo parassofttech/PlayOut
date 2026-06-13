@@ -323,7 +323,7 @@ const Games = () => {
         </div>
 
         {filteredGames.length > 0 ? (
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {filteredGames.map((game, index) => (
               <div  onClick={ ()=>navigate(`/${game.id}`)}>
                 <GameCard

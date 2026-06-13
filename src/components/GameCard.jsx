@@ -13,7 +13,7 @@ const GameCard = ({
         <img
           src={image}
           alt={title}
-          className="h-56 w-full object-cover transition duration-500 group-hover:scale-110"
+          className="h-37 sm:h-56 w-full object-cover transition duration-500 group-hover:scale-110"
         />
       </div>
 
