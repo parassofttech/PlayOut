@@ -16,35 +16,35 @@ const categories = [
     title: "Racing",
     icon: Car,
     color: "from-cyan-500 to-blue-600",
-    games: 12,
+    games: 3,
     path: "/games/racing",
   },
   {
     title: "Action",
     icon: Swords,
     color: "from-red-500 to-orange-500",
-    games: 15,
+    games: 4,
     path: "/games/action",
   },
   {
     title: "Puzzle",
     icon: Brain,
     color: "from-purple-500 to-pink-500",
-    games: 10,
+    games: 5,
     path: "/games/puzzle",
   },
   {
     title: "Arcade",
     icon: Zap,
     color: "from-yellow-500 to-orange-500",
-    games: 8,
+    games: 4,
     path: "/games/arcade",
   },
   {
     title: "Sports",
     icon: Trophy,
     color: "from-green-500 to-emerald-600",
-    games: 9,
+    games: 6,
     path: "/games/sports",
   },
   {
@@ -58,16 +58,10 @@ const categories = [
     title: "Multiplayer",
     icon: Gamepad2,
     color: "from-pink-500 to-rose-500",
-    games: 11,
+    games: 5,
     path: "/games/multiplayer",
   },
-  {
-    title: "Casual",
-    icon: Dice6,
-    color: "from-teal-500 to-cyan-500",
-    games: 14,
-    path: "/games/casual",
-  },
+  
 ];
 
 const Categories = () => {
@@ -102,7 +96,7 @@ const Categories = () => {
         <div className="grid grid-cols-3 gap-4 md:gap-8 mb-16">
           <div className="bg-white/5 border border-white/10 rounded-3xl p-5 text-center backdrop-blur-xl">
             <h2 className="text-3xl md:text-5xl font-black text-cyan-400">
-              85+
+              33+
             </h2>
             <p className="text-gray-400 mt-2 text-sm md:text-base">
               Games
