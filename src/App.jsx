@@ -35,6 +35,7 @@ import TableTennis from './games/TableTennis'
 import Football from './games/Football'
 import Chess from './games/Chess'
 import TypingRace from './games/TypingRace'
+import RacingGames from './categories/RacingGames'
 
 function App() {
   
@@ -79,6 +80,7 @@ function App() {
       <Route path="/football" element={<Football />} />
       <Route path="/chess" element={<Chess />} />
       <Route path="/typing-race" element={<TypingRace />} />
+      <Route path="/games/racing" element={<RacingGames />} />
       
 
     </Routes>
