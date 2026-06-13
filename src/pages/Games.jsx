@@ -190,7 +190,7 @@ const gamesData = [
 {
   id: "typing-race",
   title: "Typing Race",
-  category: "Skill",
+  category: "Strategy",
   rating: 4.7,
   players: "10K+",
   image: "https://media.geeksforgeeks.org/wp-content/uploads/20200123024556/out-full2-min.gif",
