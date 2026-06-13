@@ -50,7 +50,7 @@ const gamesData = [
   rating: 4.8,
   players: "28K+",
   image:
-    "https://images.unsplash.com/photo-1520975958225-3f61d8b1f2d8?w=1200",
+    "https://store-images.s-microsoft.com/image/apps.926.13590528973194609.1e6865fb-876b-4987-9759-1f3a504243fa.d391da9c-8bc6-4d85-be58-c2d430140209",
 },
   {
     id: "tic-tac-toe",
@@ -77,7 +77,7 @@ const gamesData = [
   rating: 4.9,
   players: "25K+",
   image:
-    "https://images.unsplash.com/photo-1492144534655-ae79c964c9d?w=1200",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzq06cLEisGjPh1JcykqVweS_O-FwQYzWoRw&s",
 },
   {
     id: "aim-trainer",
@@ -95,7 +95,7 @@ const gamesData = [
   rating: 4.8,
   players: "52K+",
   image:
-    "https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=1200",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh3e_G9XTWuTLm4PnlKedTgphp5TmUdOW5uA&s",
 },
   {
   id: "sudoku",
@@ -104,7 +104,7 @@ const gamesData = [
   rating: 4.8,
   players: "18K+",
   image:
-    "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=1200",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk0lGqbqYk0KqscIQIx7DHtnsMliw2rmN4sg&s",
 },
 {
   id: "ninja-run",
@@ -113,7 +113,7 @@ const gamesData = [
   rating: 4.8,
   players: "38K+",
   image:
-    "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200",
+    "https://www.metacritic.com/a/img/resize/a184e11cd8c471b6c0869937b760c043eb132a39/catalog/provider/6/12/6-1-882129-52.jpg?auto=webp&fit=contain&height=480&quality=70",
 },
 {
   id: "brick-breaker",
@@ -122,7 +122,7 @@ const gamesData = [
   rating: 4.8,
   players: "45K+",
   image:
-    "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1200",
+    "https://play-lh.googleusercontent.com/BSGfo6oFgwtvM_iHT8OUu0LA1dTOeGJGhq74o_TKpX3GfqlwQoeKa7pjHw0Bc3GwgS1wy6rIPEJau6saDox1Iw",
 },
   {
     id: "memory-game",
@@ -140,7 +140,7 @@ const gamesData = [
   rating: 4.9,
   players: "20K+",
   image:
-    "https://images.unsplash.com/photo-1607082349566-187342175e2d?w=1200",
+    "https://m.media-amazon.com/images/I/71RUFx+g5EL.png",
 },
   {
     id: "guess-number",
@@ -176,7 +176,7 @@ const gamesData = [
   rating: 4.8,
   players: "35K+",
   image:
-    "https://images.unsplash.com/photo-1520975928316-51bff5e88f9d?w=1200",
+    "https://platform.theverge.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/25617319/flappy_bird_new.png?quality=90&strip=all&crop=0,30.334004392387,100,37.408491947291",
 },
   {
   id: "bike-racing",
@@ -185,7 +185,7 @@ const gamesData = [
   rating: 4.8,
   players: "22K+",
   image:
-    "https://images.unsplash.com/photo-1508974239320-0a029497e820?w=1200",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrd5Pa2ADkpTFvd656wuCGkkt47QunzVntmQ&s",
 },
 {
   id: "typing-race",
@@ -193,7 +193,7 @@ const gamesData = [
   category: "Skill",
   rating: 4.7,
   players: "10K+",
-  image: "https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200",
+  image: "https://media.geeksforgeeks.org/wp-content/uploads/20200123024556/out-full2-min.gif",
 },
 {
   id: "2048",
@@ -202,7 +202,7 @@ const gamesData = [
   rating: 4.9,
   players: "30K+",
   image:
-    "https://images.unsplash.com/photo-1611996575749-79a3a250f948?w=1200",
+    "https://m.media-amazon.com/images/I/71EYDvwzkSL.png",
 },
 {
   id: "sliding-puzzle",
@@ -211,7 +211,7 @@ const gamesData = [
   rating: 4.8,
   players: "16K+",
   image:
-    "https://images.unsplash.com/photo-1581368129682-e2b5e5c2f9b2?w=1200",
+    "https://media.geeksforgeeks.org/wp-content/cdn-uploads/20230210105928/Slide_game.gif",
 },
 {
   id: "table-tennis",
