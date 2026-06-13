@@ -23,7 +23,7 @@ const games = [
   {
     id: "cricket-game",
     title: "Cricket Chalanges",
-    category: "Strategy",
+    category: "sports",
     rating: 4.8,
     players: "18K+",
     image:
@@ -76,13 +76,13 @@ const games = [
       "https://www.bestschoolgames.com/_next/image?url=https%3A%2F%2Fadm.bestschoolgames.com%2Fuploads%2Femoji_memory_game_thumb_879ea8325e.png&w=3840&q=75",
   },
   {
-    id: "guess-number",
-    title: "Guess Number",
-    category: "Guess Number",
-    rating: 4.9,
-    players: "20K+",
-    image:
-      "https://i.pinimg.com/564x/2e/e9/62/2ee9625a733381b5f2cfb4123ecb7d3d.jpg",
+    id: "color-sort-puzzle",
+  title: "Color Sort Puzzle",
+  category: "Puzzle",
+  rating: 4.9,
+  players: "20K+",
+  image:
+    "https://m.media-amazon.com/images/I/71RUFx+g5EL.png",
   },
   {
     id: "snake-game",
