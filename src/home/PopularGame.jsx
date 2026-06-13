@@ -94,13 +94,13 @@ const games = [
       "https://www.coolmathgames.com/sites/default/files/Snake_OG-logo.jpg",
   },
   {
-    id: "quiz-game",
-    title: "Quiz Game",
-    category: "Strategy",
-    rating: 4.9,
-    players: "10K+",
-    image:
-      "https://www.shutterstock.com/shutterstock/photos/2052894734/display_1500/stock-vector-quiz-and-question-marks-trivia-night-quiz-symbol-neon-sign-night-online-game-with-questions-2052894734.jpg",
+    id: "2048",
+  title: "2048 Puzzle",
+  category: "Puzzle",
+  rating: 4.9,
+  players: "30K+",
+  image:
+    "https://m.media-amazon.com/images/I/71EYDvwzkSL.png",
   },
 ];
 
