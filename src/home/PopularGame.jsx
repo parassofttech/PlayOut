@@ -21,13 +21,13 @@ const games = [
     trending: true,
   },
   {
-    id: "dice-game",
-    title: "Dice Game",
+    id: "cricket-game",
+    title: "Cricket Chalanges",
     category: "Strategy",
     rating: 4.8,
     players: "18K+",
     image:
-      "https://play-lh.googleusercontent.com/8kugXgA2GzLTeGwtm9fkeUwcvx-PZuvt9b5tr3b8PAy6uizs9JSrvCUxvoTfXQfi0ZKuzEktTdrJbYEXTleKgQ",
+      "https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=1200",
     trending: true,
   },
   {

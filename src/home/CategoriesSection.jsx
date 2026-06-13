@@ -68,14 +68,14 @@ const categories = [
     games: 65,
     description: "Plan and conquer",
   },
-  {
-    id: "adventure",
-    name: "Adventure",
-    icon: Gamepad2,
-    color: "from-teal-500 to-cyan-500",
-    games: 90,
-    description: "Explore new worlds",
-  },
+  // {
+  //   id: "adventure",
+  //   name: "Adventure",
+  //   icon: Gamepad2,
+  //   color: "from-teal-500 to-cyan-500",
+  //   games: 90,
+  //   description: "Explore new worlds",
+  // },
 ];
 
 const CategoriesSection = () => {
