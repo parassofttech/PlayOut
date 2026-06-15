@@ -42,6 +42,7 @@ import ArcadeGames from './categories/ArcadeGames'
 import SportsGames from './categories/SportsGames'
 import StrategyGames from './categories/StrategyGames'
 import MultiplayerGames from './categories/MultiplayerGames'
+import Signup from './pages/Signup'
 
 function App() {
   
@@ -93,6 +94,7 @@ function App() {
       <Route path="/games/sports" element={<SportsGames />} />
       <Route path="/games/strategy" element={<StrategyGames />} />
       <Route path="/games/multiplayer" element={<MultiplayerGames />} />
+      <Route path='/signup' element={<Signup/>}/>
       
 
     </Routes>
