@@ -126,6 +126,7 @@ const handlePhotoChange = (e) => {
 
   {editing ? (
 
+
     /* EDIT MODE */
     <div className="space-y-6">
 
@@ -214,6 +215,7 @@ const handlePhotoChange = (e) => {
         </select>
 
       </div>
+
 
       <div className="flex gap-4 justify-center">
         <button
