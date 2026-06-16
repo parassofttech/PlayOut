@@ -198,6 +198,7 @@ const About = () => {
                 <p>
                   Hey, I'm Paras Sahu. I engineered PlayOut with an absolute focus on cross-client latency reduction and zero-friction browser deployment. 
                 </p>
+
                 <p className="text-xs md:text-sm text-slate-500">
                   By utilizing lightweight multi-threaded rendering mechanics, my target is a clean virtual gaming distribution deck that serves premium casual titles without local overhead requirements.
                 </p>
@@ -215,6 +216,7 @@ const About = () => {
                   </span>
                 ))}
               </div>
+              
             </div>
 
           </div>
