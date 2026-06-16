@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState, } from "react";
 import {
   Menu,
   X,
@@ -6,11 +6,47 @@ import {
   Gamepad2,
   Trophy,
   User,
+  LogOut,
 } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
- function Navbar() {
+function Navbar() {
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [user, setUser] = useState(null);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const updateUser = () => {
+      const token = localStorage.getItem("token");
+      const name = localStorage.getItem("name");
+
+      if (token) {
+        setUser({
+          name: name || "User",
+        });
+      } else {
+        setUser(null);
+      }
+    };
+
+    updateUser();
+
+    window.addEventListener("storage", updateUser);
+
+    return () => {
+      window.removeEventListener("storage", updateUser);
+    };
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("name");
+
+    setUser(null);
+
+    navigate("/login");
+  };
 
   return (
     <>
@@ -34,7 +70,6 @@ import { Link } from "react-router-dom";
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center gap-8">
-
               <Link
                 to="/"
                 className="text-gray-300 hover:text-cyan-400 transition"
@@ -68,6 +103,7 @@ import { Link } from "react-router-dom";
             {/* Search */}
             <div className="hidden lg:flex items-center bg-white/10 border border-white/10 rounded-full px-4 py-2 w-72">
               <Search size={18} className="text-gray-400" />
+
               <input
                 type="text"
                 placeholder="Search Games..."
@@ -75,15 +111,41 @@ import { Link } from "react-router-dom";
               />
             </div>
 
-            {/* Profile */}
+            {/* Desktop Profile */}
             <div className="hidden md:flex items-center gap-3">
-              <button className="p-2 rounded-full bg-white/10 hover:bg-white/20 transition">
-                <User size={20} className="text-white" />
-              </button>
+              {user ? (
+                <>
+                  <Link
+  to="/profile"
+  className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition"
+>
+  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+    {user.name.charAt(0).toUpperCase()}
+  </div>
 
-              <button className="px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition">
-                Login
-              </button>
+  <span className="text-white font-medium">
+    {user.name}
+  </span>
+</Link>
+
+                  <button
+                    onClick={handleLogout}
+                    className="p-3 rounded-full bg-red-500/20 hover:bg-red-500/30 transition"
+                  >
+                    <LogOut
+                      size={18}
+                      className="text-red-400"
+                    />
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/login"
+                  className="px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition"
+                >
+                  Login
+                </Link>
+              )}
             </div>
 
             {/* Mobile Menu Button */}
@@ -91,14 +153,18 @@ import { Link } from "react-router-dom";
               onClick={() => setMobileMenu(!mobileMenu)}
               className="md:hidden text-white"
             >
-              {mobileMenu ? <X size={30} /> : <Menu size={30} />}
+              {mobileMenu ? (
+                <X size={30} />
+              ) : (
+                <Menu size={30} />
+              )}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenu && (
-          <div className="md:hidden backdrop-blur-xl bg-black/90 border-t border-white/10">
+          <div className="md:hidden backdrop-blur-xl bg-black/95 border-t border-white/10">
             <div className="flex flex-col px-5 py-5 gap-4">
 
               <Link
@@ -135,6 +201,7 @@ import { Link } from "react-router-dom";
 
               <div className="flex items-center bg-white/10 rounded-full px-4 py-2 mt-2">
                 <Search size={18} className="text-gray-400" />
+
                 <input
                   type="text"
                   placeholder="Search..."
@@ -142,18 +209,45 @@ import { Link } from "react-router-dom";
                 />
               </div>
 
-              <button className="mt-3 w-full py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold">
-                Login
-              </button>
+              {user ? (
+                <>
+                  <Link
+  to="/profile"
+  className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition"
+>
+  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+    {user.name.charAt(0).toUpperCase()}
+  </div>
+
+  <span className="text-white font-medium">
+    {user.name}
+  </span>
+</Link>
+
+                  <button
+                    onClick={handleLogout}
+                    className="w-full py-3 rounded-xl bg-red-500 text-white font-bold"
+                  >
+                    Logout
+                  </button>
+                </>
+              ) : (
+                <Link
+                  to="/login"
+                  onClick={() => setMobileMenu(false)}
+                  className="mt-3 w-full py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-center"
+                >
+                  Login
+                </Link>
+              )}
             </div>
           </div>
         )}
       </nav>
 
-      {/* Spacer */}
       <div className="h-20"></div>
     </>
   );
 }
 
-export default Navbar
+export default Navbar;
