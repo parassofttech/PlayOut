@@ -94,6 +94,8 @@ const Profile = () => {
               Account Information
             </h2>
 
+            
+
             <div className="space-y-4">
 
               <div className="flex items-center gap-4 bg-white/5 border border-white/10 rounded-2xl p-4">

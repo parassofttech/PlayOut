@@ -67,8 +67,10 @@ const categories = [
 const Categories = () => {
   return (
     <div className="min-h-screen bg-[#050816] text-white overflow-hidden">
+      
       {/* Background Glow */}
       <div className="fixed top-0 left-0 w-96 h-96 bg-cyan-500/10 blur-3xl rounded-full" />
+
       <div className="fixed bottom-0 right-0 w-96 h-96 bg-purple-500/10 blur-3xl rounded-full" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 py-16">
