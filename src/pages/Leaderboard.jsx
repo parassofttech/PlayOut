@@ -43,7 +43,7 @@ const Leaderboard = () => {
     },
     {
       rank: 6,
-      name: "Noah",
+      name: "Mohan",
       score: 8450,
       country: "🇨🇦",
     },
@@ -55,7 +55,7 @@ const Leaderboard = () => {
     },
     {
       rank: 8,
-      name: "Liam",
+      name: "Laxman",
       score: 8010,
       country: "🇩🇪",
     },
