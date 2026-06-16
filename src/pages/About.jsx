@@ -211,12 +211,13 @@ const About = () => {
                   { tag: "10K+ Players", border: "border-purple-500/20", bg: "bg-purple-500/5", text: "text-purple-400" },
                   { tag: "24/7 Engine", border: "border-pink-500/20", bg: "bg-pink-500/5", text: "text-pink-400" }
                 ].map((item, id) => (
-                  <span key={id} className={`px-4 py-2 border rounded-xl font-bold text-xs shadow-inner ${item.border} ${item.bg} ${item.text}`}>
+                  <span key={id} className={`px-4 py-2 border rounded-xl font-bold text-xs 
+                  shadow-inner ${item.border} ${item.bg} ${item.text}`}>
                     {item.tag}
                   </span>
                 ))}
               </div>
-              
+
             </div>
 
           </div>
