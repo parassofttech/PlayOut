@@ -107,7 +107,7 @@ const Login = () => {
 
             {/* Email */}
             <div>
-              <label className="text-gray-300 text-sm">
+              <label className="text-gray-300 text-sm font-medium">
                 Email Address
               </label>
 
@@ -150,7 +150,7 @@ const Login = () => {
 
             {/* Password */}
             <div>
-              <label className="text-gray-300 text-sm">
+              <label className="text-gray-300 text-sm font-medium">
                 Password
               </label>
 

@@ -98,6 +98,12 @@ function Navbar() {
               >
                 Categories
               </Link>
+              <Link
+                to="/about"
+                className="text-gray-300 hover:text-cyan-400 transition"
+              >
+                About
+              </Link>
             </div>
 
             {/* Search */}
