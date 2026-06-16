@@ -55,9 +55,10 @@ const Login = () => {
 
       if (success) {
         localStorage.setItem("token", jwtToken);
+        localStorage.setItem("isAdmin", res.data.isAdmin);
 
         if (name) {
-          localStorage.setItem("name", name);
+          localStorage.setItem("name", res.date.user.name);
         }
         window.dispatchEvent(new Event("storage"));
 
