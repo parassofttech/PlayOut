@@ -117,6 +117,10 @@ function Navbar() {
               />
             </div>
 
+            <div>
+
+            </div>
+
             {/* Desktop Profile */}
             <div className="hidden md:flex items-center gap-3">
               {user ? (
@@ -152,6 +156,10 @@ function Navbar() {
                   Login
                 </Link>
               )}
+            </div>
+
+            <div>
+              
             </div>
 
             {/* Mobile Menu Button */}

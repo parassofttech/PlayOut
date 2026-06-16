@@ -38,7 +38,7 @@ const Leaderboard = () => {
     {
       rank: 5,
       name: "Sophia",
-      score: 8700,
+      score: 8710,
       country: "🇬🇧",
     },
     {
@@ -50,7 +50,7 @@ const Leaderboard = () => {
     {
       rank: 7,
       name: "Emma",
-      score: 8220,
+      score: 8210,
       country: "🇦🇺",
     },
     {
@@ -101,12 +101,14 @@ const Leaderboard = () => {
             </span>
           </h1>
 
+
           <p className="text-gray-400 mt-5 max-w-2xl mx-auto">
             Compete with players around the world and climb
             to the top of the rankings.
           </p>
 
         </div>
+
 
         {/* Top 3 */}
         <div className="grid md:grid-cols-3 gap-6 mb-12">
