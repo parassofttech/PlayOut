@@ -45,6 +45,8 @@ import MultiplayerGames from './categories/MultiplayerGames'
 import Signup from './pages/Signup'
 import Login from './pages/Login'
 import About from './pages/About'
+import Admin from './pages/admin/Admin'
+import Dashboard from './pages/admin/Dashboard'
 
 function App() {
   
@@ -99,6 +101,8 @@ function App() {
       <Route path='/signup' element={<Signup/>}/>
       <Route path='/login' element={<Login/>}/>
       <Route path="/about" element={<About />} />
+      <Route path="/admin" element={<Admin />} />
+      <Route index element={<Dashboard />} />
       
 
     </Routes>

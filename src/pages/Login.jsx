@@ -50,16 +50,15 @@ const Login = () => {
         message,
         jwtToken,
         name,
+        email,
         error,
       } = result;
 
       if (success) {
         localStorage.setItem("token", jwtToken);
-        localStorage.setItem("isAdmin", res.data.isAdmin);
-
-        if (name) {
-          localStorage.setItem("name", res.date.user.name);
-        }
+        localStorage.setItem("email", email);
+        localStorage.setItem("name", name);
+        
         window.dispatchEvent(new Event("storage"));
 
         handleSuccess(message);

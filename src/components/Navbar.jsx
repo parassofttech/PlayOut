@@ -16,6 +16,11 @@ function Navbar() {
 
   const navigate = useNavigate();
 
+
+  const email = localStorage.getItem("email");
+
+const isAdmin = email === "paras11@gmail.com";
+
   useEffect(() => {
     const updateUser = () => {
       const token = localStorage.getItem("token");
@@ -42,7 +47,7 @@ function Navbar() {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("name");
-
+    localStorage.removeItem("email");
     setUser(null);
 
     navigate("/login");
@@ -69,7 +74,7 @@ function Navbar() {
             </Link>
 
             {/* Desktop Menu */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className=" hidden md:flex items-center mx-6 gap-3">
               <Link
                 to="/"
                 className="text-gray-300 hover:text-cyan-400 transition"
@@ -117,9 +122,14 @@ function Navbar() {
               />
             </div>
 
-            <div>
-
-            </div>
+              {isAdmin && (
+  <Link
+    to="/admin"
+    className=" hidden md:flex px-4 py-2 bg-gray-500 rounded-xl text-white font-bold"
+  >
+    Admin
+  </Link>
+)}
 
             {/* Desktop Profile */}
             <div className="hidden md:flex items-center gap-3">
@@ -129,7 +139,7 @@ function Navbar() {
   to="/profile"
   className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition"
 >
-  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+  <div className="w-10 h-10 rounded-full text-sm bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
     {user.name.charAt(0).toUpperCase()}
   </div>
 
@@ -159,7 +169,7 @@ function Navbar() {
             </div>
 
             <div>
-              
+
             </div>
 
             {/* Mobile Menu Button */}
@@ -212,6 +222,21 @@ function Navbar() {
               >
                 Categories
               </Link>
+              <Link
+                to="/about"
+                className="text-white hover:text-cyan-400"
+                onClick={() => setMobileMenu(false)}
+              >
+                About
+              </Link>
+              {isAdmin && (
+  <Link
+    to="/admin"
+    className="px-4 py-2 bg-gray-500 rounded-xl text-white font-bold"
+  >
+    Admin
+  </Link>
+)}
 
               <div className="flex items-center bg-white/10 rounded-full px-4 py-2 mt-2">
                 <Search size={18} className="text-gray-400" />
