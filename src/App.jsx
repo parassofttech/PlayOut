@@ -47,6 +47,7 @@ import Login from './pages/Login'
 import About from './pages/About'
 import Admin from './pages/admin/Admin'
 import Dashboard from './pages/admin/Dashboard'
+import Users from './pages/admin/Users'
 
 function App() {
   
@@ -103,6 +104,7 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/admin" element={<Admin />} />
       <Route index element={<Dashboard />} />
+      <Route path="/admin/users" element={<Users />} />
       
 
     </Routes>
