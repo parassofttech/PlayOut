@@ -10,7 +10,7 @@ const HeroSection = () => {
       <div className="absolute bottom-20 right-10 w-72 h-72 bg-purple-500/20 rounded-full blur-3xl"></div>
 
       {/* Grid Background */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:40px_40px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] " />
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -24,7 +24,7 @@ const HeroSection = () => {
 
             <h1 className="text-5xl md:text-7xl font-black leading-tight">
               Play
-              <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 {" "}Unlimited{" "}
               </span>
               Games Online
@@ -39,7 +39,7 @@ const HeroSection = () => {
             <div className="flex flex-wrap gap-4 mt-8">
               <Link
                 to="/games"
-                className="flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
+                className="flex items-center gap-2 px-8 py-4 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
               >
                 <Play size={20} />
                 Play Now
@@ -91,7 +91,7 @@ const HeroSection = () => {
               <img
                 src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200"
                 alt="Gaming"
-                className="w-full h-[450px] object-cover rounded-2xl"
+                className="w-full h-[450%] object-cover rounded-2xl"
               />
 
               {/* Floating Card 1 */}

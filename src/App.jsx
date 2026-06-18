@@ -50,6 +50,7 @@ import Dashboard from './pages/admin/Dashboard'
 import Users from './pages/admin/Users'
 import ContactMessages from './pages/admin/ContactMessage'
 import UnderNavbar from './components/UnderNavbar'
+import Contact from './pages/Contact'
 
 function App() {
   
@@ -108,6 +109,7 @@ function App() {
       <Route path="/admin/dashboard" element={<Dashboard />} />
       <Route path="/admin/users" element={<Users />} />
       <Route path="/admin/messages" element={<ContactMessages />} />
+      <Route path="/contact" element={<Contact />} />
       
 
     </Routes>

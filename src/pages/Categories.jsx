@@ -82,7 +82,7 @@ const Categories = () => {
 
           <h1 className="mt-6 text-4xl md:text-7xl font-black">
             Explore
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-500 bg-clip-text text-transparent">
               {" "}
               Categories
             </span>
@@ -137,12 +137,12 @@ const Categories = () => {
               >
                 {/* Gradient Glow */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-br ${category.color} opacity-0 group-hover:opacity-20 transition`}
+                  className={`absolute inset-0 bg-linear-to-br ${category.color} opacity-0 group-hover:opacity-20 transition`}
                 />
 
                 <div className="relative p-6 md:p-8">
                   <div
-                    className={`w-16 h-16 rounded-2xl bg-gradient-to-r ${category.color} flex items-center justify-center`}
+                    className={`w-16 h-16 rounded-2xl bg-linear-to-r ${category.color} flex items-center justify-center`}
                   >
                     <Icon size={32} />
                   </div>
@@ -169,7 +169,7 @@ const Categories = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 rounded-[35px] overflow-hidden border border-white/10 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
+        <div className="mt-20 rounded-[35px] overflow-hidden border border-white/10 bg-linear-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
           <div className="p-8 md:p-14 text-center">
             <h2 className="text-3xl md:text-5xl font-black">
               🚀 Ready To Play?
@@ -182,7 +182,7 @@ const Categories = () => {
 
             <Link
               to="/games"
-              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
             >
               Browse Games
             </Link>

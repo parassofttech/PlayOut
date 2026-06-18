@@ -64,11 +64,11 @@ const isAdmin = email === "paras11@gmail.com";
               to="/"
               className="flex items-center gap-2 group"
             >
-              <div className="p-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 shadow-lg shadow-cyan-500/30">
+              <div className="p-2 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 shadow-lg shadow-cyan-500/30">
                 <Gamepad2 size={24} className="text-white" />
               </div>
 
-              <h1 className="text-2xl font-extrabold bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h1 className="text-2xl font-extrabold bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 PlayOut
               </h1>
             </Link>
@@ -109,6 +109,12 @@ const isAdmin = email === "paras11@gmail.com";
               >
                 About
               </Link>
+              <Link
+                to="/contact"
+                className="text-gray-300 hover:text-cyan-400 transition"
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Search */}
@@ -139,7 +145,7 @@ const isAdmin = email === "paras11@gmail.com";
   to="/profile"
   className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition"
 >
-  <div className="w-10 h-10 rounded-full text-sm bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+  <div className="w-10 h-10 rounded-full text-sm bg-linear-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
     {user.name.charAt(0).toUpperCase()}
   </div>
 
@@ -161,7 +167,7 @@ const isAdmin = email === "paras11@gmail.com";
               ) : (
                 <Link
                   to="/login"
-                  className="px-5 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition"
+                  className="px-5 py-2 rounded-full bg-linear-to-r from-cyan-500 to-purple-600 text-white font-semibold hover:scale-105 transition"
                 >
                   Login
                 </Link>
@@ -229,6 +235,14 @@ const isAdmin = email === "paras11@gmail.com";
               >
                 About
               </Link>
+
+              <Link
+                to="/contact"
+                className="text-white hover:text-cyan-400"
+                onClick={() => setMobileMenu(false)}
+              >
+                Contact
+              </Link>
               {isAdmin && (
   <Link
     to="/admin"
@@ -254,7 +268,7 @@ const isAdmin = email === "paras11@gmail.com";
   to="/profile"
   className="flex items-center gap-3 px-4 py-2 rounded-full bg-white/10 border border-white/10 hover:bg-white/20 transition"
 >
-  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
+  <div className="w-10 h-10 rounded-full bg-linear-to-r from-cyan-500 to-purple-600 flex items-center justify-center text-white font-bold">
     {user.name.charAt(0).toUpperCase()}
   </div>
 
@@ -274,7 +288,7 @@ const isAdmin = email === "paras11@gmail.com";
                 <Link
                   to="/login"
                   onClick={() => setMobileMenu(false)}
-                  className="mt-3 w-full py-3 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold text-center"
+                  className="mt-3 w-full py-3 rounded-full bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold text-center"
                 >
                   Login
                 </Link>
