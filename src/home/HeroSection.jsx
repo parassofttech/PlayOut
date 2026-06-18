@@ -3,7 +3,7 @@ import { Gamepad2, Trophy, Users, Play } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-[#050816]">
+    <section className="relative  min-h-screen flex items-center overflow-hidden bg-[#050816]">
       
       {/* Background Glow */}
       <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full blur-3xl"></div>
@@ -17,7 +17,7 @@ const HeroSection = () => {
 
           {/* Left Content */}
           <div>
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 mb-6">
+            <div className="inline-flex items-center mt-7 gap-2 px-4 py-2 rounded-full border border-cyan-500/30 bg-cyan-500/10 text-cyan-400 mb-6">
               <Gamepad2 size={18} />
               Ultimate Gaming Platform
             </div>

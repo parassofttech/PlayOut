@@ -22,9 +22,10 @@ const [userName, setUserName] = useState(
   localStorage.getItem("name") || "Player"
 );
 const [editing, setEditing] = useState(false);
+const userEmail = localStorage.getItem("email");
 
 const [profile, setProfile] = useState(() => {
-  const saved = localStorage.getItem("profile");
+  const saved = localStorage.getItem(`profile_${userEmail}`);
 
   return saved
     ? JSON.parse(saved)
@@ -74,6 +75,7 @@ const handlePhotoChange = (e) => {
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("name");
+    localStorage.removeItem("email");
 
     window.dispatchEvent(new Event("storage"));
 
@@ -81,9 +83,9 @@ const handlePhotoChange = (e) => {
   };
  const saveProfile = () => {
   localStorage.setItem(
-    "profile",
-    JSON.stringify(profile)
-  );
+  `profile_${userEmail}`,
+  JSON.stringify(profile)
+);
 
   localStorage.setItem(
     "name",
@@ -171,6 +173,7 @@ const handlePhotoChange = (e) => {
           type="email"
           name="email"
           value={profile.email}
+          readOnly
           onChange={handleChange}
           placeholder="Email"
           className="bg-gray-800 text-white p-3 rounded-xl border border-gray-700 outline-none focus:border-cyan-500"

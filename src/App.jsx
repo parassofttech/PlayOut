@@ -49,6 +49,7 @@ import Admin from './pages/admin/Admin'
 import Dashboard from './pages/admin/Dashboard'
 import Users from './pages/admin/Users'
 import ContactMessages from './pages/admin/ContactMessage'
+import UnderNavbar from './components/UnderNavbar'
 
 function App() {
   
@@ -110,6 +111,7 @@ function App() {
       
 
     </Routes>
+    <UnderNavbar/>
     
    </Router>
    
