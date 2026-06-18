@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Users as UsersIcon, Search, Calendar, UserCheck, ShieldAlert, Trash2, UserX, Mail } from "lucide-react";
 import axios from "axios";
+import Sidebar from "./Sidebar";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
   const token = localStorage.getItem("token");
@@ -61,6 +63,7 @@ const Users = () => {
     try {
       await axios.delete(`http://localhost:8000/api/user/delete/${id}`, authConfig);
       setUsers(users.filter((user) => user._id !== id));
+    
     } catch (err) {
       alert("Error deleting user");
     }
@@ -77,12 +80,25 @@ const Users = () => {
 
   return (
     <div>
+      <Sidebar/>
+       <div className="p-2 ml-15 md:ml-68  lg:ml-68 space-y-6 animate-in fade-in duration-500">
+      
+      {/* --- Top Header & Search --- */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-white p-6 rounded-3xl shadow-sm border border-slate-100">
+        <div className="ml-15">
+          <h1 className="text-2xl font-extrabold text-slate-800">User Directory</h1>
+          <p className="text-slate-500 text-sm">Manage your community and account permissions</p>
+        </div>
 
-      <div className="flex items-center gap-3 mb-6">
-        <UsersIcon size={35} />
-        <h1 className="text-4xl font-black">
-          Users
-        </h1>
+        <div className="relative">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
+          <input 
+            type="text" 
+            placeholder="Search by name or email..." 
+            className="pl-10 pr-4 py-2.5 bg-slate-50 border border-slate-200 rounded-2xl outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 w-full md:w-80 transition-all"
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
       </div>
 
       {/* Search */}
@@ -196,6 +212,7 @@ const Users = () => {
         </div>
       </div>
 
+    </div>
     </div>
   );
 };

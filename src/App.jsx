@@ -48,6 +48,7 @@ import About from './pages/About'
 import Admin from './pages/admin/Admin'
 import Dashboard from './pages/admin/Dashboard'
 import Users from './pages/admin/Users'
+import ContactMessages from './pages/admin/ContactMessage'
 
 function App() {
   
@@ -103,8 +104,9 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path="/about" element={<About />} />
       <Route path="/admin" element={<Admin />} />
-      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/admin/dashboard" element={<Dashboard />} />
       <Route path="/admin/users" element={<Users />} />
+      <Route path="/admin/messages" element={<ContactMessages />} />
       
 
     </Routes>

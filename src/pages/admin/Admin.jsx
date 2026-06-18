@@ -7,13 +7,14 @@ import {
   LogOut,
 } from "lucide-react";
 import Dashboard from "./Dashboard";
+import Sidebar from "./Sidebar";
 
 const Admin = () => {
   return (
     <div className="min-h-screen bg-[#050816] text-white flex">
 
       {/* Sidebar */}
-      <aside className="w-72 bg-black/40 border-r border-white/10 p-6">
+      {/* <aside className="w-72 bg-black/40 border-r border-white/10 p-6">
 
         <h1 className="text-3xl font-black mb-10">
           Admin Panel
@@ -53,8 +54,11 @@ const Admin = () => {
           </button>
 
         </nav>
-      </aside>
+      </aside> */}
+
+      <Sidebar/>
       <Dashboard/>
+      <Users/>
 
       {/* Main Content */}
       <main className="flex-1 p-8">
