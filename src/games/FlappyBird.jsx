@@ -109,12 +109,15 @@ function FlappyBird() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-400 via-sky-700 to-black flex items-center justify-center">
+    <div className="min-h-screen bg-linear-to-b from-sky-400 via-sky-700 to-black flex items-center justify-center">
 
       {/* GAME AREA (responsive) */}
       <div
-        className="relative w-full max-w-[420px] h-[85vh] bg-blue-400 overflow-hidden rounded-2xl border-4 border-white/20"
+        className="relative w-full h-[85vh] bg-blue-400 overflow-hidden rounded-2xl border-4 border-white/20"
         onClick={jump}
+        style={{
+          width:420
+        }}
       >
 
         {/* SCORE */}

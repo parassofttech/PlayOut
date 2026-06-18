@@ -1,3 +1,4 @@
+import { Bird } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 function NinjaRun() {
@@ -125,11 +126,15 @@ function NinjaRun() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-red-900 flex items-center justify-center">
+    <div className="min-h-screen bg-linear-to-b from-black via-gray-900 to-red-900 flex items-center justify-center">
 
       <div
-        className="relative w-full max-w-[420px] h-[500px] bg-black rounded-2xl overflow-hidden border border-white/20"
+        className="relative w-full  bg-black rounded-2xl overflow-hidden border border-white/20"
         onClick={jump}
+        style={{
+    width: 420,
+    height: 500,
+  }}
       >
 
         {/* SCORE */}
@@ -138,25 +143,31 @@ function NinjaRun() {
         </div>
 
         {/* GROUND */}
-        <div className="absolute bottom-0 w-full h-10 bg-green-800" />
+        <div className="absolute bottom-0 w-full h-10 bg-green-800 bg-cover" >
+          <img src="https://opengameart.org/sites/default/files/mountains-bg.jpg" alt="ground" />
+        </div>
 
         {/* NINJA */}
-        <div
+        
+          <img src="https://opengameart.org/sites/default/files/screenshot_20251014-215744_1.png" alt=""
           className="absolute left-20 w-8 h-10 bg-red-500 rounded-md"
-          style={{ bottom: playerY }}
-        />
+          style={{ bottom: playerY }} />
 
         {/* OBSTACLES */}
         {obstacles.map((o, i) => (
           <div
             key={i}
-            className="absolute bottom-10 bg-gray-700 border border-white/20"
+            
+          
+            className="absolute bottom-10 "
             style={{
               left: o.x,
               width: o.width,
               height: o.height,
             }}
-          />
+          >
+            <img src="https://opengameart.org/sites/default/files/pipe_6.png" alt="" />
+          </div>
         ))}
 
         {/* GAME OVER */}

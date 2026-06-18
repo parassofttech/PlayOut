@@ -32,7 +32,7 @@ import React, { useState } from "react";
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-black text-white flex flex-col items-center justify-center p-6">
 
       <h1 className="text-4xl font-bold mb-3">🔢 Guess The Number</h1>
 
@@ -45,7 +45,7 @@ import React, { useState } from "react";
           type="number"
           value={guess}
           onChange={(e) => setGuess(e.target.value)}
-          className="px-4 py-2 rounded-lg text-black outline-none w-40"
+          className="px-4 py-2 rounded-lg text-white outline-none w-40"
           placeholder="Enter number"
           disabled={gameOver}
         />
