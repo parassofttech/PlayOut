@@ -19,7 +19,7 @@ function DiceGame() {
       setMessage("🎉 You Win this round!");
     } else if (c > p) {
       setCpuScore((s) => s + 1);
-      setMessage("💀 CPU Wins this round!");
+      setMessage("💀 You lost this round!");
     } else {
       setMessage("🤝 It's a Draw!");
     }
@@ -36,7 +36,7 @@ function DiceGame() {
   const diceFaces = ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex flex-col items-center justify-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-black text-white flex flex-col items-center justify-center p-6">
 
       <h1 className="text-4xl font-bold mb-3">🎲 Dice Battle</h1>
 

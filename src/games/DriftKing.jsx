@@ -119,7 +119,13 @@ function DriftKing() {
         </div>
 
         {/* ROAD */}
-        <div className="relative w-[330px] h-[650px] overflow-hidden rounded-3xl bg-gradient-to-b from-zinc-900 to-zinc-800 border-x-8 border-orange-500">
+        <div
+  className="relative overflow-hidden rounded-3xl bg-linear-to-b from-zinc-900 to-zinc-800 border-x-8 border-orange-500"
+  style={{
+    width: 330,
+    height: 650,
+  }}
+>
 
           {[...Array(10)].map((_, i) => (
             <div
@@ -191,7 +197,7 @@ function DriftKing() {
 
             <button
               onClick={restart}
-              className="mt-6 px-8 py-3 rounded-xl bg-gradient-to-r from-orange-500 to-red-500 font-bold"
+              className="mt-6 px-8 py-3 rounded-xl bg-linear-to-r from-orange-500 to-red-500 font-bold"
             >
               Play Again
             </button>
