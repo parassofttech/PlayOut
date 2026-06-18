@@ -103,7 +103,7 @@ function App() {
       <Route path='/login' element={<Login/>}/>
       <Route path="/about" element={<About />} />
       <Route path="/admin" element={<Admin />} />
-      <Route index element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/admin/users" element={<Users />} />
       
 

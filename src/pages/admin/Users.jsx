@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { Users as UsersIcon, Search } from "lucide-react";
+import { Users as UsersIcon, Search, Calendar, UserCheck, ShieldAlert, Trash2, UserX, Mail } from "lucide-react";
+import axios from "axios";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
   const [filteredUsers, setFilteredUsers] = useState([]);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("token");
+  const authConfig = token ? { headers: { Authorization: `Bearer ${token}` } } : {};
 
   const fetchUsers = async () => {
     try {
@@ -52,6 +55,26 @@ const Users = () => {
     setFilteredUsers(filtered);
   }, [search, users]);
 
+
+  const handleDelete = async (id) => {
+    if (!window.confirm("Delete this user permanently?")) return;
+    try {
+      await axios.delete(`http://localhost:8000/api/user/delete/${id}`, authConfig);
+      setUsers(users.filter((user) => user._id !== id));
+    } catch (err) {
+      alert("Error deleting user");
+    }
+  };
+
+   const handleToggleBlock = async (user) => {
+    try {
+      await axios.put(`http://localhost:8000/api/user/users/${user._id}/toggleBlock`, {}, authConfig);
+      setUsers(users.map((u) => u._id === user._id ? { ...u, blocked: !u.blocked } : u));
+    } catch (err) {
+      alert("Failed to update status");
+    }
+  };
+
   return (
     <div>
 
@@ -82,62 +105,95 @@ const Users = () => {
       </div>
 
       {/* Table */}
-      <div className="bg-white/5 rounded-3xl border border-white/10 overflow-hidden">
+      <div className="bg-white rounded-3xl shadow-sm border border-slate-100 overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="w-full text-left border-collapse">
+            <thead>
+              <tr className="bg-slate-50/50 border-b border-slate-100 text-slate-500 text-[13px] uppercase tracking-wider">
+                <th className="p-5 font-semibold">User Details</th>
+                <th className="p-5 font-semibold">Status</th>
+                <th className="p-5 font-semibold">Registration</th>
+                <th className="p-5 font-semibold text-center">Actions</th>
+              </tr>
+            </thead>
 
-        {loading ? (
-          <div className="p-10 text-center">
-            Loading Users...
-          </div>
-        ) : filteredUsers.length ===0 ? (
-          <div className="p-10 text-center">
-            No Users Found
-          </div>
-        ) : (
-          <>
-            <div className="grid grid-cols-4 bg-white/10 p-4 font-bold">
+            <tbody className="divide-y divide-slate-50">
+              {filteredUsers.length > 0 ? (
+                filteredUsers.map((user) => (
+                  <tr key={user._id} className="hover:bg-blue-50/30 transition-colors group">
+                    {/* User Info with Avatar */}
+                    <td className="p-5">
+                      <div className="flex items-center gap-4">
+                        <div className="h-11 w-11 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 text-blue-600 flex items-center justify-center font-bold text-sm shadow-sm">
+                          {user.name.charAt(0).toUpperCase()}
+                        </div>
+                        <div>
+                          <p className="text-sm font-bold text-slate-800 leading-none">{user.name}</p>
+                          <div className="flex items-center gap-1 text-slate-500 mt-1">
+                            <Mail size={12} />
+                            <span className="text-xs">{user.email}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
 
-              <div>Name</div>
-              <div>Email</div>
-              <div>Role</div>
-              <div>Joined</div>
+                    {/* Status Badge */}
+                    <td className="p-5">
+                      {user.blocked ? (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-100 text-red-600 text-xs font-bold ring-1 ring-red-200">
+                          <ShieldAlert size={12} /> Blocked
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-600 text-xs font-bold ring-1 ring-emerald-200">
+                          <UserCheck size={12} /> Active
+                        </span>
+                      )}
+                    </td>
 
-            </div>
+                    {/* Registration Date (Mockup or real date) */}
+                    <td className="p-5 text-slate-500">
+                      <div className="flex items-center gap-1.5 text-xs font-medium">
+                        <Calendar size={14} />
+                        {new Date(user.createdAt || Date.now()).toLocaleDateString()}
+                      </div>
+                    </td>
 
-            {filteredUsers.map((user) => (
-              <div
-                key={user._id}
-                className="grid grid-cols-4 p-4 border-t border-white/10 hover:bg-white/5"
-              >
+                    {/* Action Buttons */}
+                    <td className="p-5">
+                      <div className="flex justify-center gap-2">
+                        <button
+                          onClick={() => handleToggleBlock(user)}
+                          title={user.blocked ? "Unblock User" : "Block User"}
+                          className={`p-2 rounded-xl transition-all shadow-sm active:scale-90 ${
+                            user.blocked 
+                            ? "bg-emerald-50 text-emerald-600 hover:bg-emerald-600 hover:text-white" 
+                            : "bg-orange-50 text-orange-600 hover:bg-orange-600 hover:text-white"
+                          }`}
+                        >
+                          {user.blocked ? <UserCheck size={18} /> : <UserX size={18} />}
+                        </button>
 
-                <div>{user.name}</div>
-
-                <div className="truncate">
-                  {user.email}
-                </div>
-
-                <div>
-                  <span
-                    className={`px-3 py-1 rounded-full text-sm ${
-                      user.role === "admin"
-                        ? "bg-red-500/20 text-red-400"
-                        : "bg-cyan-500/20 text-cyan-400"
-                    }`}
-                  >
-                    {user.role}
-                  </span>
-                </div>
-
-                <div>
-                  {new Date(
-                    user.createdAt
-                  ).toLocaleDateString()}
-                </div>
-
-              </div>
-            ))}
-          </>
-        )}
-
+                        <button
+                          onClick={() => handleDelete(user._id)}
+                          title="Delete User"
+                          className="p-2 bg-red-50 text-red-500 rounded-xl hover:bg-red-600 hover:text-white transition-all shadow-sm active:scale-90"
+                        >
+                          <Trash2 size={18} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))
+              ) : (
+                <tr>
+                  <td colSpan="4" className="p-10 text-center text-slate-400 italic">
+                    No users found matching your search.
+                  </td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+        </div>
       </div>
 
     </div>
