@@ -121,10 +121,10 @@ function EndlessRunner() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-500 via-blue-700 to-black">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-b from-sky-500 via-blue-700 to-black">
 
       <div
-        className="relative w-full max-w-[420px] h-[500px] bg-black rounded-2xl overflow-hidden border border-white/20"
+        className="relative w-full max-w-105 h-125 bg-black rounded-2xl overflow-hidden border border-white/20"
         onClick={jump}
       >
 

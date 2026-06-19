@@ -142,7 +142,7 @@ export default function MemoryGame() {
   const isWin = cards.length && cards.every((c) => c.matched);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-slate-900 to-gray-950 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-black via-slate-900 to-gray-950 text-white flex flex-col items-center p-6">
 
       {/* HEADER */}
       <h1 className="text-4xl font-bold mb-2">🎮 Memory Pro</h1>

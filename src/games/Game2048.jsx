@@ -155,7 +155,7 @@ function Game2048() {
             row.map((cell, c) => (
               <div
                 key={`${r}-${c}`}
-                className="w-16 h-16 flex items-center justify-center rounded-xl font-black text-white text-xl bg-gradient-to-br from-purple-500/30 to-cyan-500/30"
+                className="w-16 h-16 flex items-center justify-center rounded-xl font-black text-white text-xl bg-linear-to-br from-purple-500/30 to-cyan-500/30"
               >
                 {cell !== 0 ? cell : ""}
               </div>
@@ -201,7 +201,7 @@ function Game2048() {
         {/* RESTART */}
         <button
           onClick={restart}
-          className="mt-6 px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-600 text-white font-bold rounded-xl"
+          className="mt-6 px-8 py-3 bg-linear-to-r from-pink-500 to-purple-600 text-white font-bold rounded-xl"
         >
           🔄 Restart
         </button>

@@ -154,7 +154,7 @@ function Football() {
   }, [ball.x, gameOver, playerX, aiX]);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-green-950 via-black to-green-950 p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-green-950 via-black to-green-950 p-4">
 
       {/* Score */}
       <div className="flex gap-6 mb-4 text-white font-bold">
@@ -169,7 +169,7 @@ function Football() {
       </div>
 
       {/* Game Board */}
-      <div className="relative w-[360px] h-[600px] bg-green-900 border-4 border-white/20 overflow-hidden rounded-2xl">
+      <div className="relative w-90 h-150 bg-green-900 border-4 border-white/20 overflow-hidden rounded-2xl">
 
         {/* Ball */}
         <div

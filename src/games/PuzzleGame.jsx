@@ -167,7 +167,7 @@ const PuzzleGame = () => {
             return (
               <div
                 key={index}
-                className="w-[120px] h-[120px] rounded-lg bg-black/50"
+                className="w-30 h-30 rounded-lg bg-black/50"
               />
             );
           }
@@ -184,7 +184,7 @@ const PuzzleGame = () => {
               onClick={() =>
                 handleTileClick(index)
               }
-              className="w-[120px] h-[120px] cursor-pointer rounded-lg border border-white/10 hover:scale-95 transition"
+              className="w-30 h-30 cursor-pointer rounded-lg border border-white/10 hover:scale-95 transition"
               style={{
                 backgroundImage: `url(${puzzleImage})`,
                 backgroundSize: "360px 360px",
@@ -201,7 +201,7 @@ const PuzzleGame = () => {
       <div className="flex gap-4 mt-8">
         <button
           onClick={startGame}
-          className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold flex items-center gap-2 hover:scale-105 transition"
+          className="px-6 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 text-white font-bold flex items-center gap-2 hover:scale-105 transition"
         >
           <RotateCcw size={18} />
           Restart
@@ -230,7 +230,7 @@ const PuzzleGame = () => {
 
             <button
               onClick={startGame}
-              className="mt-6 px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              className="mt-6 px-8 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
             >
               Play Again
             </button>
