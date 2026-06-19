@@ -139,7 +139,7 @@ function CricketGame() {
   )}.${balls % 6}`;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-green-900 via-green-700 to-green-900 flex items-center justify-center p-2 sm:p-4 overflow-x-hidden">
+    <div className="min-h-screen bg-linear-to-b from-green-900 via-green-700 to-green-900 flex items-center justify-center p-2 sm:p-4 overflow-x-hidden">
 
       <div className="w-full max-w-md mx-auto">
 
@@ -186,29 +186,30 @@ function CricketGame() {
         <div
   className="
     relative
-    h-[530px]
-    sm:h-[600px]
-    md:h-[750px]
+    h-132.5
+    sm:h-150
+    md:h-180
     overflow-hidden
     rounded-3xl
     border-4
     border-white/10
-    bg-gradient-to-b
+    bg-linear-to-b
     from-sky-400
     via-green-400
     to-green-700
   "
+
 >
 
           {/* Crowd */}
-          <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-gray-900 to-gray-700" />
+          <div className="absolute top-0 left-0 w-full h-20 bg-linear-to-b from-gray-900 to-gray-700" />
 
           {/* Pitch */}
           <div className="absolute left-1/2 -translate-x-1/2 top-0 w-28 h-full bg-yellow-200/70" />
 
           {/* Batting Zone */}
-          <div className="absolute left-0 right-0 bottom-[70px] sm:bottom-[80px] md:bottom-[90px]
-h-[70px] sm:h-[80px] md:h-[90px] border-y-4 border-red-500 bg-red-500/10">
+         <div className="absolute left-0 right-0 bottom-17.5 sm:bottom-20 md:bottom-22.5
+h-17.5 sm:h-20 md:h-22.5 border-y-4 border-red-500 bg-red-500/10">
             <div className="text-center text-red-600 font-black mt-6">
               HIT ZONE
             </div>
@@ -246,7 +247,7 @@ h-[70px] sm:h-[80px] md:h-[90px] border-y-4 border-red-500 bg-red-500/10">
         {!gameOver ? (
           <button
             onClick={hitBall}
-            className="w-full mt-5 py-4 rounded-2xl bg-gradient-to-r from-yellow-400 to-orange-500 text-black text-xl font-black hover:scale-105 active:scale-95 transition"
+            className="w-full mt-5 py-4 rounded-2xl bg-linear-to-r from-yellow-400 to-orange-500 text-black text-xl font-black hover:scale-105 active:scale-95 transition"
           >
             🏏 HIT BALL
           </button>
@@ -266,7 +267,7 @@ h-[70px] sm:h-[80px] md:h-[90px] border-y-4 border-red-500 bg-red-500/10">
 
             <button
               onClick={restartGame}
-              className="mt-5 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-black hover:scale-105 transition"
+              className="mt-5 px-8 py-4 rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-black hover:scale-105 transition"
             >
               🔄 Play Again
             </button>

@@ -120,9 +120,16 @@ function AlienAttack() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-black via-purple-900 to-black flex items-center justify-center">
+    <div className="min-h-screen bg-linear-to-b from-black via-purple-900 to-black flex items-center justify-center">
 
-      <div className="relative w-full max-w-[360px] h-[500px] bg-black border border-white/20 overflow-hidden rounded-2xl">
+      <div className="relative w-full max-w-[36%]  bg-black border border-white/20 overflow-hidden rounded-2xl"
+      
+      style={
+        {
+          height:500
+        }
+      }>
+      
 
         {/* SCORE */}
         <div className="absolute top-2 left-2 text-white font-bold z-10">

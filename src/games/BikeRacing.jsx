@@ -99,7 +99,13 @@ function BikeRacing() {
         </div>
 
         {/* ROAD */}
-        <div className="relative w-[330px] h-[650px] overflow-hidden rounded-3xl bg-gradient-to-b from-gray-900 via-gray-800 to-black border-x-8 border-yellow-500">
+        <div className="relative  overflow-hidden rounded-3xl bg-linear-to-b from-gray-900 via-gray-800 to-black border-x-8 border-yellow-500"
+        
+        style={{
+          width:330,
+          height:650
+        }}
+        >
 
           {/* road lines */}
           {[...Array(10)].map((_, i) => (
@@ -168,7 +174,7 @@ function BikeRacing() {
 
             <button
               onClick={restart}
-              className="mt-5 px-8 py-3 rounded-xl bg-gradient-to-r from-yellow-400 to-orange-500 font-bold"
+              className="mt-5 px-8 py-3 rounded-xl bg-linear-to-r from-yellow-400 to-orange-500 font-bold"
             >
               Restart
             </button>

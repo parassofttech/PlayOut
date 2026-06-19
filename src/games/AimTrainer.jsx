@@ -78,7 +78,7 @@ export default function AimTrainer() {
     shots === 0 ? 0 : Math.round((score / 10 / shots) * 100);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-black text-white flex flex-col items-center p-6">
 
       {/* HEADER */}
       <h1 className="text-4xl font-bold mb-2">🎯 Aim Trainer</h1>
@@ -99,7 +99,11 @@ export default function AimTrainer() {
       <div
         ref={areaRef}
         onClick={handleMiss}
-        className="relative w-full max-w-3xl h-[500px] bg-gray-800 border border-gray-600 rounded-xl overflow-hidden"
+        className="relative w-full max-w-3xl  bg-gray-800 border border-gray-600 rounded-xl overflow-hidden"
+
+        style={{
+          height:500
+        }}
       >
         {targets.map((t) => (
           <div

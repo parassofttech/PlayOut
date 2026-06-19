@@ -130,7 +130,11 @@ const CarRacing = () => {
         </div>
 
         {/* ROAD */}
-        <div className="relative w-[340px] h-[600px] overflow-hidden rounded-2xl border-x-8 border-yellow-400 bg-zinc-900 shadow-[0_0_50px_rgba(0,255,255,0.25)]">
+        <div className="relative overflow-hidden rounded-2xl border-x-8 border-yellow-400 bg-zinc-900 shadow-[0_0_50px_rgba(0,255,255,0.25)]"
+        style={{
+        width:340,
+        height:600
+      }}>
 
           {/* LINES */}
           {[...Array(12)].map((_, index) => (
@@ -151,10 +155,12 @@ const CarRacing = () => {
               key={enemy.id}
               src={enemyCar}
               alt="enemy"
-              className="absolute w-[70px] h-[120px] object-contain"
+              className="absolute object-contain"
               style={{
                 left: LANES[enemy.lane],
                 top: enemy.y,
+                 width:70,
+        height:120
               }}
             />
           ))}
@@ -163,10 +169,12 @@ const CarRacing = () => {
           <img
             src={playerCar}
             alt="player"
-            className="absolute bottom-5 w-[75px] h-[125px] object-contain drop-shadow-[0_0_25px_cyan]"
+            className="absolute bottom-5  object-contain drop-shadow-[0_0_25px_cyan]"
             style={{
               left: LANES[lane],
               transition: "all .12s cubic-bezier(0.4,0,0.2,1)",
+               width:75,
+        height:125,
               transform:
                 lane === 0
                   ? "rotate(-10deg)"
@@ -208,7 +216,7 @@ const CarRacing = () => {
 
             <button
               onClick={restartGame}
-              className="mt-6 px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
+              className="mt-6 px-8 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
             >
               Play Again
             </button>

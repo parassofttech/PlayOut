@@ -143,7 +143,11 @@ function BrickBreaker() {
       <p className="mb-3">Score: {score}</p>
 
       {/* GAME AREA */}
-      <div className="relative w-[400px] h-[420px] bg-zinc-900 border">
+      <div className="relative  bg-zinc-900 border"
+      style={{
+        width:400,
+        height:420
+      }}>
 
         {/* BALL */}
         <div
@@ -163,8 +167,12 @@ function BrickBreaker() {
             b.alive && (
               <div
                 key={i}
-                className="absolute w-[60px] h-[20px] bg-pink-500"
-                style={{ left: b.x, top: b.y }}
+                className="absolute  bg-pink-500"
+                style={{ left: b.x, top: b.y,
+                  height:20,
+                  width:60
+                
+                 }}
               />
             )
         )}

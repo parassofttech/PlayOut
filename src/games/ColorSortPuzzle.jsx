@@ -91,7 +91,7 @@ function ColorSortPuzzle() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 via-purple-900 to-black p-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-900 via-purple-900 to-black p-4">
 
       <div className="text-center w-full max-w-md">
 
@@ -130,7 +130,7 @@ function ColorSortPuzzle() {
         {/* CONTROLS */}
         <button
           onClick={reset}
-          className="mt-6 px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold"
+          className="mt-6 px-8 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold"
         >
           🔄 Restart
         </button>
