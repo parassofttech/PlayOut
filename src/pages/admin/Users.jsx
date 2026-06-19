@@ -140,7 +140,7 @@ const Users = () => {
                     {/* User Info with Avatar */}
                     <td className="p-5">
                       <div className="flex items-center gap-4">
-                        <div className="h-11 w-11 rounded-full bg-gradient-to-br from-blue-100 to-indigo-100 text-blue-600 flex items-center justify-center font-bold text-sm shadow-sm">
+                        <div className="h-11 w-11 rounded-full bg-linear-to-br from-blue-100 to-indigo-100 text-blue-600 flex items-center justify-center font-bold text-sm shadow-sm">
                           {user.name.charAt(0).toUpperCase()}
                         </div>
                         <div>

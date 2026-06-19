@@ -79,7 +79,7 @@ const ContactMessages = () => {
       </div>
 
       {/* --- Inbox Layout --- */}
-      <div className="bg-white rounded-[2rem] shadow-sm border border-slate-100 overflow-hidden">
+      <div className="bg-white rounded-4xl shadow-sm border border-slate-100 overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
@@ -147,7 +147,7 @@ const ContactMessages = () => {
 
       {/* --- Message Preview Modal --- */}
       {selectedMsg && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm animate-in fade-in duration-300">
           <div className="bg-white w-full max-w-xl rounded-[2.5rem] shadow-2xl overflow-hidden animate-in zoom-in duration-300">
             <div className="relative p-8 pb-0">
               <button 

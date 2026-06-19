@@ -58,7 +58,7 @@ function GameDashboard() {
     ];
 
     return (
-        <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white p-6">
+        <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-black text-white p-6">
 
             {/* HEADER */}
             <h1 className="text-4xl font-bold text-center mb-8">
@@ -72,7 +72,7 @@ function GameDashboard() {
                     <div
                         key={index}
                         onClick={() => navigate(game.path)}
-                        className={`cursor-pointer p-6 rounded-2xl bg-gradient-to-r ${game.color} hover:scale-105 transition-all duration-300 shadow-xl`}
+                        className={`cursor-pointer p-6 rounded-2xl bg-linear-to-r ${game.color} hover:scale-105 transition-all duration-300 shadow-xl`}
                     >
                         <h2 className="text-xl font-bold">{game.name}</h2>
                         <p className="text-sm mt-2 opacity-80">

@@ -49,10 +49,10 @@ const About = () => {
     <div className="min-h-screen bg-[#040612] text-white overflow-hidden relative font-sans selection:bg-cyan-500/30">
       
       {/* ================= HIGH-TECH BACKGROUND ARCHITECTURE ================= */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-cyan-500/10 blur-[150px] rounded-full pointer-events-none" />
-      <div className="absolute top-[35%] right-1/4 w-[600px] h-[600px] bg-purple-600/10 blur-[180px] rounded-full pointer-events-none" />
-      <div className="absolute bottom-10 left-10 w-[400px] h-[400px] bg-pink-500/5 blur-[130px] rounded-full pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
+      <div className="absolute top-0 left-1/4 w-125 h-125 bg-cyan-500/10 blur-[150px] rounded-full pointer-events-none" />
+      <div className="absolute top-[35%] right-1/4 w-150 h-150 bg-purple-600/10 blur-[180px] rounded-full pointer-events-none" />
+      <div className="absolute bottom-10 left-10 w-100 h-100 bg-pink-500/5 blur-[130px] rounded-full pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(#ffffff03_1px,transparent_1px)] [bg-size:20px_20px] pointer-events-none" />
 
       {/* ================= HERO SECTION ================= */}
       <section className="relative max-w-7xl mx-auto px-6 pt-32 pb-16 text-center">
@@ -63,7 +63,7 @@ const About = () => {
 
         <h1 className="text-5xl md:text-8xl font-black tracking-tight leading-none">
           About{" "}
-          <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.2)]">
+          <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(168,85,247,0.2)]">
             PlayOut
           </span>
         </h1>
@@ -76,7 +76,7 @@ const About = () => {
 
       {/* ================= METRICS / STATS BLOCK ================= */}
       <section className="max-w-7xl mx-auto px-6 pb-16">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-1.5 bg-slate-900/30 border border-white/5 rounded-[2rem] backdrop-blur-xl shadow-2xl">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-1.5 bg-slate-900/30 border border-white/5 rounded-4xl backdrop-blur-xl shadow-2xl">
           {[
             { value: "100+", label: "Arcade Games", textStyle: "text-cyan-400" },
             { value: "10K+", label: "Active Gamers", textStyle: "text-purple-400" },
@@ -108,7 +108,7 @@ const About = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className={`group bg-gradient-to-b from-slate-900/90 to-slate-950/90 border border-white/5 rounded-[2rem] p-8 transition-all duration-300 shadow-2xl relative overflow-hidden backdrop-blur-xl ${feature.borderHover}`}
+              className={`group bg-linear-to-b from-slate-900/90 to-slate-950/90 border border-white/5 rounded-4xl p-8 transition-all duration-300 shadow-2xl relative overflow-hidden backdrop-blur-xl ${feature.borderHover}`}
             >
               <div className={`w-12 h-12 rounded-xl bg-slate-800/40 border border-white/5 flex items-center justify-center mb-6 transition-colors duration-500 ${feature.glow}`}>
                 {feature.icon}
@@ -128,7 +128,7 @@ const About = () => {
 
       {/* ================= PLATFORM MISSION SECTION ================= */}
       <section className="max-w-6xl mx-auto px-6 py-12">
-        <div className="bg-gradient-to-b from-slate-900/80 to-slate-950/80 border border-white/5 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl">
+        <div className="bg-linear-to-b from-slate-900/80 to-slate-950/80 border border-white/5 backdrop-blur-xl rounded-[2.5rem] p-8 md:p-12 relative overflow-hidden shadow-2xl">
           <div className="absolute top-0 right-0 w-48 h-48 bg-cyan-500/10 blur-3xl rounded-full pointer-events-none" />
           
           <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
@@ -151,7 +151,7 @@ const About = () => {
                 { icon: <Star className="text-yellow-400" size={20} />, text: "Premium" },
                 { icon: <Flame className="text-purple-400" size={20} />, text: "Velocity" }
               ].map((val, idx) => (
-                <div key={idx} className="flex flex-col items-center p-3 bg-white/5 rounded-xl border border-white/5 min-w-[75px]">
+                <div key={idx} className="flex flex-col items-center p-3 bg-white/5 rounded-xl border border-white/5 min-w-18.75">
                   {val.icon}
                   <span className="text-[10px] font-bold text-slate-400 uppercase mt-2 tracking-wide">{val.text}</span>
                 </div>
@@ -163,16 +163,16 @@ const About = () => {
 
       {/* ================= INTERACTIVE FOUNDER BLOCK ================= */}
       <section className="max-w-6xl mx-auto px-6 py-16">
-        <div className="bg-gradient-to-b from-slate-900/40 via-slate-950/80 to-slate-950 border border-white/5 backdrop-blur-2xl rounded-[3rem] overflow-hidden shadow-2xl relative">
+        <div className="bg-linear-to-b from-slate-900/40 via-slate-950/80 to-slate-950 border border-white/5 backdrop-blur-2xl rounded-[3rem] overflow-hidden shadow-2xl relative">
           
           <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center p-8 md:p-14">
             
             {/* Image Box */}
             <div className="md:col-span-5 flex justify-center">
               <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-tr from-cyan-500 to-purple-500 blur-2xl opacity-30 rounded-full group-hover:opacity-40 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-linear-to-tr from-cyan-500 to-purple-500 blur-2xl opacity-30 rounded-full group-hover:opacity-40 transition-opacity duration-500" />
                 
-                <div className="relative rounded-[2rem] overflow-hidden p-1 bg-gradient-to-b from-cyan-500/30 via-transparent to-purple-500/30 border border-white/10 shadow-2xl">
+                <div className="relative rounded-4xl overflow-hidden p-1 bg-linear-to-b from-cyan-500/30 via-transparent to-purple-500/30 border border-white/10 shadow-2xl">
                   <img
                     src="https://media.licdn.com/dms/image/v2/D5603AQGeEbP3nrtzJA/profile-displayphoto-shrink_200_200/B56ZpQCMbyKEAY-/0/1762279346709?e=2147483647&v=beta&t=Y6oUc5PAUMh5STJvJ5u_9Z5QtCyP7cLk5q_2HhKNfwY"
                     alt="Paras Sahu Portrait"
@@ -226,9 +226,9 @@ const About = () => {
 
       {/* ================= HIGHLY CALL-TO-ACTION BANNER ================= */}
       <section className="max-w-5xl mx-auto px-6 pb-28">
-        <div className="relative overflow-hidden bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border border-white/5 rounded-[2.5rem] p-10 md:p-14 text-center shadow-2xl">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-gradient-to-tr from-cyan-500 to-purple-500 blur-[120px] opacity-20 rounded-full pointer-events-none" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+        <div className="relative overflow-hidden bg-linear-to-r from-slate-950 via-slate-900 to-slate-950 border border-white/5 rounded-[2.5rem] p-10 md:p-14 text-center shadow-2xl">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-linear-to-tr from-cyan-500 to-purple-500 blur-[120px] opacity-20 rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-linear-to-r from-transparent via-cyan-500/40 to-transparent" />
 
           <div className="relative z-10 max-w-xl mx-auto space-y-4">
             <h2 className="text-3xl md:text-5xl font-black tracking-tight">Ready To Play?</h2>
@@ -237,7 +237,7 @@ const About = () => {
             </p>
             
             <div className="pt-4">
-              <button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold tracking-wide text-sm shadow-xl shadow-cyan-950/40 hover:brightness-110 active:scale-95 transition-all duration-200 group">
+              <button className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-linear-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold tracking-wide text-sm shadow-xl shadow-cyan-950/40 hover:brightness-110 active:scale-95 transition-all duration-200 group">
                 <span>Start Matchmaking</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </button>

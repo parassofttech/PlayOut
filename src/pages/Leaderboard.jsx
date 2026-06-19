@@ -96,7 +96,7 @@ const Leaderboard = () => {
 
           <h1 className="text-5xl md:text-7xl font-black">
             Leader
-            <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text text-transparent">
               Board
             </span>
           </h1>
@@ -119,7 +119,7 @@ const Leaderboard = () => {
               size={40}
               className="mx-auto text-gray-300 mb-3"
             />
-            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-gray-400 to-gray-500 flex items-center justify-center text-3xl font-black mx-auto">
+            <div className="w-20 h-20 rounded-full bg-linear-to-r from-gray-400 to-gray-500 flex items-center justify-center text-3xl font-black mx-auto">
               A
             </div>
 
@@ -133,14 +133,14 @@ const Leaderboard = () => {
           </div>
 
           {/* 1st */}
-          <div className="bg-gradient-to-b from-yellow-500/20 to-orange-500/10 border border-yellow-500/20 rounded-3xl p-8 text-center backdrop-blur-xl">
+          <div className="bg-linear-to-b from-yellow-500/20 to-orange-500/10 border border-yellow-500/20 rounded-3xl p-8 text-center backdrop-blur-xl">
 
             <Crown
               size={45}
               className="mx-auto text-yellow-400 mb-3"
             />
 
-            <div className="w-24 h-24 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-4xl font-black mx-auto">
+            <div className="w-24 h-24 rounded-full bg-linear-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-4xl font-black mx-auto">
               A
             </div>
 
@@ -160,7 +160,7 @@ const Leaderboard = () => {
               size={40}
               className="mx-auto text-orange-400 mb-3"
             />
-            <div className="w-20 h-20 rounded-full bg-gradient-to-r from-orange-500 to-red-500 flex items-center justify-center text-3xl font-black mx-auto">
+            <div className="w-20 h-20 rounded-full bg-linear-to-r from-orange-500 to-red-500 flex items-center justify-center text-3xl font-black mx-auto">
               R
             </div>
 
@@ -214,7 +214,7 @@ const Leaderboard = () => {
                   #{player.rank}
                 </div>
 
-                <div className="w-12 h-12 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 flex items-center justify-center font-bold">
+                <div className="w-12 h-12 rounded-full bg-linear-to-r from-cyan-500 to-purple-600 flex items-center justify-center font-bold">
                   {player.name.charAt(0)}
                 </div>
 

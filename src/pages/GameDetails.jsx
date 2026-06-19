@@ -65,10 +65,10 @@ const GameDetails = () => {
           <img
             src={game.image}
             alt={game.title}
-            className="w-full h-[400px] object-cover"
+            className="w-full h-100 object-cover"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"></div>
         </div>
 
         {/* Info */}
@@ -101,7 +101,7 @@ const GameDetails = () => {
           {/* Play Button */}
           <button
             onClick={() => window.open(game.url, "_blank")}
-            className="mt-8 flex items-center gap-3 px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
+            className="mt-8 flex items-center gap-3 px-8 py-4 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 font-bold hover:scale-105 transition"
           >
             <Play size={20} />
             Play Now
@@ -115,7 +115,7 @@ const GameDetails = () => {
           Play Game
         </h2>
 
-        <div className="w-full h-[500px] rounded-2xl overflow-hidden border border-white/10">
+        <div className="w-full h-125 rounded-2xl overflow-hidden border border-white/10">
           <iframe
             src={game.url}
             title={game.title}

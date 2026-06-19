@@ -115,7 +115,7 @@ const handlePhotoChange = (e) => {
         <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-xl">
 
           {/* Cover */}
-          <div className="h-52 bg-gradient-to-r from-cyan-500 via-purple-600 to-pink-500"></div>
+          <div className="h-52 bg-linear-to-r from-cyan-500 via-purple-600 to-pink-500"></div>
 
           {/* Avatar */}
           <div className="flex flex-col items-center -mt-20">
@@ -291,7 +291,7 @@ const handlePhotoChange = (e) => {
       <div className="flex justify-center mt-8">
         <button
           onClick={() => setEditing(true)}
-          className="px-8 py-3 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl text-white font-bold hover:scale-105 transition"
+          className="px-8 py-3 bg-linear-to-r from-cyan-500 to-purple-600 rounded-xl text-white font-bold hover:scale-105 transition"
         >
           Edit Profile
         </button>
@@ -419,7 +419,7 @@ const handlePhotoChange = (e) => {
 
             <div className="space-y-4">
 
-              <div className="bg-gradient-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/20 rounded-2xl p-4">
+              <div className="bg-linear-to-r from-yellow-500/20 to-orange-500/20 border border-yellow-500/20 rounded-2xl p-4">
                 <h3 className="text-yellow-400 font-bold">
                   🏆 First Victory
                 </h3>
@@ -428,7 +428,7 @@ const handlePhotoChange = (e) => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/20 rounded-2xl p-4">
+              <div className="bg-linear-to-r from-cyan-500/20 to-blue-500/20 border border-cyan-500/20 rounded-2xl p-4">
                 <h3 className="text-cyan-400 font-bold">
                   ⚡ Rising Star
                 </h3>
@@ -437,7 +437,7 @@ const handlePhotoChange = (e) => {
                 </p>
               </div>
 
-              <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/20 rounded-2xl p-4">
+              <div className="bg-linear-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/20 rounded-2xl p-4">
                 <h3 className="text-purple-400 font-bold">
                   👑 Elite Gamer
                 </h3>
@@ -454,7 +454,7 @@ const handlePhotoChange = (e) => {
         <div className="mt-8">
           <button
             onClick={handleLogout}
-            className="w-[40%] sm:w-[20%] py-4 rounded-3xl bg-gradient-to-r from-red-500 to-pink-600 text-white font-bold flex items-center justify-center gap-3 hover:scale-[1.02] transition"
+            className="w-[40%] sm:w-[20%] py-4 rounded-3xl bg-linear-to-r from-red-500 to-pink-600 text-white font-bold flex items-center justify-center gap-3 hover:scale-[1.02] transition"
           >
             <LogOut size={22} />
             Logout

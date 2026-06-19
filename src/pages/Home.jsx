@@ -132,7 +132,7 @@ const popularGames = [
           Join thousands of gamers and start your adventure today.
         </p>
 
-        <button onClick={()=>navigate('/games')} className="mt-8 px-10 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-bold text-lg hover:scale-105 transition">
+        <button onClick={()=>navigate('/games')} className="mt-8 px-10 py-4 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 font-bold text-lg hover:scale-105 transition">
           Start Playing
         </button>
       </section>

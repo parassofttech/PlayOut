@@ -80,7 +80,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-950 via-slate-900 to-black px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-950 via-slate-900 to-black px-4">
 
       {/* Glow Effects */}
       <div className="absolute w-72 h-72 bg-cyan-500/20 blur-[120px] rounded-full top-20 left-10"></div>
@@ -137,7 +137,7 @@ const Login = () => {
                     absolute
                     left-0
                     bottom-0
-                    h-[2px]
+                    h-0.5
                     w-0
                     bg-cyan-500
                     transition-all
@@ -180,7 +180,7 @@ const Login = () => {
                     absolute
                     left-0
                     bottom-0
-                    h-[2px]
+                    h-0.5
                     w-0
                     bg-cyan-500
                     transition-all
@@ -199,7 +199,7 @@ const Login = () => {
     w-full
     py-3
     rounded-xl
-    bg-gradient-to-r
+    bg-linear-to-r
     from-cyan-500
     to-blue-600
     text-white

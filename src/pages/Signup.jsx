@@ -58,7 +58,7 @@ const Signup = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-950 via-slate-900 to-black px-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-indigo-950 via-slate-900 to-black px-4">
 
       {/* Background Blur */}
       <div className="absolute w-72 h-72 bg-cyan-500/20 blur-[120px] rounded-full top-20 left-10"></div>
@@ -132,7 +132,7 @@ const Signup = () => {
             {/* Button */}
             <button
               type="submit"
-              className="w-full py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold hover:scale-[1.02] transition"
+              className="w-full py-3 rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 text-white font-bold hover:scale-[1.02] transition"
             >
               Create Account
             </button>

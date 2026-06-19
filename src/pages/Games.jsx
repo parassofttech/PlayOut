@@ -269,12 +269,12 @@ const Games = () => {
     <div className="min-h-screen bg-[#050816] text-white">
       {/* Hero */}
       <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 blur-3xl"></div>
+        <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 blur-3xl"></div>
 
         <div className="relative max-w-7xl mx-auto px-6">
           <h1 className="text-5xl md:text-6xl font-black text-center">
             Explore Amazing
-            <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
               {" "}
               Games
             </span>
@@ -300,7 +300,7 @@ const Games = () => {
               onClick={() => setActiveCategory(category)}
               className={`px-5 py-2 rounded-full font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? "bg-gradient-to-r from-cyan-500 to-purple-600 text-white"
+                  ? "bg-linear-to-r from-cyan-500 to-purple-600 text-white"
                   : "bg-white/5 border border-white/10 text-gray-300 hover:border-cyan-500"
               }`}
             >

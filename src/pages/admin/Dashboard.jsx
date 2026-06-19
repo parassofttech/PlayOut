@@ -108,7 +108,7 @@ const Dashboard = () => {
   return (
     <div>
       <Sidebar/>
-      <div className="p-4 ml-15 md:ml-68  lg:ml-68 lg:p-8 max-w-[1600px] mx-auto animate-in fade-in duration-700">
+      <div className="p-4 ml-15 md:ml-68  lg:ml-68 lg:p-8 max-w-400 mx-auto animate-in fade-in duration-700">
       
       {/* Welcome Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-6">
@@ -156,7 +156,7 @@ const Dashboard = () => {
               <span className="px-3 py-1 bg-blue-50 text-blue-600 text-[10px] font-bold rounded-full">Monthly</span>
             </div>
           </div>
-          <div className="h-[320px] w-full">
+          <div className="h-80 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={chartData}>
                 <defs>
@@ -187,7 +187,7 @@ const Dashboard = () => {
             {recentUsers.length > 0 ? recentUsers.map((u) => (
               <div key={u._id} className="flex items-center justify-between group">
                 <div className="flex items-center gap-4">
-                  <div className="h-11 w-11 rounded-2xl bg-gradient-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-600 font-black text-sm border border-white shadow-sm group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white transition-all duration-500">
+                  <div className="h-11 w-11 rounded-2xl bg-linear-to-br from-slate-100 to-slate-200 flex items-center justify-center text-slate-600 font-black text-sm border border-white shadow-sm group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white transition-all duration-500">
                     {u.name?.charAt(0).toUpperCase()}
                   </div>
                   <div>

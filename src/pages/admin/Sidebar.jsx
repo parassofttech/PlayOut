@@ -71,7 +71,7 @@ const Sidebar = () => {
         {/* Logo */}
         <div className="h-20 flex items-center px-6 mb-4">
           <div className="flex items-center gap-3">
-            <div className="bg-gradient-to-br from-blue-500 to-indigo-600 p-2 rounded-xl">
+            <div className="bg-linear-to-br from-blue-500 to-indigo-600 p-2 rounded-xl">
               <ShieldCheck className="text-white" size={24} />
             </div>
             {!collapse && (
