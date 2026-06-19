@@ -80,7 +80,7 @@ function StrategyGames() {
 
           <h1 className="mt-6 text-4xl md:text-7xl font-black text-white">
             Strategy
-            <span className="bg-gradient-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-indigo-400 to-purple-500 bg-clip-text text-transparent">
               {" "}Games
             </span>
           </h1>
@@ -96,10 +96,15 @@ function StrategyGames() {
           <img
             src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1200"
             alt="Chess"
-            className="w-full h-[300px] md:h-[500px] object-cover group-hover:scale-110 transition duration-700"
+            className="w-full  md:h-[500%] object-cover group-hover:scale-110 transition duration-700"
+
+            style={{
+              height:300
+              
+            }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
 
           <div className="absolute left-6 md:left-10 bottom-6 md:bottom-10 max-w-xl">
             <div className="flex gap-3 mb-4">
@@ -123,7 +128,7 @@ function StrategyGames() {
 
             <Link
               to="/chess"
-              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-linear-to-r from-indigo-500 to-purple-600 text-white font-bold hover:scale-105 transition"
             >
               <Play size={18} />
               Play Now
@@ -184,7 +189,7 @@ function StrategyGames() {
 
                 <Link
                   to={`/${game.id}`}
-                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-linear-to-r from-indigo-500 to-purple-600 text-white font-bold hover:scale-105 transition"
                 >
                   <Play size={16} />
                   Play
@@ -195,7 +200,7 @@ function StrategyGames() {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 rounded-[35px] border border-white/10 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
+        <div className="mt-20 rounded-[35px] border border-white/10 bg-linear-to-r from-indigo-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
           <div className="p-10 md:p-14 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white">
               ♟️ Ready To Outsmart Everyone?
@@ -207,7 +212,7 @@ function StrategyGames() {
 
             <Link
               to="/chess"
-              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-indigo-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-linear-to-r from-indigo-500 to-purple-600 text-white font-bold hover:scale-105 transition"
             >
               Start Playing
               <ChevronRight size={20} />
