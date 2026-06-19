@@ -63,7 +63,7 @@ const ArcadeGames = () => {
 
           <h1 className="mt-6 text-4xl md:text-7xl font-black text-white">
             Arcade
-            <span className="bg-gradient-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-yellow-400 to-orange-500 bg-clip-text text-transparent">
               {" "}Games
             </span>
           </h1>
@@ -79,10 +79,13 @@ const ArcadeGames = () => {
           <img
             src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=1200"
             alt="Arcade Games"
-            className="w-full h-[300px] md:h-[500px] object-cover group-hover:scale-110 transition duration-700"
+            className="w-full  md:h-[500%] object-cover group-hover:scale-110 transition duration-700"
+            style={{
+              height:300
+            }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
 
           <div className="absolute left-6 md:left-10 bottom-6 md:bottom-10 max-w-xl">
             <span className="px-4 py-2 rounded-full bg-orange-500 text-white text-sm font-bold">
@@ -99,7 +102,7 @@ const ArcadeGames = () => {
 
             <Link
               to="/flappy-bird"
-              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-linear-to-r from-yellow-500 to-orange-500 text-white font-bold hover:scale-105 transition"
             >
               <Play size={18} />
               Play Now
@@ -162,7 +165,7 @@ const ArcadeGames = () => {
 
                 <Link
                   to={`/${game.id}`}
-                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold hover:scale-105 transition"
+                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-linear-to-r from-yellow-500 to-orange-500 text-white font-bold hover:scale-105 transition"
                 >
                   <Play size={16} />
                   Play
@@ -173,7 +176,7 @@ const ArcadeGames = () => {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 rounded-[35px] border border-white/10 bg-gradient-to-r from-yellow-500/10 via-orange-500/10 to-red-500/10 backdrop-blur-xl">
+        <div className="mt-20 rounded-[35px] border border-white/10 bg-linear-to-r from-yellow-500/10 via-orange-500/10 to-red-500/10 backdrop-blur-xl">
           <div className="p-10 md:p-14 text-center">
             <h2 className="text-3xl md:text-5xl font-black text-white">
               ⚡ Ready For Arcade Fun?
@@ -186,7 +189,7 @@ const ArcadeGames = () => {
 
             <Link
               to="/flappy-bird"
-              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-yellow-500 to-orange-500 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-linear-to-r from-yellow-500 to-orange-500 text-white font-bold hover:scale-105 transition"
             >
               Start Playing
               <ChevronRight size={20} />

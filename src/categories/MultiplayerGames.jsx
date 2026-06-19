@@ -69,7 +69,7 @@ function MultiplayerGames() {
 
           <h1 className="mt-6 text-4xl md:text-7xl font-black text-white">
             Multiplayer
-            <span className="bg-gradient-to-r from-pink-400 to-violet-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-pink-400 to-violet-500 bg-clip-text text-transparent">
               {" "}
               Games
             </span>
@@ -86,10 +86,13 @@ function MultiplayerGames() {
           <img
             src="https://images.unsplash.com/photo-1528819622765-d6bcf132f793?w=1200"
             alt="Chess"
-            className="w-full h-[280px] md:h-[500px] object-cover group-hover:scale-110 transition duration-700"
+            className="w-full  md:h-[500%] object-cover group-hover:scale-110 transition duration-700"
+            style={{
+              height:300
+            }}
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
 
           <div className="absolute left-5 md:left-10 bottom-5 md:bottom-10 max-w-xl">
             <div className="flex flex-wrap gap-3 mb-4">
@@ -114,7 +117,7 @@ function MultiplayerGames() {
 
             <Link
               to="/chess"
-              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-600 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-6 px-8 py-4 rounded-2xl bg-linear-to-r from-pink-500 to-violet-600 text-white font-bold hover:scale-105 transition"
             >
               <Play size={18} />
               Play Now
@@ -181,7 +184,7 @@ function MultiplayerGames() {
 
                 <Link
                   to={`/${game.id}`}
-                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-gradient-to-r from-pink-500 to-violet-600 text-white font-bold hover:scale-105 transition"
+                  className="mt-4 w-full inline-flex justify-center items-center gap-2 py-3 rounded-xl bg-linear-to-r from-pink-500 to-violet-600 text-white font-bold hover:scale-105 transition"
                 >
                   <Play size={16} />
                   Play
@@ -192,7 +195,7 @@ function MultiplayerGames() {
         </div>
 
         {/* CTA */}
-        <div className="mt-20 rounded-[35px] border border-white/10 bg-gradient-to-r from-pink-500/10 via-violet-500/10 to-purple-500/10 backdrop-blur-xl">
+        <div className="mt-20 rounded-[35px] border border-white/10 bg-linear-to-r from-pink-500/10 via-violet-500/10 to-purple-500/10 backdrop-blur-xl">
           <div className="p-10 md:p-14 text-center">
             <Crown
               size={60}
@@ -210,7 +213,7 @@ function MultiplayerGames() {
 
             <Link
               to="/chess"
-              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-violet-600 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-linear-to-r from-pink-500 to-violet-600 text-white font-bold hover:scale-105 transition"
             >
               Start Playing
               <ChevronRight size={20} />
