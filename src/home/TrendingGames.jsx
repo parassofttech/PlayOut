@@ -66,10 +66,10 @@ const TrendingGames = () => {
           <img
             src={trendingGames[0].image}
             alt={trendingGames[0].title}
-            className="w-full h-[500px] object-cover transition duration-700 group-hover:scale-110"
+            className="w-full h-125 object-cover transition duration-700 group-hover:scale-110"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/60 to-transparent"></div>
 
           <div className="absolute bottom-10 left-10 max-w-xl">
             <span className="px-4 py-2 rounded-full bg-cyan-500/20 text-cyan-400 font-semibold">
@@ -94,7 +94,7 @@ const TrendingGames = () => {
 
             <Link
           to={trendingGames[0].id}
-          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
+          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
         >
           <Play size={16} />
           Play Now
@@ -115,7 +115,7 @@ const TrendingGames = () => {
                 className="w-full h-64 object-cover transition duration-500 group-hover:scale-110"
               />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent"></div>
+              <div className="absolute inset-0 bg-linear-to-t from-black via-black/50 to-transparent"></div>
 
               <div className="absolute top-4 left-4">
                 <span className="px-3 py-1 rounded-full bg-orange-500/20 text-orange-400 text-sm font-semibold">
@@ -139,7 +139,7 @@ const TrendingGames = () => {
                 </div>
                 <Link
           to={game.id}
-          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
+          className="inline-flex items-center justify-center gap-2 mt-5 w-full px-4 py-2 sm:py-3 rounded-xl sm:rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-sm sm:text-base"
         >
           Play Now
         </Link>

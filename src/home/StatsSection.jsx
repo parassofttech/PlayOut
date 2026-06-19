@@ -50,7 +50,7 @@ const StatsSection = () => {
 
           <h2 className="mt-6 text-4xl md:text-6xl font-black text-white">
             Gaming In
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
               {" "}
               Numbers
             </span>
@@ -73,11 +73,11 @@ const StatsSection = () => {
                 className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 hover:-translate-y-3 transition-all duration-500"
               >
                 <div
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-15 bg-gradient-to-r ${item.color} transition duration-500`}
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-15 bg-linear-to-r ${item.color} transition duration-500`}
                 />
 
                 <div
-                  className={`w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-r ${item.color}`}
+                  className={`w-20 h-20 rounded-2xl flex items-center justify-center bg-linear-to-r ${item.color}`}
                 >
                   <Icon size={38} className="text-white" />
                 </div>
@@ -158,7 +158,7 @@ const StatsSection = () => {
 
         {/* Bottom CTA */}
         <div className="mt-16 text-center">
-          <button className="px-10 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold text-lg hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.3)]">
+          <button className="px-10 py-4 rounded-2xl bg-linear-to-r from-cyan-500 via-blue-500 to-purple-600 text-white font-bold text-lg hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.3)]">
             Join Millions of Gamers 🚀
           </button>
         </div>

@@ -99,7 +99,7 @@ const Testimonials = () => {
 
           <h2 className="mt-6 text-4xl md:text-6xl font-black text-white">
             What Gamers
-            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
               {" "}
               Say About Us
             </span>
@@ -113,17 +113,17 @@ const Testimonials = () => {
         {/* Slider */}
         <div className="relative overflow-hidden">
           {/* Left Fade */}
-          <div className="absolute left-0 top-0 z-10 h-full w-24 bg-gradient-to-r from-[#050816] to-transparent" />
+          <div className="absolute left-0 top-0 z-10 h-full w-24 bg-linear-to-r from-[#050816] to-transparent" />
 
           {/* Right Fade */}
-          <div className="absolute right-0 top-0 z-10 h-full w-24 bg-gradient-to-l from-[#050816] to-transparent" />
+          <div className="absolute right-0 top-0 z-10 h-full w-24 bg-linear-to-l from-[#050816] to-transparent" />
 
           <div className="flex gap-6 w-max animate-testimonial-slider">
             {[...testimonials, ...testimonials].map(
               (user, index) => (
                 <div
                   key={index}
-                  className="group w-[350px] shrink-0 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-cyan-500/50 transition-all duration-300"
+                  className="group w-85.5 shrink-0 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-6 hover:border-cyan-500/50 transition-all duration-300"
                 >
                   {/* Quote */}
                   <div className="flex justify-between items-start">

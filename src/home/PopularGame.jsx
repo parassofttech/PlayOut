@@ -123,7 +123,7 @@ const PopularGame = () => {
 
             <h2 className="mt-5 text-4xl md:text-6xl font-black text-white">
               Popular
-              <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                 {" "}
                 Games
               </span>
@@ -141,10 +141,10 @@ const PopularGame = () => {
           <img
             src={games[0].image}
             alt={games[0].title}
-            className="w-full h-[500px] object-cover group-hover:scale-110 transition duration-700"
+            className="w-full h-125 object-cover group-hover:scale-110 transition duration-700"
           />
 
-          <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-black via-black/70 to-transparent" />
 
           <div className="absolute left-10 bottom-10 max-w-xl">
             <div className="flex gap-3 mb-4">
@@ -181,7 +181,7 @@ const PopularGame = () => {
 
             <Link
               to="/car-racing"
-              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              className="inline-flex items-center gap-3 mt-8 px-8 py-4 rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
             >
               <Play size={18} />
               Play Now
@@ -232,7 +232,7 @@ const PopularGame = () => {
 
         <Link
           to={game.id}
-          className="inline-flex items-center justify-center gap-2 mt-4 sm:mt-5 w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-xs sm:text-base"
+          className="inline-flex items-center justify-center gap-2 mt-4 sm:mt-5 w-full px-3 py-2 sm:px-4 sm:py-3 rounded-lg sm:rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition text-xs sm:text-base"
         >
           <Play size={14} />
           Play Now
@@ -243,7 +243,7 @@ const PopularGame = () => {
 </div>
 
         {/* Bottom Banner */}
-        <div className="mt-20 rounded-[35px] overflow-hidden border border-white/10 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
+        <div className="mt-20 rounded-[35px] overflow-hidden border border-white/10 bg-linear-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 backdrop-blur-xl">
           <div className="p-10 md:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
             <div>
               <h3 className="text-3xl md:text-4xl font-black text-white">
@@ -256,7 +256,7 @@ const PopularGame = () => {
               </p>
             </div>
 
-            <button onClick={()=>navigate('/games')} className="px-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition">
+            <button onClick={()=>navigate('/games')} className="px-8 py-4 rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition">
               Explore Games
             </button>
           </div>

@@ -11,7 +11,7 @@ const Newsletter = () => {
         <div className="relative overflow-hidden rounded-[40px] border border-white/10 bg-white/5 backdrop-blur-2xl">
 
           {/* Animated Background */}
-          <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
+          <div className="absolute inset-0 bg-linear-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10" />
 
           {/* Floating Icons */}
           <div className="absolute top-10 left-10 opacity-20">
@@ -33,7 +33,7 @@ const Newsletter = () => {
             {/* Heading */}
             <h2 className="text-4xl md:text-6xl font-black text-white leading-tight">
               Never Miss A
-              <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-cyan-400 via-blue-400 to-purple-500 bg-clip-text text-transparent">
                 {" "}
                 Gaming Update
               </span>
@@ -61,7 +61,7 @@ const Newsletter = () => {
                   />
                 </div>
 
-                <button className="group h-16 px-10 rounded-2xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold flex items-center justify-center gap-3 hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)]">
+                <button className="group h-16 px-10 rounded-2xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold flex items-center justify-center gap-3 hover:scale-105 transition duration-300 shadow-[0_0_30px_rgba(34,211,238,0.35)]">
                   Subscribe
                   <Send
                     size={18}

@@ -106,7 +106,7 @@ const CategoriesSection = () => {
 
           <h2 className="mt-5 text-5xl font-black text-white">
             Explore Games By
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-cyan-400 to-purple-500">
               {" "}
               Category
             </span>
@@ -120,7 +120,7 @@ const CategoriesSection = () => {
 
         {/* Featured Category */}
         <div
-          className={`mb-12 rounded-3xl p-8 border border-white/10 bg-gradient-to-r ${activeCategory.color}`}
+          className={`mb-12 rounded-3xl p-8 border border-white/10 bg-linear-to-r ${activeCategory.color}`}
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div>
@@ -171,12 +171,12 @@ const CategoriesSection = () => {
                 <div className="absolute inset-0 bg-white/5 backdrop-blur-xl" />
 
                 <div
-                  className={`absolute inset-0 opacity-0 group-hover:opacity-20 bg-gradient-to-r ${category.color} transition`}
+                  className={`absolute inset-0 opacity-0 group-hover:opacity-20 bg-linear-to-r ${category.color} transition`}
                 />
 
                 <div className="relative p-7">
                   <div
-                    className={`w-20 h-20 rounded-2xl flex items-center justify-center bg-gradient-to-r ${category.color}`}
+                    className={`w-20 h-20 rounded-2xl flex items-center justify-center bg-linear-to-r ${category.color}`}
                   >
                     <Icon
                       size={38}
