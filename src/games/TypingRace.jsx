@@ -77,7 +77,7 @@ function TypingRace() {
 };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-slate-900 to-black p-4 text-white">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-black via-slate-900 to-black p-4 text-white">
 
       {/* Header */}
       <div className="flex gap-4 mb-6 flex-wrap justify-center">

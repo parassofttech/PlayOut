@@ -232,10 +232,10 @@ function TableTennis() {
   ]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-blue-950 to-black flex flex-col items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-b from-slate-950 via-blue-950 to-black flex flex-col items-center justify-center p-4">
 
       {/* Header */}
-      <div className="w-full max-w-[340px] mb-4">
+      <div className="w-full max-w-85 mb-4">
 
         <div className="flex justify-between items-center">
 
@@ -245,7 +245,7 @@ function TableTennis() {
 
           <button
             onClick={restartGame}
-            className="px-4 py-2 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold"
+            className="px-4 py-2 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold"
           >
             🔄 Restart
           </button>
@@ -266,7 +266,7 @@ function TableTennis() {
         }}
       >
         {/* Center Line */}
-        <div className="absolute left-0 top-1/2 w-full h-[2px] bg-white/20" />
+        <div className="absolute left-0 top-1/2 w-full h-0.5 bg-white/20" />
 
         {/* AI Paddle */}
         <div
@@ -309,7 +309,7 @@ function TableTennis() {
 
             <button
               onClick={restartGame}
-              className="mt-6 px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold"
+              className="mt-6 px-8 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold"
             >
               Play Again
             </button>

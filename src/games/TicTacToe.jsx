@@ -51,7 +51,7 @@ const TicTacToe = () => {
     !winner && board.every((cell) => cell !== "");
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-100 via-blue-100 to-cyan-100 p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-br from-indigo-100 via-blue-100 to-cyan-100 p-4">
       <h1 className="text-4xl font-bold mb-6 text-gray-800">
         Tic Tac Toe
       </h1>

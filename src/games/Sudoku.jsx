@@ -69,7 +69,7 @@ function Sudoku() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-black flex items-center justify-center p-4">
+    <div className="min-h-screen bg-linear-to-br from-indigo-900 via-purple-900 to-black flex items-center justify-center p-4">
 
       <div className="w-full max-w-md text-center">
 
@@ -82,7 +82,7 @@ function Sudoku() {
         </p>
 
         {/* BOARD */}
-        <div className="grid grid-cols-9 bg-white/10 p-2 rounded-2xl gap-[2px]">
+        <div className="grid grid-cols-9 bg-white/10 p-2 rounded-2xl gap-0.5">
 
           {board.map((row, r) =>
             row.map((cell, c) => (
