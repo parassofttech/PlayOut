@@ -23,12 +23,12 @@ const SearchBar = ({ onSearch }) => {
   return (
     <div className="relative w-full max-w-xl">
       {/* Glow Effect */}
-      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl blur opacity-20"></div>
+      <div className="absolute -inset-1 bg-linear-to-r from-cyan-500 via-purple-500 to-pink-500 rounded-2xl blur opacity-20"></div>
 
       <div className="relative flex items-center bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden">
         <Search
           size={20}
-          className="ml-4 text-gray-400 flex-shrink-0"
+          className="ml-4 text-gray-400 flex"
         />
 
         <input

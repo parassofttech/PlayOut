@@ -12,13 +12,13 @@ const Loader = () => {
       <div className="relative">
         <div className="absolute inset-0 rounded-full bg-cyan-500/30 blur-2xl animate-pulse"></div>
 
-        <div className="relative p-6 rounded-full bg-gradient-to-r from-cyan-500 to-purple-600 animate-bounce">
+        <div className="relative p-6 rounded-full bg-linear-to-r from-cyan-500 to-purple-600 animate-bounce">
           <Gamepad2 size={60} className="text-white" />
         </div>
       </div>
 
       {/* Loading Text */}
-      <h2 className="mt-8 text-3xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+      <h2 className="mt-8 text-3xl font-black bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
         PlayOut
       </h2>
 

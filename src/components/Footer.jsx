@@ -8,18 +8,18 @@ const Footer = () => {
   return (
     <footer className="relative bg-[#050816] border-t border-white/10">
       {/* Glow Effect */}
-      <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 blur-3xl"></div>
+      <div className="absolute inset-0 bg-linear-to-r from-cyan-500/5 via-purple-500/5 to-pink-500/5 blur-3xl"></div>
 
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Logo & About */}
           <div>
             <div className="flex items-center gap-3 mb-5">
-              <div className="p-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600">
+              <div className="p-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600">
                 <Gamepad2 className="text-white" size={24} />
               </div>
 
-              <h2 className="text-2xl font-black bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+              <h2 className="text-2xl font-black bg-linear-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
                 PlayOut
               </h2>
             </div>
@@ -118,7 +118,7 @@ const Footer = () => {
                 className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 outline-none focus:border-cyan-500"
               />
 
-              <button className="w-full mt-3 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
+              <button className="w-full mt-3 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 font-semibold hover:scale-105 transition">
                 Subscribe
               </button>
             </div>

@@ -18,8 +18,8 @@ const GameCard = ({
       </div>
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-6">
-        <button className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 font-semibold text-white shadow-lg">
+      <div className="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex items-end justify-center pb-6">
+        <button className="px-6 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 font-semibold text-white shadow-lg">
           ▶ Play Now
         </button>
       </div>
