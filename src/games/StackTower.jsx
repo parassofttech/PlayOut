@@ -97,7 +97,7 @@ function StackTower() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-gray-900 to-purple-900 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-linear-to-b from-black via-gray-900 to-purple-900 p-4">
 
       <div className="text-center">
 
@@ -113,13 +113,13 @@ function StackTower() {
         </p>
 
         {/* GAME AREA */}
-        <div className="relative w-[300px] h-[400px] bg-black border border-white/20 rounded-xl overflow-hidden">
+        <div className="relative w-75 h-100 bg-black border border-white/20 rounded-xl overflow-hidden">
 
           {/* blocks */}
           {blocks.map((b, i) => (
             <div
               key={i}
-              className="absolute h-[30px] bg-gradient-to-r from-cyan-500 to-purple-600"
+              className="absolute h-7.5 bg-linear-to-r from-cyan-500 to-purple-600"
               style={{
                 width: WIDTH,
                 bottom: b.y,
@@ -131,7 +131,7 @@ function StackTower() {
           {/* moving block */}
           {!gameOver && (
             <div
-              className="absolute h-[30px] bg-yellow-400"
+              className="absolute h-7.5 bg-yellow-400"
               style={{
                 width: WIDTH,
                 bottom: blocks.length * 30,

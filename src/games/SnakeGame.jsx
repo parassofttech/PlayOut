@@ -388,7 +388,7 @@ case "ArrowRight":
     className="
       w-16 h-16
       rounded-2xl
-      bg-gradient-to-r
+      bg-linear-to-r
       from-cyan-500
       to-purple-600
       text-white
@@ -408,7 +408,7 @@ case "ArrowRight":
       className="
         w-16 h-16
         rounded-2xl
-        bg-gradient-to-r
+        bg-linear-to-r
         from-cyan-500
         to-purple-600
         text-white
@@ -426,7 +426,7 @@ case "ArrowRight":
       className="
         w-16 h-16
         rounded-2xl
-        bg-gradient-to-r
+        bg-linear-to-r
         from-cyan-500
         to-purple-600
         text-white
@@ -444,7 +444,7 @@ case "ArrowRight":
       className="
         w-16 h-16
         rounded-2xl
-        bg-gradient-to-r
+        bg-linear-to-r
         from-cyan-500
         to-purple-600
         text-white
@@ -473,7 +473,7 @@ case "ArrowRight":
 
         <button
           onClick={restartGame}
-          className="px-6 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold flex items-center gap-2 hover:scale-105 transition"
+          className="px-6 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold flex items-center gap-2 hover:scale-105 transition"
         >
           <RotateCcw size={18} />
           Restart
@@ -499,7 +499,7 @@ case "ArrowRight":
 
             <button
               onClick={restartGame}
-              className="mt-6 px-8 py-3 rounded-xl bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
+              className="mt-6 px-8 py-3 rounded-xl bg-linear-to-r from-cyan-500 to-purple-600 text-white font-bold hover:scale-105 transition"
             >
               Play Again
             </button>

@@ -99,7 +99,7 @@ function SubwaySurfers() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-black via-purple-950 to-black p-4">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-linear-to-b from-black via-purple-950 to-black p-4">
 
       {/* Score */}
       <div className="text-white mb-4 flex gap-6 items-center">
@@ -116,7 +116,7 @@ function SubwaySurfers() {
       </div>
 
       {/* Game Board */}
-      <div className="relative w-[240px] h-[600px] bg-black border border-white/20 rounded-2xl overflow-hidden">
+      <div className="relative w-60 h-150 bg-black border border-white/20 rounded-2xl overflow-hidden">
 
         {/* Player */}
         <div

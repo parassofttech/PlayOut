@@ -63,7 +63,7 @@ const shuffle = (arr) => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-black via-gray-900 to-black text-white flex flex-col items-center p-6">
 
       {/* TITLE */}
       <h1 className="text-4xl font-bold mb-2">🧩 Puzzle Slider</h1>
@@ -93,7 +93,7 @@ const shuffle = (arr) => {
           <div
             key={index}
             onClick={() => moveTile(index)}
-            className={`w-[90px] h-[90px] flex items-center justify-center text-xl font-bold rounded-lg cursor-pointer transition-all duration-200 ${
+            className={`w-22.5 h-22.5 flex items-center justify-center text-xl font-bold rounded-lg cursor-pointer transition-all duration-200 ${
               tile === 0
                 ? "bg-transparent"
                 : "bg-blue-500 hover:scale-105 shadow-lg"
