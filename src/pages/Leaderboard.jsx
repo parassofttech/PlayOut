@@ -6,6 +6,7 @@ import {
   Search,
   Star,
 } from "lucide-react";
+import { div } from "framer-motion/client";
 
 const Leaderboard = () => {
   const [search, setSearch] = useState("");
@@ -72,10 +73,24 @@ const Leaderboard = () => {
       country: "🇯🇵",
     },
   ];
+  const user = [
+    {
+      rank:100,
+      name:localStorage.getItem("name")||"",
+      score:600,
+      country:"In"
+    }
+  ]
+
+  console.log(user.score)
 
   const filteredPlayers = players.filter((player) =>
     player.name.toLowerCase().includes(search.toLowerCase())
   );
+
+
+  const loginuser = localStorage.getItem("name")
+  
 
   return (
     <div className="min-h-screen bg-[#050816] text-white overflow-hidden">
@@ -111,26 +126,27 @@ const Leaderboard = () => {
 
 
         {/* Top 3 */}
-        <div className="grid md:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6 items-end mb-12">
 
           {/* 2nd */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-6 text-center backdrop-blur-xl md:mt-10">
-            <Medal
-              size={40}
-              className="mx-auto text-gray-300 mb-3"
-            />
-            <div className="w-20 h-20 rounded-full bg-linear-to-r from-gray-400 to-gray-500 flex items-center justify-center text-3xl font-black mx-auto">
-              A
-            </div>
+         <div className="bg-white/5 border border-white/10 rounded-3xl p-4 md:p-6 text-center backdrop-blur-xl md:mt-10">
+  <Medal
+    size={40}
+    className="mx-auto text-gray-300 mb-3"
+  />
 
-            <h3 className="text-2xl font-bold mt-4">
-              Aarav
-            </h3>
+  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-linear-to-r from-gray-400 to-gray-500 flex items-center justify-center text-2xl md:text-3xl font-black mx-auto">
+    A
+  </div>
 
-            <p className="text-gray-400">
-              9,420 Points
-            </p>
-          </div>
+  <h3 className="text-xl md:text-2xl font-bold mt-4">
+    Aarav
+  </h3>
+
+  <p className="text-gray-400 text-sm md:text-base">
+    9,420 Points
+  </p>
+</div>
 
           {/* 1st */}
           <div className="bg-linear-to-b from-yellow-500/20 to-orange-500/10 border border-yellow-500/20 rounded-3xl p-8 text-center backdrop-blur-xl">
@@ -140,38 +156,39 @@ const Leaderboard = () => {
               className="mx-auto text-yellow-400 mb-3"
             />
 
-            <div className="w-24 h-24 rounded-full bg-linear-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-4xl font-black mx-auto">
+             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-linear-to-r from-yellow-400 to-orange-500 flex items-center justify-center text-2xl md:text-3xl font-black mx-auto">
               A
             </div>
 
-            <h3 className="text-3xl font-black mt-4">
+            <h3 className="text-xl md:text-2xl font-bold  mt-4">
               Aanand
             </h3>
 
-            <p className="text-yellow-400 font-bold">
+            <p className="text-yellow-400  text-sm md:text-base">
               9,850 Points
             </p>
 
           </div>
 
           {/* 3rd */}
-          <div className="bg-white/5 border border-white/10 rounded-3xl p-6 text-center backdrop-blur-xl md:mt-16">
-            <Medal
-              size={40}
-              className="mx-auto text-orange-400 mb-3"
-            />
-            <div className="w-20 h-20 rounded-full bg-linear-to-r from-orange-500 to-red-500 flex items-center justify-center text-3xl font-black mx-auto">
-              R
-            </div>
+          <div className="bg-white/5 border border-white/10 rounded-3xl p-4 md:p-6 text-center backdrop-blur-xl md:mt-10">
+  <Medal
+    size={40}
+    className="mx-auto text-gray-300 mb-3"
+  />
 
-            <h3 className="text-2xl font-bold mt-4">
-              Rohan
-            </h3>
+  <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-linear-to-r from-gray-400 to-gray-500 flex items-center justify-center text-2xl md:text-3xl font-black mx-auto">
+    R
+  </div>
 
-            <p className="text-gray-400">
-              9,180 Points
-            </p>
-          </div>
+  <h3 className="text-xl md:text-2xl font-bold mt-4">
+    Rohan
+  </h3>
+
+  <p className="text-gray-400 text-sm md:text-base">
+    9,180 Points
+  </p>
+</div>
 
         </div>
 
@@ -227,17 +244,62 @@ const Leaderboard = () => {
                     {player.country}
                   </p>
                 </div>
+              
 
               </div>
-
+           
               <div className="flex items-center gap-2 text-yellow-400 font-bold">
                 <Star size={18} />
                 {player.score.toLocaleString()}
               </div>
-
+            
             </div>
           ))}
 
+
+
+          
+{loginuser && 
+
+<div className="bg-white/5 border border-white/10 rounded-3xl overflow-hidden backdrop-blur-xl">
+            {user.map((player)=>(
+              <div
+              key={player.rank}
+              className="flex items-center justify-between px-6 py-5 border-b border-white/5 hover:bg-white/5 transition">
+
+                <div className="flex items-center gap-5">
+
+                <div className="w-12 text-center font-black text-xl">
+                  #{player.rank}
+                </div>
+
+                <div className="w-12 h-12 rounded-full bg-linear-to-r from-cyan-500 to-purple-600 flex items-center justify-center font-bold">
+                  {player.name.charAt(0)}
+                </div>
+
+                <div>
+                  <h3 className="font-bold">
+                    {player.name}
+                  </h3>
+
+                  <p className="text-gray-400 text-sm">
+                    {player.country}
+                  </p>
+                </div>
+              
+
+              </div>
+ 
+
+               <div className="flex items-center gap-2 text-yellow-400 font-bold">
+                <Star size={18} />
+                {player.score.toLocaleString()}
+              </div>
+            
+              </div>
+            ))}
+          </div>
+}
         </div>
 
       </div>

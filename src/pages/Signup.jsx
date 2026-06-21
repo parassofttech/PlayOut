@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { handleError, handleSuccess } from "../Utils";
 
 const Signup = () => {
   const [signupInfo, setSignupInfo] = useState({
@@ -24,7 +25,7 @@ const Signup = () => {
     const { name, email, password } = signupInfo;
 
     if (!name || !email || !password) {
-      return alert("Please fill all fields");
+      return handleError("Please fill all fields");
     }
 
     try {
@@ -43,17 +44,17 @@ const Signup = () => {
       const { success, message, error } = result;
 
       if (success) {
-        alert(message);
+        handleSuccess(message);
 
         setTimeout(() => {
           navigate("/login");
         }, 1000);
       } else if (error) {
-        alert(error.details?.[0]?.message || message);
+        handleError(error.details?.[0]?.message || message);
       }
     } catch (err) {
       console.log(err);
-      alert("Something went wrong");
+      handleError("Something went wrong");
     }
   };
 
@@ -70,7 +71,7 @@ const Signup = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-4xl font-black text-white">
-              Create Account
+              Signup
             </h1>
 
             <p className="text-gray-400 mt-2">
@@ -87,46 +88,129 @@ const Signup = () => {
                 Full Name
               </label>
 
-              <input
-                type="text"
-                name="name"
-                value={signupInfo.name}
-                onChange={handleChange}
-                placeholder="Enter your name"
-                className="w-full mt-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-cyan-500"
-              />
+             <div className="relative mt-2">
+                <input
+                  type="name"
+                  name="name"
+                  value={signupInfo.name}
+                  onChange={handleChange}
+                  placeholder="Enter your name"
+                  className="
+                    peer
+                    w-full
+                    bg-transparent
+                    text-white
+                    py-3
+                    outline-none
+                    border-b
+                    border-gray-600
+                    placeholder:italic
+                    placeholder:text-gray-400
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    left-0
+                    bottom-0
+                    h-0.5
+                    w-0
+                    bg-cyan-500
+                    transition-all
+                    duration-300
+                    peer-focus:w-full
+                  "
+                ></span>
+              </div>
             </div>
 
             {/* Email */}
-            <div>
-              <label className="text-gray-300 text-sm">
+           <div>
+              <label className="text-gray-300 text-sm font-medium">
                 Email Address
               </label>
 
-              <input
-                type="email"
-                name="email"
-                value={signupInfo.email}
-                onChange={handleChange}
-                placeholder="Enter your email"
-                className="w-full mt-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-cyan-500"
-              />
+              <div className="relative mt-2">
+                <input
+                  type="email"
+                  name="email"
+                  value={signupInfo.email}
+                  onChange={handleChange}
+                  placeholder="Enter your email"
+                  className="
+                    peer
+                    w-full
+                    bg-transparent
+                    text-white
+                    py-3
+                    outline-none
+                    border-b
+                    border-gray-600
+                    placeholder:italic
+                    placeholder:text-gray-400
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    left-0
+                    bottom-0
+                    h-0.5
+                    w-0
+                    bg-cyan-500
+                    transition-all
+                    duration-300
+                    peer-focus:w-full
+                  "
+                ></span>
+              </div>
             </div>
+
 
             {/* Password */}
             <div>
-              <label className="text-gray-300 text-sm">
+              <label className="text-gray-300 text-sm font-medium">
                 Password
               </label>
 
-              <input
-                type="password"
-                name="password"
-                value={signupInfo.password}
-                onChange={handleChange}
-                placeholder="Enter your password"
-                className="w-full mt-2 px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white outline-none focus:border-cyan-500"
-              />
+
+              <div className="relative mt-2">
+                <input
+                  type="password"
+                  name="password"
+                  value={signupInfo.password}
+                  onChange={handleChange}
+                  placeholder="Enter your password"
+                  className="
+                    peer
+                    w-full
+                    bg-transparent
+                    text-white
+                    py-3
+                    outline-none
+                    border-b
+                    border-gray-600
+                    placeholder:italic
+                    placeholder:text-gray-400
+                  "
+                />
+
+                <span
+                  className="
+                    absolute
+                    left-0
+                    bottom-0
+                    h-0.5
+                    w-0
+                    bg-cyan-500
+                    transition-all
+                    duration-300
+                    peer-focus:w-full
+                  "
+                ></span>
+              </div>
             </div>
 
             {/* Button */}
@@ -134,7 +218,7 @@ const Signup = () => {
               type="submit"
               className="w-full py-3 rounded-xl bg-linear-to-r from-cyan-500 to-blue-600 text-white font-bold hover:scale-[1.02] transition"
             >
-              Create Account
+              SignUp
             </button>
 
           </form>

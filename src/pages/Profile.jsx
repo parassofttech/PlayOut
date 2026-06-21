@@ -36,7 +36,7 @@ const [profile, setProfile] = useState(() => {
         state: "",
         dob: "",
         gender: "",
-        photo: "https://uxwing.com/wp-content/themes/uxwing/download/peoples-avatars/no-profile-picture-icon.png",
+        photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9DK7EeiXGKoyMeOK1E84gi5MoEZjuWOseBwI0i94G9g&s",
       };
 });
 
