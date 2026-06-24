@@ -175,15 +175,42 @@ function AlienAttack() {
             >
               Restart
             </button>
+            
           </div>
+          
         )}
 
+
+      
       </div>
+      
 
       <div className="absolute bottom-4 text-white text-sm text-center">
-        ⬅️ ➡️ Move | SPACE / Tap = Shoot
+       
+        <button
+    onClick={moveLeft}
+    className="px-6 py-3 bg-blue-500 text-white rounded-xl font-bold"
+  >
+    ⬅️
+  </button>
+
+  <button
+    onClick={shoot}
+    className="px-8 py-3 bg-yellow-500 text-black rounded-xl font-bold"
+  >
+    🔫
+  </button>
+
+  <button
+    onClick={moveRight}
+    className="px-6 py-3 bg-blue-500 text-white rounded-xl font-bold"
+  >
+    ➡️
+  </button>
       </div>
+      
     </div>
+    
   );
 }
 
