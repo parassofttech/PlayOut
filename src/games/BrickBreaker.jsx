@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function BrickBreaker() {
-  const boardWidth = 400;
+  const boardWidth = 380;
   const paddleWidth = 80;
 
   const [ball, setBall] = useState({ x: 180, y: 300, dx: 3, dy: -3 });
@@ -145,7 +145,7 @@ function BrickBreaker() {
       {/* GAME AREA */}
       <div className="relative  bg-zinc-900 border"
       style={{
-        width:400,
+        width:390,
         height:420
       }}>
 

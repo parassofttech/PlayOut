@@ -185,7 +185,7 @@ function AlienAttack() {
       </div>
       
 
-      <div className="absolute bottom-4 text-white text-sm text-center">
+      <div className="absolute bottom-4 text-white mt-4 text-sm text-center">
        
         <button
     onClick={moveLeft}
