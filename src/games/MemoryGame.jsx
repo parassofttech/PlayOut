@@ -27,7 +27,7 @@ export default function MemoryGame() {
   const [mode, setMode] = useState("emoji");
   const [level, setLevel] = useState("easy");
 
-  const [cards, setCards] = useState(shuffleCards(GAME_DATA["emoji"]));
+  const [cards, setCards] = useState(shuffleCards(GAME_DATA.emoji));
   const [first, setFirst] = useState(null);
   const [second, setSecond] = useState(null);
   const [lock, setLock] = useState(false);
@@ -35,12 +35,11 @@ export default function MemoryGame() {
   const [moves, setMoves] = useState(0);
   const [score, setScore] = useState(0);
 
-  const [time, setTime] = useState(DIFFICULTY[level]);
+  const [time, setTime] = useState(DIFFICULTY.easy);
   const [gameOver, setGameOver] = useState(false);
 
   const highScoreKey = `${mode}-${level}`;
 
-  // INIT GAME
   const startGame = (newMode = mode, newLevel = level) => {
     setMode(newMode);
     setLevel(newLevel);
@@ -48,127 +47,166 @@ export default function MemoryGame() {
     setCards(shuffleCards(GAME_DATA[newMode]));
     setFirst(null);
     setSecond(null);
+    setLock(false);
+
     setMoves(0);
     setScore(0);
+
     setTime(DIFFICULTY[newLevel]);
     setGameOver(false);
   };
 
-  // TIMER
   useEffect(() => {
     if (gameOver) return;
 
     const timer = setInterval(() => {
-      setTime((t) => {
-        if (t <= 1) {
+      setTime((prev) => {
+        if (prev <= 1) {
           clearInterval(timer);
           setGameOver(true);
           return 0;
         }
-        return t - 1;
+        return prev - 1;
       });
     }, 1000);
 
     return () => clearInterval(timer);
   }, [gameOver]);
 
-  // CLICK LOGIC
   const handleClick = (card) => {
-    if (lock || card.flipped || card.matched || gameOver) return;
+    if (
+      lock ||
+      card.flipped ||
+      card.matched ||
+      gameOver
+    )
+      return;
 
     setCards((prev) =>
       prev.map((c) =>
-        c.id === card.id ? { ...c, flipped: true } : c
+        c.id === card.id
+          ? { ...c, flipped: true }
+          : c
       )
     );
 
-    if (!first) setFirst(card);
-    else {
+    if (!first) {
+      setFirst(card);
+    } else {
       setSecond(card);
       setLock(true);
     }
   };
 
-  // MATCH CHECK
   useEffect(() => {
-    if (first && second) {
-      setMoves((m) => m + 1);
+    if (!first || !second) return;
 
-      if (first.value === second.value) {
+    setMoves((m) => m + 1);
+
+    if (first.value === second.value) {
+      setCards((prev) =>
+        prev.map((c) =>
+          c.value === first.value
+            ? { ...c, matched: true }
+            : c
+        )
+      );
+
+      setScore((s) => s + 10);
+
+      setTimeout(() => {
+        setFirst(null);
+        setSecond(null);
+        setLock(false);
+      }, 300);
+    } else {
+      setTimeout(() => {
         setCards((prev) =>
           prev.map((c) =>
-            c.value === first.value ? { ...c, matched: true } : c
+            c.id === first.id ||
+            c.id === second.id
+              ? { ...c, flipped: false }
+              : c
           )
         );
-        setScore((s) => s + 10);
-        resetTurn();
-      } else {
-        setTimeout(() => {
-          setCards((prev) =>
-            prev.map((c) =>
-              c.id === first.id || c.id === second.id
-                ? { ...c, flipped: false }
-                : c
-            )
-          );
-          resetTurn();
-        }, 600);
-      }
+
+        setFirst(null);
+        setSecond(null);
+        setLock(false);
+      }, 800);
     }
   }, [first, second]);
 
-  const resetTurn = () => {
-    setFirst(null);
-    setSecond(null);
-    setLock(false);
-  };
-
-  // WIN CHECK
   useEffect(() => {
-    if (cards.length && cards.every((c) => c.matched)) {
+    if (
+      cards.length > 0 &&
+      cards.every((c) => c.matched)
+    ) {
       setGameOver(true);
 
-      const prevHigh = localStorage.getItem(highScoreKey) || 0;
+      const prevHigh =
+        Number(
+          localStorage.getItem(highScoreKey)
+        ) || 0;
+
       if (score > prevHigh) {
-        localStorage.setItem(highScoreKey, score);
+        localStorage.setItem(
+          highScoreKey,
+          score
+        );
       }
     }
-  }, [cards, score]);
+  }, [cards, score, highScoreKey]);
 
   const restart = () => {
     startGame(mode, level);
   };
 
-  const isWin = cards.length && cards.every((c) => c.matched);
+  const isWin =
+    cards.length > 0 &&
+    cards.every((c) => c.matched);
 
   return (
-    <div className="min-h-screen bg-linear-to-br from-black via-slate-900 to-gray-950 text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-linear-to-br from-slate-950 via-black to-slate-900 text-white flex flex-col items-center p-4">
 
-      {/* HEADER */}
-      <h1 className="text-4xl font-bold mb-2">🎮 Memory Pro</h1>
+      {/* Header */}
+      <h1 className="text-3xl md:text-5xl font-black mb-4 text-yellow-400">
+        🧠 Memory Pro
+      </h1>
 
-      {/* MODE + LEVEL */}
-      <div className="flex flex-wrap gap-3 mb-3">
-        {["emoji", "cars", "animals"].map((m) => (
-          <button
-            key={m}
-            onClick={() => startGame(m, level)}
-            className={`px-3 py-1 rounded-lg ${
-              mode === m ? "bg-yellow-400 text-black" : "bg-white/10"
-            }`}
-          >
-            {m}
-          </button>
-        ))}
+      {/* Mode */}
+      <div className="flex flex-wrap justify-center gap-2 mb-3">
+        {["emoji", "cars", "animals"].map(
+          (m) => (
+            <button
+              key={m}
+              onClick={() =>
+                startGame(m, level)
+              }
+              className={`px-4 py-2 rounded-xl font-bold transition ${
+                mode === m
+                  ? "bg-yellow-400 text-black"
+                  : "bg-white/10"
+              }`}
+            >
+              {m}
+            </button>
+          )
+        )}
       </div>
 
-      <div className="flex gap-3 mb-3">
+      {/* Difficulty */}
+      <div className="flex gap-2 mb-5">
         {Object.keys(DIFFICULTY).map((l) => (
           <button
             key={l}
-            onClick={() => startGame(mode, l)}
-            className={`px-3 py-1 rounded-lg ${
-              level === l ? "bg-green-400 text-black" : "bg-white/10"
+            onClick={() =>
+              startGame(mode, l)
+            }
+            className={`px-4 py-2 rounded-xl font-bold transition ${
+              level === l
+                ? "bg-green-500 text-black"
+                : "bg-white/10"
             }`}
           >
             {l}
@@ -176,34 +214,70 @@ export default function MemoryGame() {
         ))}
       </div>
 
-      {/* STATS */}
-      <div className="flex gap-6 mb-3">
-        <div className="bg-white/10 px-4 py-2 rounded-xl">🎯 {moves}</div>
-        <div className="bg-white/10 px-4 py-2 rounded-xl">⭐ {score}</div>
-        <div className="bg-red-500 px-4 py-2 rounded-xl">⏱ {time}s</div>
+      {/* Stats */}
+      <div className="flex gap-3 md:gap-6 flex-wrap justify-center mb-6">
+        <div className="bg-white/10 px-4 py-2 rounded-xl">
+          🎯 Moves: {moves}
+        </div>
+
+        <div className="bg-white/10 px-4 py-2 rounded-xl">
+          ⭐ Score: {score}
+        </div>
+
+        <div className="bg-red-500 px-4 py-2 rounded-xl">
+          ⏱ {time}s
+        </div>
       </div>
 
-      {/* GRID */}
-      <div className="grid grid-cols-4 gap-3">
+      {/* Cards */}
+      <div className="grid grid-cols-4 gap-2 md:gap-4">
         {cards.map((card) => (
           <div
             key={card.id}
-            onClick={() => handleClick(card)}
-            className="w-20 h-20 cursor-pointer"
+            onClick={() =>
+              handleClick(card)
+            }
+            className="cursor-pointer"
+            style={{
+              perspective: "1000px",
+            }}
           >
             <div
-              className={`relative w-full h-full transition-transform duration-500 ${
-                card.flipped || card.matched ? "rotate-y-180" : ""
-              }`}
+              className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 duration-500"
+              style={{
+                transformStyle:
+                  "preserve-3d",
+                transform:
+                  card.flipped ||
+                  card.matched
+                    ? "rotateY(180deg)"
+                    : "rotateY(0deg)",
+              }}
             >
-              <div className="absolute w-full h-full bg-slate-700 rounded-xl flex items-center justify-center">
+              {/* Front */}
+              <div
+                className="absolute inset-0 bg-slate-700 rounded-2xl flex items-center justify-center text-2xl shadow-lg"
+                style={{
+                  backfaceVisibility:
+                    "hidden",
+                }}
+              >
                 ❓
               </div>
 
+              {/* Back */}
               <div
-                className={`absolute w-full h-full rounded-xl flex items-center justify-center text-2xl rotate-y-180 ${
-                  card.matched ? "bg-green-500" : "bg-yellow-400 text-black"
+                className={`absolute inset-0 rounded-2xl flex items-center justify-center text-3xl shadow-lg ${
+                  card.matched
+                    ? "bg-green-500"
+                    : "bg-yellow-400 text-black"
                 }`}
+                style={{
+                  transform:
+                    "rotateY(180deg)",
+                  backfaceVisibility:
+                    "hidden",
+                }}
               >
                 {card.value}
               </div>
@@ -212,22 +286,31 @@ export default function MemoryGame() {
         ))}
       </div>
 
-      {/* WIN / GAME OVER MODAL */}
+      {/* Modal */}
       {(gameOver || isWin) && (
-        <div className="fixed inset-0 bg-black/80 flex items-center justify-center">
-          <div className="bg-white text-black p-6 rounded-xl text-center w-72">
-            <h2 className="text-2xl font-bold mb-2">
-              {isWin ? "🏆 You Win!" : "⏰ Time Over"}
+        <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+          <div className="bg-white text-black p-6 rounded-3xl w-[90%] max-w-sm text-center">
+
+            <h2 className="text-3xl font-black mb-3">
+              {isWin
+                ? "🏆 You Win!"
+                : "⏰ Time Over"}
             </h2>
 
-            <p>Score: {score}</p>
-            <p>
-              High Score: {localStorage.getItem(highScoreKey) || 0}
+            <p className="font-semibold">
+              Score: {score}
+            </p>
+
+            <p className="font-semibold mt-2">
+              High Score:{" "}
+              {localStorage.getItem(
+                highScoreKey
+              ) || 0}
             </p>
 
             <button
               onClick={restart}
-              className="mt-4 px-4 py-2 bg-black text-white rounded-lg"
+              className="mt-5 px-6 py-3 bg-black text-white rounded-xl font-bold hover:scale-105 transition"
             >
               Play Again
             </button>
