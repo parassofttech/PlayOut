@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 function BrickBreaker() {
-  const boardWidth = 380;
+  const boardWidth = 386;
   const paddleWidth = 80;
 
   const [ball, setBall] = useState({ x: 180, y: 300, dx: 3, dy: -3 });
