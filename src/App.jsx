@@ -52,6 +52,7 @@ import ContactMessages from './pages/admin/ContactMessage'
 import UnderNavbar from './components/UnderNavbar'
 import Contact from './pages/Contact'
 import Ludo from './games/Ludo'
+import CandyCrush from './games/CandyCrush'
 
 function App() {
   
@@ -112,6 +113,7 @@ function App() {
       <Route path="/admin/messages" element={<ContactMessages />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/ludo" element={<Ludo />} />
+      <Route path="/candycrush" element={<CandyCrush/>} />
       
 
     </Routes>
