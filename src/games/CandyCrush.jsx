@@ -1,18 +1,29 @@
 import React, { useState, useEffect } from "react";
-import { Sparkles, RotateCcw, Trophy, Flame, Zap } from "lucide-react";
+import { Sparkles, RotateCcw, Trophy, Flame, Zap, ArrowBigRight } from "lucide-react";
 
 /*
   ============================================================
-  ADVANCED CANDY CRUSH SAGA (Fully Functional React Component)
+  ADVANCED CANDY CRUSH SAGA (Levels, Targets & Progressive Difficulty)
   ============================================================
 */
 
 const BOARD_SIZE = 8;
-const CANDIES = ["🔴", "🔵", "🟢", "🟡", "🟣", "🟠"];
-const TARGET_SCORE = 1000;
-const MAX_MOVES = 20;
+const CANDIES = ["🍬", "🍭", "🍫", "🍩", "🧁", "🍪"]; // Custom candy visuals
 
-// Helper to create a random board without initial matches
+// Level configuration settings
+const LEVELS = {
+  1: { targetScore: 600, maxMoves: 20 },
+  2: { targetScore: 1000, maxMoves: 18 },
+  3: { targetScore: 1500, maxMoves: 16 },
+  4: { targetScore: 2000, maxMoves: 15 },
+  5: { targetScore: 2500, maxMoves: 13 },
+  6: { targetScore: 3000, maxMoves: 11 },
+  7: { targetScore: 3500, maxMoves: 10 },
+  8: { targetScore: 4000, maxMoves: 10 },
+  9: { targetScore: 4500, maxMoves: 10 },
+  10: { targetScore: 5000, maxMoves: 10 },
+};
+
 const createBoard = () => {
   let board;
   do {
@@ -32,9 +43,7 @@ const checkInitialMatches = (board) => {
     for (let c = 0; c < BOARD_SIZE; c++) {
       const candy = board[r][c];
       if (!candy) continue;
-      // Horizontal
       if (c + 2 < BOARD_SIZE && board[r][c + 1] === candy && board[r][c + 2] === candy) return true;
-      // Vertical
       if (r + 2 < BOARD_SIZE && board[r + 1][c] === candy && board[r + 2][c] === candy) return true;
     }
   }
@@ -42,30 +51,48 @@ const checkInitialMatches = (board) => {
 };
 
 export default function CandyCrush() {
+  const [level, setLevel] = useState(1);
+  const currentLevelConfig = LEVELS[level] || LEVELS[10];
+
   const [board, setBoard] = useState(createBoard);
   const [score, setScore] = useState(0);
-  const [moves, setMoves] = useState(MAX_MOVES);
+  const [moves, setMoves] = useState(currentLevelConfig.maxMoves);
   const [selected, setSelected] = useState(null);
   const [isProcessing, setIsProcessing] = useState(false);
-  const [message, setMessage] = useState("Match 3 or more candies to score!");
+  const [message, setMessage] = useState(`Level ${level}: Match candies to reach ${currentLevelConfig.targetScore} points!`);
   const [combo, setCombo] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [levelCleared, setLevelCleared] = useState(false);
 
-  // Restart Game
-  const resetGame = () => {
+  // Initialize/Reset game for current or selected level
+  const startLevel = (targetLevel) => {
+    const config = LEVELS[targetLevel];
+    setLevel(targetLevel);
     setBoard(createBoard());
     setScore(0);
-    setMoves(MAX_MOVES);
+    setMoves(config.maxMoves);
     setSelected(null);
     setIsProcessing(false);
     setCombo(0);
     setGameOver(false);
-    setMessage("New game started. Good luck!");
+    setLevelCleared(false);
+    setMessage(`Level ${targetLevel}: Reach ${config.targetScore} points within ${config.maxMoves} moves.`);
   };
 
-  // Handle candy selection & swap
+  const resetCurrentLevel = () => {
+    startLevel(level);
+  };
+
+  const nextLevel = () => {
+    if (level < Object.keys(LEVELS).length) {
+      startLevel(level + 1);
+    } else {
+      setMessage("🏆 Incredible! You have beaten all available levels!");
+    }
+  };
+
   const handleCandyClick = (r, c) => {
-    if (isProcessing || gameOver) return;
+    if (isProcessing || gameOver || levelCleared) return;
 
     if (!selected) {
       setSelected({ r, c });
@@ -76,14 +103,12 @@ export default function CandyCrush() {
     const prevR = selected.r;
     const prevC = selected.c;
 
-    // Check if clicked same candy
     if (prevR === r && prevC === c) {
       setSelected(null);
       setMessage("Selection cleared.");
       return;
     }
 
-    // Check if adjacent
     const isAdjacent = Math.abs(prevR - r) + Math.abs(prevC - c) === 1;
     if (!isAdjacent) {
       setSelected({ r, c });
@@ -97,7 +122,6 @@ export default function CandyCrush() {
     newBoard[prevR][prevC] = newBoard[r][c];
     newBoard[r][c] = temp;
 
-    // Validate if swap creates a match
     if (hasMatches(newBoard)) {
       setBoard(newBoard);
       setSelected(null);
@@ -105,7 +129,6 @@ export default function CandyCrush() {
       setIsProcessing(true);
       setCombo(1);
     } else {
-      // Invalid swap, revert
       setMessage("Invalid move! No match created.");
       setSelected(null);
     }
@@ -123,7 +146,7 @@ export default function CandyCrush() {
     return false;
   };
 
-  // Match finding and dropping loop (Cascade effect)
+  // Cascade effect and match evaluation
   useEffect(() => {
     if (!isProcessing) return;
 
@@ -131,7 +154,6 @@ export default function CandyCrush() {
       let currentBoard = board.map((row) => [...row]);
       let matchedCoords = new Set();
 
-      // Find horizontal matches
       for (let r = 0; r < BOARD_SIZE; r++) {
         for (let c = 0; c < BOARD_SIZE - 2; c++) {
           const candy = currentBoard[r][c];
@@ -144,7 +166,6 @@ export default function CandyCrush() {
         }
       }
 
-      // Find vertical matches
       for (let c = 0; c < BOARD_SIZE; c++) {
         for (let r = 0; r < BOARD_SIZE - 2; r++) {
           const candy = currentBoard[r][c];
@@ -158,19 +179,17 @@ export default function CandyCrush() {
       }
 
       if (matchedCoords.size > 0) {
-        // Matches found! Calculate score boost
-        const points = matchedCoords.size * 20 * combo;
-        setScore((s) => s + points);
+        const points = matchedCoords.size * 25 * combo;
+        const newTotalScore = score + points;
+        setScore(newTotalScore);
         setCombo((c) => c + 1);
         setMessage(`Matched! +${points} points (Combo x${combo})`);
 
-        // Clear matched candies
         matchedCoords.forEach((coord) => {
           const [r, c] = coord.split(",").map(Number);
           currentBoard[r][c] = null;
         });
 
-        // Drop down existing candies
         for (let c = 0; c < BOARD_SIZE; c++) {
           let writeRow = BOARD_SIZE - 1;
           for (let r = BOARD_SIZE - 1; r >= 0; r--) {
@@ -182,32 +201,38 @@ export default function CandyCrush() {
               writeRow--;
             }
           }
-          // Fill empty spaces at the top with random candies
           for (let r = writeRow; r >= 0; r--) {
             currentBoard[r][c] = CANDIES[Math.floor(Math.random() * CANDIES.length)];
           }
         }
 
         setBoard(currentBoard);
+
+        // Check if target score is reached mid-cascade
+        if (newTotalScore >= currentLevelConfig.targetScore) {
+          setLevelCleared(true);
+          setIsProcessing(false);
+          setMessage(`🎉 Level ${level} Cleared! Ready for next challenge.`);
+          return;
+        }
       } else {
-        // No more matches, processing complete
         setIsProcessing(false);
         setCombo(0);
-        setMessage("Your turn! Pick a candy.");
 
-        // Check Win/Loss conditions
-        if (score >= TARGET_SCORE) {
-          setGameOver(true);
-          setMessage("🎉 Congratulations! You won the game!");
+        if (score >= currentLevelConfig.targetScore) {
+          setLevelCleared(true);
+          setMessage(`🎉 Level ${level} Cleared! Ready for next challenge.`);
         } else if (moves <= 0) {
           setGameOver(true);
-          setMessage("❌ Game Over! Out of moves.");
+          setMessage("❌ Out of moves! Try again.");
+        } else {
+          setMessage("Your turn! Pick a candy.");
         }
       }
     }, 450);
 
     return () => clearTimeout(timer);
-  }, [isProcessing, board, combo, moves, score]);
+  }, [isProcessing, board, combo, moves, score, level, currentLevelConfig]);
 
   return (
     <div className="min-h-screen bg-slate-950 text-white px-4 py-8 font-sans flex flex-col items-center justify-center">
@@ -217,48 +242,48 @@ export default function CandyCrush() {
         <div className="flex items-center justify-between bg-slate-900/80 border border-white/10 p-4 rounded-3xl backdrop-blur-xl shadow-xl">
           <div>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-bold tracking-wider uppercase">
-              <Sparkles size={12} /> Candy Crush Saga
+              <Sparkles size={12} /> Level {level} / 10
             </div>
             <h1 className="mt-1 text-2xl font-black bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
-              Sweet Match
+              Candy Smash Saga
             </h1>
           </div>
           <button
-            onClick={resetGame}
+            onClick={resetCurrentLevel}
             className="p-3 rounded-2xl bg-pink-600 hover:bg-pink-500 transition text-white shadow-lg cursor-pointer flex items-center gap-1.5 text-xs font-bold"
           >
             <RotateCcw size={16} /> Reset
           </button>
         </div>
 
-        {/* Status Dashboard */}
+        {/* Dashboard Metrics */}
         <div className="grid grid-cols-3 gap-3 text-center">
           <div className="bg-slate-900/60 border border-white/10 p-3 rounded-2xl backdrop-blur-xl shadow-md">
             <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold flex items-center justify-center gap-1">
               <Trophy size={12} className="text-yellow-400" /> Score
             </p>
-            <p className="text-xl font-black mt-1 text-yellow-400">{score} <span className="text-[10px] text-slate-500">/ {TARGET_SCORE}</span></p>
+            <p className="text-xl font-black mt-1 text-yellow-400">{score} <span className="text-[10px] text-slate-500">/ {currentLevelConfig.targetScore}</span></p>
           </div>
           <div className="bg-slate-900/60 border border-white/10 p-3 rounded-2xl backdrop-blur-xl shadow-md">
             <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold flex items-center justify-center gap-1">
               <Zap size={12} className="text-cyan-400" /> Moves
             </p>
-            <p className={`text-xl font-black mt-1 ${moves <= 5 ? "text-red-500 animate-pulse" : "text-cyan-400"}`}>{moves}</p>
+            <p className={`text-xl font-black mt-1 ${moves <= 4 ? "text-red-500 animate-pulse" : "text-cyan-400"}`}>{moves}</p>
           </div>
           <div className="bg-slate-900/60 border border-white/10 p-3 rounded-2xl backdrop-blur-xl shadow-md">
             <p className="text-[10px] text-slate-400 uppercase tracking-widest font-bold flex items-center justify-center gap-1">
               <Flame size={12} className="text-orange-400" /> Target
             </p>
-            <p className="text-xl font-black mt-1 text-orange-400">{TARGET_SCORE}</p>
+            <p className="text-xl font-black mt-1 text-orange-400">{currentLevelConfig.targetScore}</p>
           </div>
         </div>
 
-        {/* Message Banner */}
+        {/* Status Notification Message */}
         <div className="bg-slate-900/40 border border-white/10 px-4 py-2.5 rounded-2xl text-center text-xs font-medium text-slate-300 shadow-inner">
           {message}
         </div>
 
-        {/* Game Board Grid */}
+        {/* Board Container */}
         <div className="bg-slate-900/80 border-4 border-pink-500/30 p-3 rounded-3xl backdrop-blur-xl shadow-2xl relative overflow-hidden">
           <div className="grid grid-cols-8 gap-1.5 aspect-square">
             {board.map((row, r) =>
@@ -267,13 +292,13 @@ export default function CandyCrush() {
                 return (
                   <button
                     key={`${r}-${c}`}
-                    disabled={gameOver || isProcessing}
+                    disabled={gameOver || levelCleared || isProcessing}
                     onClick={() => handleCandyClick(r, c)}
                     className={`aspect-square rounded-xl flex items-center justify-center text-2xl sm:text-3xl transition-all transform active:scale-90 select-none ${
-                      candy ? "bg-white/5 hover:bg-white/10 cursor-pointer shadow-sm" : "bg-transparent"
+                      candy ? "bg-white/5 hover:bg-white/15 cursor-pointer shadow-sm" : "bg-transparent"
                     } ${
                       isSelected
-                        ? "ring-4 ring-pink-400 bg-pink-500/20 scale-105 shadow-[0_0_15px_rgba(236,72,153,0.5)]"
+                        ? "ring-4 ring-pink-400 bg-pink-500/25 scale-105 shadow-[0_0_15px_rgba(236,72,153,0.6)]"
                         : ""
                     }`}
                   >
@@ -284,20 +309,47 @@ export default function CandyCrush() {
             )}
           </div>
 
+          {/* Level Cleared Overlay */}
+          {levelCleared && (
+            <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-30 animate-fadeIn">
+              <h2 className="text-3xl font-black mb-1 bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">
+                LEVEL {level} CLEARED!
+              </h2>
+              <p className="text-sm text-slate-300 mb-6 font-medium">
+                Fantastic job! Ready to tackle higher difficulty?
+              </p>
+              {level < Object.keys(LEVELS).length ? (
+                <button
+                  onClick={nextLevel}
+                  className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer flex items-center gap-2"
+                >
+                  Next Level <ArrowBigRight size={18} />
+                </button>
+              ) : (
+                <button
+                  onClick={() => startLevel(1)}
+                  className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer"
+                >
+                  Play From Level 1
+                </button>
+              )}
+            </div>
+          )}
+
           {/* Game Over Overlay */}
           {gameOver && (
             <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-30 animate-fadeIn">
-              <h2 className="text-3xl font-black mb-2 bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">
-                {score >= TARGET_SCORE ? "VICTORY!" : "GAME OVER"}
+              <h2 className="text-3xl font-black mb-2 text-red-500">
+                GAME OVER
               </h2>
               <p className="text-sm text-slate-300 mb-6 font-medium">
-                {score >= TARGET_SCORE ? `You smashed the target with ${score} points!` : "Better luck next time! Try again."}
+                You ran out of moves on Level {level}. Give it another shot!
               </p>
               <button
-                onClick={resetGame}
+                onClick={resetCurrentLevel}
                 className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer"
               >
-                Play Again
+                Try Again
               </button>
             </div>
           )}

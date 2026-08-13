@@ -432,10 +432,10 @@ export default function Ludo() {
     return (
       <div className={`w-full h-full ${color.bg} border-4 border-white p-3 sm:p-5 flex flex-col justify-between shadow-md relative`}>
         <div className="flex items-center justify-between">
-          <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-wider">{color.name}</span>
+          <span className="text-[10px] -mt-5 sm:text-xs font-black text-white uppercase tracking-wider">{color.name}</span>
           <button
             onClick={() => toggleCpu(player)}
-            className="text-[9px] px-2 py-0.5 rounded-full font-bold bg-white/20 text-white border border-white/30 transition hover:bg-white/30 cursor-pointer"
+            className="text-[9px] -mt-4 px-2 py-0.5 rounded-full font-bold bg-white/20 text-white border border-white/30 transition hover:bg-white/30 cursor-pointer"
           >
             {cpuPlayers[player] ? "🤖 CPU" : "👤 Human"}
           </button>
@@ -607,13 +607,13 @@ export default function Ludo() {
         </div>
 
         <div className="grid lg:grid-cols-[1fr_340px] gap-8 items-start">
-          <div className="flex justify-center">{renderBoard()}</div>
+          <div className="flex  justify-center">{renderBoard()}</div>
 
           <div className="space-y-6">
-            <div className="rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-6 shadow-xl">
+            <div className="rounded-3xl border border-white/10 bg-slate-900/60 backdrop-blur-xl p-6 max-sm:-mt-4 shadow-xl">
               <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div className={`w-10 h-10 rounded-2xl ${COLORS[currentPlayer].bg} flex items-center justify-center shadow-md`}>
+                <div className="flex max-sm:-mt-4 items-center gap-3">
+                  <div className={`w-10 h-10 rounded-2xl   ${COLORS[currentPlayer].bg} flex items-center justify-center shadow-md`}>
                     {isCurrentCpu ? <Bot size={20} className="text-white" /> : <User size={20} className="text-white" />}
                   </div>
                   <div>
@@ -626,12 +626,12 @@ export default function Ludo() {
                 </span>
               </div>
 
-              <p className="mt-4 text-slate-300 text-sm font-medium">{message}</p>
+              <p className="mt-4 max-sm:mt-0.5 text-slate-300 text-sm font-medium">{message}</p>
 
               <button
                 onClick={rollDice}
                 disabled={rolling || hasRolled || isCurrentCpu || !!winner}
-                className={`mt-5 w-full h-32 rounded-2xl border border-white/10 bg-slate-950 flex flex-col items-center justify-center transition ${
+                className={`mt-5 max-sm:mt-2 w-full h-32 max-sm:h-25 rounded-2xl border border-white/10 bg-slate-950 flex flex-col items-center justify-center transition ${
                   !hasRolled && !rolling && !isCurrentCpu && !winner
                     ? "hover:border-amber-400 hover:shadow-[0_0_25px_rgba(251,191,36,0.2)] cursor-pointer"
                     : "opacity-80 cursor-not-allowed"
