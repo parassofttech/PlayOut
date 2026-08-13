@@ -25,6 +25,15 @@ const gamesData = [
     trending: true,
   },
   {
+  id: "ludo",
+  title: "Classic Ludo",
+  category: "Board",
+  rating: 4.9,
+  players: "45K+",
+  image:
+    "https://play-lh.googleusercontent.com/95ttbC4U3uULANW-wYJt8y_-axD0MD2EehQbE88DkThWv808u8fMseZxmLJlvjLDwPDfUcXznNNQCEmFL7NdndE",
+},
+  {
     id: "rock-paper-scissors",
     title: "Rock Paper Scissors",
     category: "Multiplayer",
