@@ -312,7 +312,7 @@ export default function CandyCrush() {
           {/* Level Cleared Overlay */}
           {levelCleared && (
             <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-md flex flex-col items-center justify-center p-6 text-center z-30 animate-fadeIn">
-              <h2 className="text-3xl font-black mb-1 bg-gradient-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-black mb-1 bg-linear-to-r from-pink-400 to-yellow-400 bg-clip-text text-transparent">
                 LEVEL {level} CLEARED!
               </h2>
               <p className="text-sm text-slate-300 mb-6 font-medium">
@@ -321,14 +321,14 @@ export default function CandyCrush() {
               {level < Object.keys(LEVELS).length ? (
                 <button
                   onClick={nextLevel}
-                  className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer flex items-center gap-2"
+                  className="px-6 py-3 rounded-2xl bg-linear-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer flex items-center gap-2"
                 >
                   Next Level <ArrowBigRight size={18} />
                 </button>
               ) : (
                 <button
                   onClick={() => startLevel(1)}
-                  className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer"
+                  className="px-6 py-3 rounded-2xl bg-linear-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer"
                 >
                   Play From Level 1
                 </button>
@@ -347,7 +347,7 @@ export default function CandyCrush() {
               </p>
               <button
                 onClick={resetCurrentLevel}
-                className="px-6 py-3 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer"
+                className="px-6 py-3 rounded-2xl bg-linear-to-r from-pink-600 to-purple-600 text-white font-bold shadow-lg hover:opacity-90 transition cursor-pointer"
               >
                 Try Again
               </button>
