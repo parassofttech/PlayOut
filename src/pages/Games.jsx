@@ -4,7 +4,24 @@ import GameCard from "../components/GameCard";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 const gamesData = [
-  {
+   {
+  id: "ludo",
+  title: "Classic Ludo",
+  category: "Board",
+  rating: 4.9,
+  players: "45K+",
+  image:
+    "https://play-lh.googleusercontent.com/JeLOUSEwFeqaJhl8O5WXlwPsH715ZnXXKCBHpxIIGMBoJacCCSSwcSe2WOHtqNwi1Um_EfTtwyYFhecNnp1Ve-M",
+},
+{
+  "id": "candy-crush",
+  "title": "Candy Crush",
+  "category": "Puzzle",
+  "rating": 4.9,
+  "players": "50K+",
+  "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCw77qI26v_M42hMOli5v3Lx0XyVANQdYuyArJlKDMgg&s"
+},
+{
     id: "car-racing",
     title: "Car Racing ",
     category: "Racing",
@@ -14,25 +31,8 @@ const gamesData = [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSTvZMdYsgUwZzLy_HM2UCaUe5cq9NxSv0-g&s",
   },
   
-  {
-    id: "dice-game",
-    title: "Dice Game",
-    category: "Strategy",
-    rating: 4.8,
-    players: "18K+",
-    image:
-      "https://play-lh.googleusercontent.com/8kugXgA2GzLTeGwtm9fkeUwcvx-PZuvt9b5tr3b8PAy6uizs9JSrvCUxvoTfXQfi0ZKuzEktTdrJbYEXTleKgQ",
-    trending: true,
-  },
-  {
-  id: "ludo",
-  title: "Classic Ludo",
-  category: "Board",
-  rating: 4.9,
-  players: "45K+",
-  image:
-    "https://play-lh.googleusercontent.com/95ttbC4U3uULANW-wYJt8y_-axD0MD2EehQbE88DkThWv808u8fMseZxmLJlvjLDwPDfUcXznNNQCEmFL7NdndE",
-},
+ 
+  
   {
     id: "rock-paper-scissors",
     title: "Rock Paper Scissors",
@@ -88,6 +88,16 @@ const gamesData = [
   image:
     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzq06cLEisGjPh1JcykqVweS_O-FwQYzWoRw&s",
 },
+ {
+    id: "dice-game",
+    title: "Dice Game",
+    category: "Strategy",
+    rating: 4.8,
+    players: "18K+",
+    image:
+      "https://play-lh.googleusercontent.com/8kugXgA2GzLTeGwtm9fkeUwcvx-PZuvt9b5tr3b8PAy6uizs9JSrvCUxvoTfXQfi0ZKuzEktTdrJbYEXTleKgQ",
+    trending: true,
+  },
   {
     id: "aim-trainer",
     title: "Aim Trainer",

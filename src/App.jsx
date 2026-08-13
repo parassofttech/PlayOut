@@ -113,7 +113,7 @@ function App() {
       <Route path="/admin/messages" element={<ContactMessages />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/ludo" element={<Ludo />} />
-      <Route path="/candycrush" element={<CandyCrush/>} />
+      <Route path="/candy-crush" element={<CandyCrush/>} />
       
 
     </Routes>

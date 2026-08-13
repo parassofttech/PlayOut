@@ -244,7 +244,7 @@ export default function CandyCrush() {
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/20 text-pink-400 text-xs font-bold tracking-wider uppercase">
               <Sparkles size={12} /> Level {level} / 10
             </div>
-            <h1 className="mt-1 text-2xl font-black bg-gradient-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
+            <h1 className="mt-1 text-2xl font-black bg-linear-to-r from-pink-400 to-purple-400 bg-clip-text text-transparent">
               Candy Smash Saga
             </h1>
           </div>
