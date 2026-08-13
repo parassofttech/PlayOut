@@ -51,6 +51,7 @@ import Users from './pages/admin/Users'
 import ContactMessages from './pages/admin/ContactMessage'
 import UnderNavbar from './components/UnderNavbar'
 import Contact from './pages/Contact'
+import Ludo from './games/Ludo'
 
 function App() {
   
@@ -110,6 +111,7 @@ function App() {
       <Route path="/admin/users" element={<Users />} />
       <Route path="/admin/messages" element={<ContactMessages />} />
       <Route path="/contact" element={<Contact />} />
+      <Route path="/ludo" element={<Ludo />} />
       
 
     </Routes>
