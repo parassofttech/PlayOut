@@ -222,12 +222,12 @@ const INITIAL_BALLS = [
   const cueBall = balls.find((b) => b.type === "cue");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#030712] via-[#0f172a] to-[#020617] text-white flex flex-col items-center px-3 py-4 select-none">
+    <div className="min-h-screen bg-linear-to-br from-[#030712] via-[#0f172a] to-[#020617] text-white flex flex-col items-center px-3 py-4 select-none">
       
       {/* HEADER */}
       <div className="w-full max-w-md flex items-center justify-between mb-3 px-1">
         <div>
-          <h1 className="text-xl sm:text-2xl font-black bg-gradient-to-r from-emerald-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent flex items-center gap-1.5">
+          <h1 className="text-xl sm:text-2xl font-black bg-linear-to-r from-emerald-400 via-cyan-400 to-indigo-400 bg-clip-text text-transparent flex items-center gap-1.5">
             🎱 Pro 8-Ball Arena
           </h1>
           <p className="text-[11px] text-gray-400">Precision Billiards Experience</p>
@@ -250,7 +250,7 @@ const INITIAL_BALLS = [
       </div>
 
       {/* STATS BAR */}
-      <div className="w-full max-w-[360px] grid grid-cols-3 gap-2 mb-3">
+      <div className="w-full max-w-90 grid grid-cols-3 gap-2 mb-3">
         <div className="bg-white/5 border border-white/10 rounded-2xl p-2 text-center backdrop-blur-md">
           <Target size={15} className="mx-auto text-emerald-400" />
           <p className="text-[9px] text-gray-400 mt-0.5">SCORE</p>
@@ -272,7 +272,7 @@ const INITIAL_BALLS = [
 
       {/* BILLIARDS TABLE */}
       <div
-        className="relative rounded-[32px] overflow-hidden border-[6px] border-[#3f2b1d] shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
+        className="relative rounded-4xl overflow-hidden border-[6px] border-[#3f2b1d] shadow-[0_20px_50px_rgba(0,0,0,0.8)]"
         style={{
           width: TABLE_WIDTH,
           height: TABLE_HEIGHT,
@@ -353,7 +353,7 @@ const INITIAL_BALLS = [
       </div>
 
       {/* CONTROLS PANEL */}
-      <div className="w-full max-w-[360px] mt-3 bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur-md">
+      <div className="w-full max-w-90 mt-3 bg-white/5 border border-white/10 rounded-2xl p-3 backdrop-blur-md">
         <div className="flex items-center justify-between mb-2">
           <span className="text-xs text-gray-400 font-semibold flex items-center gap-1">
             <Zap size={13} className="text-amber-400" /> POWER: {power}%
@@ -384,7 +384,7 @@ const INITIAL_BALLS = [
           <button
             onClick={shootCueBall}
             disabled={!isAiming}
-            className="py-2.5 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-500 text-black text-xs font-black shadow-lg shadow-cyan-500/20 active:scale-95 transition disabled:opacity-50"
+            className="py-2.5 rounded-xl bg-linear-to-r from-emerald-400 to-cyan-500 text-black text-xs font-black shadow-lg shadow-cyan-500/20 active:scale-95 transition disabled:opacity-50"
           >
             SHOOT 🎯
           </button>
