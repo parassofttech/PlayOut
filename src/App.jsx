@@ -55,6 +55,7 @@ import Ludo from './games/Ludo'
 import CandyCrush from './games/CandyCrush'
 import TempleRun from './games/TempleRun'
 import BubbleShooter from './games/BubbleShooter'
+import EightBallPool from './games/EightBallPool'
 
 function App() {
   
@@ -118,6 +119,7 @@ function App() {
       <Route path="/candy-crush" element={<CandyCrush/>} />
       <Route path="/temple-run" element={<TempleRun/>} />
       <Route path="/bubble-shooter" element={<BubbleShooter/>} />
+      <Route path="/8-ball-pool" element={<EightBallPool/>} />
       
 
     </Routes>

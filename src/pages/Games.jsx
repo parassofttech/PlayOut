@@ -59,7 +59,14 @@ const gamesData = [
     image:
       "https://play-lh.googleusercontent.com/xyikFZEzzKVQqOsz9Yty5sejBxj3ZQKE6Dl_YgPmmOBaecaNkFg3D440EbdUb6o9PlW0ofnXssw_5XGmcc-tsg",
   },
-  
+  {
+    "id": "8-ball-pool",
+    "title": "8 Ball Pool",
+    "category": "Sports",
+    "rating": 4.9,
+    "players": "110K+",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrd5Pa2ADkpTFvd656wuCGkkt47QunzVntmQ&s"
+  },
   {
   id: "stack-tower",
   title: "Stack Tower",
