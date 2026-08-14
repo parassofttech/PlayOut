@@ -22,6 +22,14 @@ const gamesData = [
   "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCw77qI26v_M42hMOli5v3Lx0XyVANQdYuyArJlKDMgg&s"
 },
 {
+    "id": "bubble-shooter",
+    "title": "Bubble Shooter",
+    "category": "Puzzle",
+    "rating": 4.6,
+    "players": "65K+",
+    "image": "https://img.poki-cdn.com/cdn-cgi/image/q=78,scq=50,width=1200,height=1200,fit=cover,f=png/2d5e417ea0fc1ef06d746b2cef691c07/bubble-shooter-lak-logo.png"
+  },
+{
     id: "car-racing",
     title: "Car Racing ",
     category: "Racing",
