@@ -515,7 +515,7 @@ function EightBallPool() {
         min-h-screen
         w-full
         overflow-x-hidden
-        bg-gradient-to-br
+        bg-linear-to-br
         from-[#030712]
         via-[#0f172a]
         to-[#020617]
@@ -536,7 +536,7 @@ function EightBallPool() {
       <div
         className="
           w-full
-          max-w-[420px]
+          max-w-105
           flex
           items-center
           justify-between
@@ -550,7 +550,7 @@ function EightBallPool() {
               text-lg
               sm:text-2xl
               font-black
-              bg-gradient-to-r
+              bg-linear-to-r
               from-emerald-400
               via-cyan-400
               to-indigo-400
@@ -624,7 +624,7 @@ function EightBallPool() {
       <div
         className="
           w-full
-          max-w-[360px]
+          max-w-90
           grid
           grid-cols-3
           gap-2
@@ -916,7 +916,7 @@ function EightBallPool() {
           text-cyan-300
           text-center
           font-semibold
-          min-h-[18px]
+          min-h-4.5
         "
       >
         {gameMessage}
@@ -929,7 +929,7 @@ function EightBallPool() {
       <div
         className="
           w-full
-          max-w-[420px]
+          max-w-105
           mt-2
           bg-white/5
           border
@@ -1037,7 +1037,7 @@ function EightBallPool() {
               min-w-0
               py-2.5
               rounded-xl
-              bg-gradient-to-r
+              bg-linear-to-r
               from-emerald-400
               to-cyan-500
               text-black
